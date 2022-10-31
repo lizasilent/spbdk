@@ -81,7 +81,35 @@ a {
 }
 
 .search__bar{
-  border: 1px solid black;
+  position: relative;
+  margin: 0 auto;
+  border-bottom-right-radius: 50px;
+  border: 2px solid #427E66;
+  border-top: none;
+  border-left: none;
+  padding-top: 5px;
+}
+
+.search__icon {
+  background: url(../images/search.png) no-repeat;
+  background-size: contain;
+  height: 32px;
+  width: 32px;
+  margin-right: 9px 13px;
+  display: inline-block;
+
+
+}
+
+.search__bar input{
+
+  height: 50px;
+  width: 773px;
+  background-color: #fdf6ec;
+  color: #9A9A9A;
+  padding-left: 10px;
+  outline: none;
+  border: 0;
 }
 
 .banner__img{
@@ -89,5 +117,4 @@ a {
   background-size: contain;
   height: 586px;
   max-width: 1242px;
-
 }
