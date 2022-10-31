@@ -1,0 +1,45 @@
+{
+  "name": "spbdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "core-js": "^3.23.3",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "css-to-bem-file-structure": "0.0.2",
+    "cssnano": "^5.1.12",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --open",
+    "start": "css-to-bem-file-structure /index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizasilent/spbdk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizasilent/spbdk/issues"
+  },
+  "homepage": "https://github.com/lizasilent/spbdk#readme"
+}

@@ -1,0 +1,45 @@
+@import url(./vendor.css);
+@import url(./normalize.css);
+
+.body {
+  background-color: #b4ebbb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+.page {
+  min-width: 320px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding: 50px;
+  position: relative;
+}
+
+
+@media screen and (max-width: 498px) {
+  .page{
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .page{
+    padding: 10px;
+  }
+}
+
+.page__content {
+  padding: 0 50px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
