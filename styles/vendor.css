@@ -1,1 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src:
+      url('../fonts/ApercuPro-Regular.woff2') format('woff2'),
+      url('../fonts/ApercuPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src:
+      url('../fonts/ApercuPro-Bold.woff2') format('woff2'),
+      url('../fonts/ApercuPro-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+}
+
+
+  @font-face{
+    font-family: "Manege Demo";
+    src: url("../fonts/ManegeDemo-Light.woff2") format("woff2");
+    font-style: normal;
+    font-weight: normal;
+    }

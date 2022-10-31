@@ -1,9 +1,11 @@
 @import url(./vendor.css);
 @import url(./normalize.css);
 
-.body {
-  background-color: #b4ebbb;
+.body{
+  background: #FDF6EC;
+  font: 20px "Apercu Pro", Helvetica, Arial, sans-serif;
 }
+
 
 * {
   box-sizing: border-box;
@@ -15,31 +17,55 @@ a {
 
 .page {
   min-width: 320px;
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  padding: 50px;
-  position: relative;
+  padding: 70px 245px;
 }
 
-
-@media screen and (max-width: 498px) {
-  .page{
-    padding: 30px;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .page{
-    padding: 10px;
-  }
-}
 
 .page__content {
-  padding: 0 50px;
   margin: 0 auto;
-  background-color: white;
-  border-radius: 10px;
-  position: relative;
   overflow: hidden;
   min-height: 100vh;
+}
+
+.header {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+padding: 20px;
+}
+
+.header__address {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header__phone{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 48px;
+}
+
+
+.header__address-logo {
+  background: url(../images/geo.png) no-repeat;
+  background-size: contain;
+  height: 15px;
+  width: 15px;
+
+}
+
+.header__phone-logo{
+  background: url(../images/tel.png) no-repeat;
+  min-height: 15px;
+  background-size: contain;
+  width: 15px;
+}
+
+.header p {
+margin: 0 0 0 10px;
 }
