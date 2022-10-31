@@ -66,45 +66,39 @@ a {
 .logo {
   margin: 0 auto;
   padding: 40px 0;
+  min-height: 150px;
 }
 
 .logo__img {
   background: url(../images/dk-logo.png) no-repeat;
   background-size: contain;
-  height: 150px;
-  max-width: 1317px;
+  height: 180px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .search{
-  border: 1px solid black;
   padding: 77px 0 48px;
 }
 
 .search__bar{
+  height: 51px;
   position: relative;
   margin: 0 auto;
   border-bottom-right-radius: 50px;
   border: 2px solid #427E66;
   border-top: none;
   border-left: none;
-  padding-top: 5px;
-}
-
-.search__icon {
-  background: url(../images/search.png) no-repeat;
-  background-size: contain;
-  height: 32px;
-  width: 32px;
-  margin-right: 9px 13px;
-  display: inline-block;
-
-
+  padding: 9px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
 }
 
 .search__bar input{
-
   height: 50px;
-  width: 773px;
+  max-width: 773px;
   background-color: #fdf6ec;
   color: #9A9A9A;
   padding-left: 10px;
@@ -112,9 +106,24 @@ a {
   border: 0;
 }
 
+.search__icon {
+  background: url(../images/search.png) no-repeat;
+  background-size: contain;
+  height: 32px;
+  width: 32px;
+  margin-right: 13px;
+
+}
+
+.banner{
+  margin: 0 auto;
+  min-height: 600px;
+}
+
 .banner__img{
   background: url(../images/banner.png) no-repeat;
   background-size: contain;
   height: 586px;
   max-width: 1242px;
+  margin: 0 auto;
 }
