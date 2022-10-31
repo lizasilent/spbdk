@@ -1,11 +1,10 @@
 @import url(./vendor.css);
 @import url(./normalize.css);
 
-.body{
-  background: #FDF6EC;
+.body {
+  background: #fdf6ec;
   font: 20px "Apercu Pro", Helvetica, Arial, sans-serif;
 }
-
 
 * {
   box-sizing: border-box;
@@ -20,7 +19,6 @@ a {
   padding: 70px 245px;
 }
 
-
 .page__content {
   margin: 0 auto;
   overflow: hidden;
@@ -28,44 +26,68 @@ a {
 }
 
 .header {
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: right;
-padding: 20px;
+  padding: 20px 0;
 }
 
 .header__address {
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.header__phone{
-  border: 1px solid black;
+.header__phone {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-left: 48px;
 }
 
-
 .header__address-logo {
   background: url(../images/geo.png) no-repeat;
   background-size: contain;
-  height: 15px;
+  min-height: 15px;
   width: 15px;
-
 }
 
-.header__phone-logo{
+.header__phone-logo {
   background: url(../images/tel.png) no-repeat;
-  min-height: 15px;
   background-size: contain;
+  min-height: 15px;
   width: 15px;
 }
 
 .header p {
-margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
+}
+
+.logo {
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.logo__img {
+  background: url(../images/dk-logo.png) no-repeat;
+  background-size: contain;
+  height: 150px;
+  max-width: 1317px;
+}
+
+.search{
+  border: 1px solid black;
+  padding: 77px 0 48px;
+}
+
+.search__bar{
+  border: 1px solid black;
+}
+
+.banner__img{
+  background: url(../images/banner.png) no-repeat;
+  background-size: contain;
+  height: 586px;
+  max-width: 1242px;
+
 }
