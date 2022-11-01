@@ -77,33 +77,38 @@ a {
   margin: 0 auto;
 }
 
-.search{
-  padding: 77px 0 48px;
+.search {
+  padding: 50px 0 48px;
+  position: relative;
 }
 
-.search__bar{
+.search__bar {
   height: 51px;
   position: relative;
   margin: 0 auto;
   border-bottom-right-radius: 50px;
-  border: 2px solid #427E66;
+  border: 2px solid #427e66;
   border-top: none;
   border-left: none;
   padding: 9px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 50%;
+  width: 773px;
+  position: relative;
 }
 
-.search__bar input{
+.search__bar input {
   height: 50px;
-  max-width: 773px;
+  width: 85%;
   background-color: #fdf6ec;
-  color: #9A9A9A;
+  color: #9a9a9a;
   padding-left: 10px;
   outline: none;
   border: 0;
+  border-radius: 50px;
+  margin-bottom: 5px;
+  position: relative;
 }
 
 .search__icon {
@@ -112,18 +117,97 @@ a {
   height: 32px;
   width: 32px;
   margin-right: 13px;
-
 }
 
-.banner{
+.banner {
   margin: 0 auto;
   min-height: 600px;
 }
 
-.banner__img{
+.banner__img {
   background: url(../images/banner.png) no-repeat;
   background-size: contain;
   height: 586px;
   max-width: 1242px;
   margin: 0 auto;
 }
+
+.search__results {
+  height: 598px;
+  width: 773px;
+  border-radius: 22px;
+  z-index: 1;
+  background-color: #FFFFFF;
+  position: relative;
+  margin: 8px auto 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.search__list {
+  border: 1px solid green;
+  margin: 0;
+}
+
+.search__item {
+  padding: 15px 30px;
+  border: 1px solid green;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__item-image {
+  background: url(../images/16.png);
+  height: 106px;
+  width: 69px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
+
+}
+
+.search__item-texts {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  margin-right: 48px;
+}
+
+.search__item-autor {
+  color: #9A9A9A;
+  margin: 0 0 6px 0;
+
+}
+
+.search__item-name {
+color: #427E66;
+margin: 0;
+}
+
+.search__item-pricecontainer {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.search__item-price {
+  font-family: 'Manege Demo';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 36px;
+  margin: 0 0 65px 0;
+}
+
+.search__item-availability {
+  font-family: 'Manege Demo';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+  color: #427E66;
+  margin: 0;
+}
+
