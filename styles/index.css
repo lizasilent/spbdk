@@ -1,12 +1,11 @@
 @import url(./vendor.css);
 @import url(./normalize.css);
 
-
-html, body {
-  scrollbar-color: #C4C4C4 #EEEEEE; /* «цвет ползунка» «цвет полосы скроллбара» */
-  scrollbar-width: thin ;  /* толщина */
+html,
+body {
+  scrollbar-color: #c4c4c4 #eeeeee; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin; /* толщина */
 }
-
 
 .body {
   background: #fdf6ec;
@@ -108,7 +107,7 @@ a {
 .search__bar input {
   height: 50px;
   width: 85%;
-  background-color: #fdf6ec;
+  background-color: transparent;
   color: #9a9a9a;
   padding-left: 10px;
   outline: none;
@@ -144,7 +143,7 @@ a {
   max-width: 773px;
   border-radius: 22px;
   z-index: 1;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: relative;
   margin: 8px auto 0;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
@@ -155,18 +154,18 @@ a {
 /* полоса прокрутки (скроллбар) */
 .search__list::-webkit-scrollbar {
   width: 6px; /* ширина для вертикального скролла */
-  background-color:  #EEEEEE;
+  background-color: #eeeeee;
   border-radius: 20px;
 }
 
 /* ползунок скроллбара */
 .search__list::-webkit-scrollbar-thumb {
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   border-radius: 20px;
 }
 
 .search__list::-webkit-scrollbar-thumb:hover {
-  background-color: #427E66;
+  background-color: #427e66;
 }
 
 .search__list {
@@ -176,7 +175,6 @@ a {
   overflow-y: auto;
 }
 
-
 .search__item {
   padding: 15px;
   list-style: none;
@@ -185,10 +183,10 @@ a {
   justify-content: center;
   align-items: center;
   max-height: 131px;
-  border-bottom: 1px solid #C4C4C4;
+  border-bottom: 1px solid #c4c4c4;
 }
 
-.search__item:last-child{
+.search__item:last-child {
   border-bottom: none;
 }
 
@@ -208,15 +206,15 @@ a {
 }
 
 .search__item-autor {
-  color: #9A9A9A;
+  color: #9a9a9a;
   margin: 0 0 6px 0;
 }
 
 .search__item-name {
-color: #427E66;
-margin: 0;
-font-weight: 700;
-line-height: 25px;
+  color: #427e66;
+  margin: 0;
+  font-weight: 700;
+  line-height: 25px;
 }
 
 .search__item-pricecontainer {
@@ -226,7 +224,7 @@ line-height: 25px;
   margin-left: 48px;
 }
 
-.search__item-box{
+.search__item-box {
   display: flex;
   flex-direction: row;
   margin: 0 0 48px 0;
@@ -234,7 +232,7 @@ line-height: 25px;
 }
 
 .search__item-price {
-  font-family: 'Manege Demo';
+  font-family: "Manege Demo";
   font-style: normal;
   font-weight: 300;
   font-size: 36px;
@@ -242,7 +240,7 @@ line-height: 25px;
   margin: 0 8px 0 0;
 }
 
-.search__item-icon{
+.search__item-icon {
   background: url(../images/rub.png) no-repeat;
   background-size: contain;
   height: 27px;
@@ -251,42 +249,95 @@ line-height: 25px;
 }
 
 .search__item-availability {
-  font-family: 'Manege Demo';
+  font-family: "Manege Demo";
   font-style: normal;
   font-weight: 300;
   font-size: 13px;
   line-height: 13px;
-  color: #427E66;
+  color: #427e66;
   margin: 0;
 }
 
-.search__more{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-end;
-padding: 20px 8px;
-
+.search__more {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 8px;
 }
 
-
-.search__more-text{
-  font-family: 'Manege Demo';
+.search__more-text {
+  font-family: "Manege Demo";
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
   line-height: 20px;
   margin: 0;
-  color: #427E66;
-
+  color: #427e66;
 }
 
 .search__more-icon {
-background: url(../images/next.png) no-repeat;
-background-size: contain;
-width: 40px;
-height: 16px;
-margin-left: 8px;
+  background: url(../images/next.png) no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+.s-catalog {
+background-color: #FFFFFF;
+}
+
+.s-catalog__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 73px 50px;
+}
+
+.s-catalog__logo {
+  background: url(../images/DK_Logo.svg) no-repeat;
+  background-size: contain;
+  width: 119px;
+  height: 53px;
+}
+
+
+.s-catalog__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1.7px solid #9A9A9A;
+  border-radius: 30px;
+  padding: 15px;
+  font-family: 'Apercu Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #9A9A9A;
+  background-color: transparent;
+}
+
+
+.s-catalog__btn-icon{
+  background: url(../images/back.png) no-repeat;
+  background-size: contain;
+  width: 17px;
+  height: 17px;
+  margin-right: 4px;
+}
+
+.s-catalog__main {
 
 }
 
+.s-catalog__main-header {
+
+}
+
+.s-catalog__template {
+
+}

@@ -1,0 +1,25 @@
+
+.icon {
+  background: url(../images/next.png) no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+
+.block__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8px;
+}
+
+.block__column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 48px;
+  padding: 34px 0 41px;
+  width: 60%;
+}
