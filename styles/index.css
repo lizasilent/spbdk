@@ -367,8 +367,10 @@ max-width: 100%;
 .s-catalog__template {
 display: grid;
 grid-template-columns: repeat(5, 1fr);
+grid-auto-flow: column;
 margin: 0 auto;
 width: 100%;
+max-width: 1287px;
 }
 
 
@@ -442,7 +444,8 @@ text-transform: uppercase;
 .s__item-box {
   display: flex;
   flex-direction: row;
-  margin-right: 67px;
+justify-content: space-between;
+  margin-right: 30px;
 }
 
 .s__item-price {
@@ -473,3 +476,8 @@ text-transform: uppercase;
   margin: 0;
   min-width: 90px;
 }
+
+.red {
+  color: #D32D34;
+}
+
