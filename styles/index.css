@@ -128,7 +128,6 @@ a:hover {
   background-size: contain;
   height: 32px;
   width: 32px;
-  margin-right: 13px;
 }
 
 .banner {
@@ -321,6 +320,7 @@ max-width: 100%;
 
 
 .s-catalog__btn {
+  min-width: 150px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -335,7 +335,7 @@ max-width: 100%;
   line-height: 25px;
   color: #9A9A9A;
   background-color: transparent;
-  width: 150px;
+
 }
 
 
@@ -352,6 +352,11 @@ max-width: 100%;
 }
 
 .s-catalog__main-header {
+  padding: 55px 0 20px;
+}
+
+.s-catalog__main-header h2 {
+  margin: 0;
   font-family: 'Manege Demo';
   font-style: normal;
   font-weight: 300;
@@ -359,8 +364,8 @@ max-width: 100%;
   line-height: 48px;
   color: #427E66;
   text-transform: uppercase;
-  padding: 50px 0 20px;
 }
+
 
 .s-catalog__template {
 
