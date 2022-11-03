@@ -486,6 +486,7 @@ a:hover {
 
 .card__left-menu {
   border: 1px solid black;
+  width: 50%;
 }
 
 .photo-block {
@@ -497,7 +498,12 @@ a:hover {
 }
 
 .card__right {
-  border: 1px solid black;
+  border: 2px solid #427e66;
+  border-bottom-left-radius: 50px;
+  border-right: none;
+  border-top: none;
+  padding-left: 60px;
+  width: 50%;
 }
 
 .card-right__header {
@@ -507,21 +513,38 @@ a:hover {
   font-size: 32px;
   line-height: 32px;
   color: #427e65;
+  padding-bottom: 67px;
 }
 
-.card-right__main {
-}
 
 .card-right__template {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 16px;
   border: 1px solid black;
 }
 
-.card-right__item {
+.card-right__template p {
+
+  margin: 0;
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
+}
+
+.card-right__bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  grid-template-columns: 1fr 2fr;
+}
+
+
+.card-right__bottom p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  margin: 0;
 }
 
 .card-right__logo {
@@ -536,7 +559,3 @@ a:hover {
   text-align: left;
 }
 
-.card-right__bottom {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
