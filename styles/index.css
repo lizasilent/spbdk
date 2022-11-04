@@ -490,14 +490,56 @@ a:hover {
 .card__left-menu {
   border: 1px solid black;
   width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .photo-block {
   border: 1px solid black;
+  display: flex;
+  flex-direction: row;
 }
+
+.photo-block__slider {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.slider__arrow{
+  background: url(../images/up.png) no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  border: none;
+}
+
+.slider__photo{
+  background: url(../images/1.png) no-repeat;
+  background-size: contain;
+  height: 84px;
+  width: 112px;
+  margin: 15px;
+
+}
+
+
+.photo-block__main-photo {
+  background: url(../images/0.png) no-repeat;
+  background-size: contain;
+  width: 303px;
+  height: 428px;
+}
+
 
 .text-block {
   border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
 .card__right {
