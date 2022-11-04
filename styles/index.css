@@ -40,7 +40,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: right;
-  padding: 20px 245px;
+  padding: 20px 15%;
 }
 
 .header__address {
@@ -76,7 +76,7 @@ a:hover {
 
 .logo {
   margin: 0 auto;
-  padding: 40px 245px;
+  padding: 40px 15%;
   min-height: 150px;
 }
 
@@ -89,14 +89,14 @@ a:hover {
 }
 
 .search {
-  padding: 50px 245px 48px;
+  padding: 50px 15% 48px;
   position: relative;
 }
 
 .search__bar {
   height: 51px;
   width: 773px;
-  max-width: 100%;
+  /* max-width: 100%; */
   position: relative;
   margin: 0 auto;
   border-bottom-right-radius: 50px;
@@ -132,7 +132,6 @@ a:hover {
 .banner {
   margin: 0 auto;
   min-height: 600px;
-  padding: 0 245px;
 }
 
 .banner__img {
@@ -291,7 +290,7 @@ a:hover {
 
 .s-catalog {
   background-color: #ffffff;
-  padding: 73px 237px 80px;
+  padding: 73px 12% 80px;
 }
 
 .s-catalog__header {
@@ -361,7 +360,7 @@ a:hover {
   grid-auto-flow: column;
   margin: 0 auto;
   width: 100%;
-  max-width: 1287px;
+  /* max-width: 1287px; */
 }
 
 .s__item {
@@ -471,7 +470,7 @@ a:hover {
 
 .card-page {
   background-color: #ffffff;
-  padding: 73px 237px 80px;
+  padding: 73px 12% 80px;
 }
 
 .card {
