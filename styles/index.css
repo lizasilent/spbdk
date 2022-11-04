@@ -109,6 +109,10 @@ a:hover {
   align-items: center;
 }
 
+.long {
+  width: 100%;
+}
+
 .search__bar input {
   height: 50px;
   width: 85%;
