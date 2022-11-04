@@ -469,7 +469,7 @@ a:hover {
 }
 
 .green {
-  color: #427E66
+  color: #427e66;
 }
 
 .card-page {
@@ -478,37 +478,39 @@ a:hover {
 }
 
 .card {
-  border: 1px solid black;
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-content: space-between;
   justify-content: space-between;
   padding: 20px 8px;
-  width: 100%
+  width: 100%;
 }
 
 .card__left-menu {
   border: 1px solid black;
   width: 60%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+
 }
 
 .photo-block {
-  border: 1px solid black;
+  border: 1px solid green;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 90px;
 }
 
 .photo-block__slider {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.slider__arrow{
+.slider__arrow {
   background: url(../images/up.png) no-repeat;
   background-size: contain;
   width: 15px;
@@ -516,15 +518,13 @@ a:hover {
   border: none;
 }
 
-.slider__photo{
+.slider__photo {
   background: url(../images/1.png) no-repeat;
   background-size: contain;
   height: 84px;
   width: 112px;
   margin: 15px;
-
 }
-
 
 .photo-block__main-photo {
   background: url(../images/0.png) no-repeat;
@@ -533,14 +533,52 @@ a:hover {
   height: 428px;
 }
 
-
 .text-block {
   border: 1px solid black;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40%;
+}
+
+.text-block__box{
+  border: 1.7px solid #DFDFDF;
+  border-top-left-radius: 100px;
+  border-right: none;
+  border-bottom: none;
+  padding-left: 60px;
+  display: flex;
   flex-direction: row;
   align-items: center;
-
+  justify-content: space-between;
 }
+
+.bsize {
+font-weight: 300;
+font-size: 64px;
+line-height: 65px;
+}
+
+.text-block p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #427E66;
+  margin-top: 40px;
+}
+
+
+.text-block__tab p {
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 19px;
+margin: 0;
+}
+
+
 
 .card__right {
   border: 2px solid #427e66;
@@ -550,7 +588,6 @@ a:hover {
   padding-left: 60px;
   width: 40%;
 }
-
 
 .card-right__header {
   font-family: "Manege Demo";
@@ -562,12 +599,11 @@ a:hover {
   padding-bottom: 67px;
 }
 
-
 .card-right__template {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 16px;
-  border-bottom: 1.8px solid #427E66;
+  border-bottom: 1.8px solid #427e66;
   padding-bottom: 41px;
 }
 
@@ -576,9 +612,8 @@ a:hover {
 }
 
 .card-right__bottom {
- padding: 35px 0 40px;
+  padding: 35px 0 40px;
 }
-
 
 .card-right__template p {
   margin: 0;
@@ -598,6 +633,4 @@ a:hover {
   color: #427e66;
   text-align: left;
   margin: 0 0 17px 0;
-
 }
-
