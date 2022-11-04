@@ -579,7 +579,17 @@ line-height: 19px;
 margin: 0;
 }
 
+.big-font{
+font-weight: 300;
+font-size: 64px;
+line-height: 65px;
+}
 
+.big-symbol {
+  width:34px;
+height:45px;
+margin-top: 8px;
+}
 
 .card__right {
   border: 2px solid #427e66;
