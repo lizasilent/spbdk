@@ -25,3 +25,5 @@
       el: '.swiper-scrollbar',
     },
   });
+
+  export {swiper};
