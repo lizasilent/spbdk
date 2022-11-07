@@ -1,18 +1,16 @@
-  // import Swiper bundle with all modules installed
+// import Swiper bundle with all modules installed
   import Swiper from 'swiper/bundle';
 
   // import styles bundle
   import 'swiper/css/bundle';
 
-  const swiper = new Swiper('.photo-block__slider', {
+  const swiper = new Swiper('.slider', {
     // Optional parameters
     direction: 'vertical',
     loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
 
-    // // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
 
     // Navigation arrows
     navigation: {
@@ -20,10 +18,6 @@
       prevEl: '.slider__arrow-next',
     },
 
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
   });
 
   export {swiper};

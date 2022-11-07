@@ -515,6 +515,14 @@ display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 0;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider__arrow-prev {
