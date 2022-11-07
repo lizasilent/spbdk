@@ -492,7 +492,9 @@ display: none;
   justify-content: space-between;
   padding: 20px 8px;
   width: 100%;
+
 }
+
 
 .card__left-menu {
   border: 1px solid black;
@@ -508,6 +510,10 @@ display: none;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 90px;
+  max-height: 100%;
+  position: relative;
+  min-width: 0;
+  padding-top: 10px;
 }
 
 .photo-block__slider {
@@ -515,42 +521,11 @@ display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 0;
+  position: relative;
+  min-height: 0;
 }
 
-.slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.slider__arrow-prev {
-  background: url(../images/up.png) no-repeat;
-  background-size: contain;
-  width: 15px;
-  height: 15px;
-  border: none;
-}
-
-.slider__arrow-next{
-  background: url(../images/down.png) no-repeat;
-  background-size: contain;
-  width: 15px;
-  height: 15px;
-  border: none;
-}
-
-.slider__photo {
-  background: url(../images/1.png) no-repeat;
-  background-size: contain;
-  height: 84px;
-  width: 112px;
-  margin: 15px;
-  justify-self: center;
-}
-
-.photo-block__main-block{
+.photo-block__main-block {
   border: 1px solid yellow;
   width: 80%;
   display: flex;
@@ -681,3 +656,5 @@ margin-top: 8px;
   text-align: left;
   margin: 0 0 17px 0;
 }
+
+@import url(./slider.css);
