@@ -91,12 +91,13 @@ a:hover {
 .search {
   padding: 50px 15% 48px;
   position: relative;
+  border: 1px solid black;
 }
 
 .search__bar {
   height: 51px;
   width: 773px;
-  /* max-width: 100%; */
+  max-width: 100%;
   position: relative;
   margin: 0 auto;
   border-bottom-right-radius: 50px;
@@ -148,7 +149,9 @@ a:hover {
 
 .search__results {
   max-height: 598px;
-  max-width: 773px;
+  width: 773px;
+  max-width: 100%;
+
   border-radius: 22px;
   z-index: 1;
   background-color: #ffffff;
