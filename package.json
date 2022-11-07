@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "core-js": "^3.23.3",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "node": "^16.13.2",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",

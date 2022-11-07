@@ -510,8 +510,16 @@ a:hover {
   align-items: center;
 }
 
-.slider__arrow {
+.slider__arrow-prev {
   background: url(../images/up.png) no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  border: none;
+}
+
+.slider__arrow-next{
+  background: url(../images/down.png) no-repeat;
   background-size: contain;
   width: 15px;
   height: 15px;
@@ -524,14 +532,26 @@ a:hover {
   height: 84px;
   width: 112px;
   margin: 15px;
+  justify-self: center;
 }
+
+.photo-block__main-block{
+  border: 1px solid yellow;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
 
 .photo-block__main-photo {
   background: url(../images/0.png) no-repeat;
   background-size: contain;
   width: 303px;
   height: 428px;
+
 }
+
+
 
 .text-block {
   border: 1px solid black;
@@ -586,7 +606,8 @@ line-height: 65px;
 }
 
 .big-symbol {
-  width:34px;
+  background-image: url(../images/rub_big.png);
+width:34px;
 height:45px;
 margin-top: 8px;
 }
