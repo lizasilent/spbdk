@@ -1,4 +1,3 @@
-
 // import Swiper JS
   import Swiper from 'swiper';
   // import Swiper styles
@@ -57,7 +56,6 @@ else if (slider.isBeginning) {
   sliderNext.classList.remove("disabled");
 }
 }
-
 
 
 

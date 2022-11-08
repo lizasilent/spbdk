@@ -163,7 +163,11 @@ a:hover {
 }
 
 .disabled {
-display: none;
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 /* полоса прокрутки (скроллбар) */
@@ -365,6 +369,45 @@ display: none;
   text-transform: uppercase;
 }
 
+.s-catalog__pagination {
+  border: 1px solid black;
+  height: 57px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.s-catalog__pagination-list ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  list-style: none;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 21px;
+  color: #427e66;
+  padding: 0;
+}
+
+.s-catalog__pagination-list li {
+  margin-right: 20px;
+}
+
+.s-catalog__pagination-count p {
+  font-family: 'Apercu Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: right;
+  color: #9A9A9A;
+  margin: 0;
+}
+
 .s-catalog__template {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -492,16 +535,13 @@ display: none;
   justify-content: space-between;
   padding: 20px 8px;
   width: 100%;
-
 }
-
 
 .card__left-menu {
   border: 1px solid black;
   width: 60%;
   display: flex;
   flex-direction: column;
-
 }
 
 .photo-block {
@@ -532,16 +572,12 @@ display: none;
   justify-content: center;
 }
 
-
 .photo-block__main-photo {
   background: url(../images/0.png) no-repeat;
   background-size: contain;
   width: 303px;
   height: 428px;
-
 }
-
-
 
 .text-block {
   border: 1px solid black;
@@ -552,16 +588,13 @@ display: none;
   padding: 15px;
 }
 
-.text-block__box{
-
+.text-block__box {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
 }
-
 
 .text-block__description {
   font-size: 15px;
@@ -569,12 +602,12 @@ display: none;
   line-height: 19px;
   letter-spacing: 0em;
   text-align: left;
-  color: #427E66;
+  color: #427e66;
   margin-top: 40px;
 }
 
 .text-block__tab {
-  border: 1.7px solid #DFDFDF;
+  border: 1.7px solid #dfdfdf;
   border-top-left-radius: 100px;
   border-right: none;
   border-bottom: none;
@@ -582,24 +615,24 @@ display: none;
 }
 
 .text-block__tab p {
-font-style: normal;
-font-weight: 700;
-font-size: 15px;
-line-height: 19px;
-margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 19px;
+  margin: 0;
 }
 
-.big-font{
-font-weight: 300;
-font-size: 64px;
-line-height: 65px;
+.big-font {
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 65px;
 }
 
 .big-symbol {
   background-image: url(../images/rub_big.png);
-width:34px;
-height:45px;
-margin-top: 8px;
+  width: 34px;
+  height: 45px;
+  margin-top: 8px;
 }
 
 .card__right {
@@ -657,13 +690,12 @@ margin-top: 8px;
   margin: 0 0 17px 0;
 }
 
-
 .slider {
   position: relative;
   padding: 50px 0;
 }
 
-.slider__container  {
+.slider__container {
   width: 112px;
   height: 312px;
 }
@@ -697,12 +729,12 @@ margin-top: 8px;
 }
 
 .slider__photo {
-  background-image: url(../images/1.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 84px;
-  width: 100%;
   justify-self: center;
   display: block;
   overflow: hidden;
+}
+
+.slider__photo img {
+  height: 84px;
+  width: 100%;
 }
