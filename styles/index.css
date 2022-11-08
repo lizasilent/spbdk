@@ -74,13 +74,13 @@ a:hover {
   margin: 0 0 0 10px;
 }
 
-.logo {
+.main__logo {
   margin: 0 auto;
   padding: 40px 15%;
   min-height: 150px;
 }
 
-.logo__img {
+.main__logo-img {
   background: url(../images/dk-logo.png) no-repeat;
   background-size: contain;
   height: 180px;
