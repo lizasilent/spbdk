@@ -1,0 +1,14 @@
+.s-catalog__main-header {
+  padding: 55px 0 20px;
+}
+
+.s-catalog__main-header h2 {
+  margin: 0;
+  font-family: "Manege Demo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 48px;
+  color: #427e66;
+  text-transform: uppercase;
+}

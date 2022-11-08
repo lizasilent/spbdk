@@ -1,0 +1,13 @@
+.search__results {
+  max-height: 598px;
+  width: 773px;
+  max-width: 100%;
+  border-radius: 22px;
+  z-index: 1;
+  background-color: #ffffff;
+  position: relative;
+  margin: 8px auto 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 27px 25px 31px;
+  overflow: hidden;
+}

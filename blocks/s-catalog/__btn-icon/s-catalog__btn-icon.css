@@ -1,0 +1,7 @@
+.s-catalog__btn-icon {
+  background: url(../../../images/back.png) no-repeat;
+  background-size: contain;
+  min-width: 17px;
+  height: 17px;
+  margin-right: 4px;
+}

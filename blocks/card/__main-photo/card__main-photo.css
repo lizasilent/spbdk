@@ -1,0 +1,6 @@
+.card__main-photo {
+  background: url(../../../images/0.png) no-repeat;
+  background-size: contain;
+  width: 303px;
+  height: 428px;
+}

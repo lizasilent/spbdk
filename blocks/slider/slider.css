@@ -1,0 +1,9 @@
+@import url(./__arrow-next/slider__arrow-next.css);
+@import url(./__arrow-prev/slider__arrow-prev.css);
+@import url(./__container/slider__container.css);
+@import url(./__photo/slider__photo.css);
+
+.slider {
+  position: relative;
+  padding: 50px 0;
+}

@@ -1,0 +1,6 @@
+.search__icon {
+  background: url(../../../images/search.png) no-repeat;
+  background-size: contain;
+  height: 32px;
+  width: 32px;
+}

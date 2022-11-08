@@ -1,0 +1,38 @@
+.s-catalog__pagination {
+  border: 1px solid black;
+  height: 57px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.s-catalog__pagination-list ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  list-style: none;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 21px;
+  color: #427e66;
+  padding: 0;
+}
+
+.s-catalog__pagination-list li {
+  margin-right: 20px;
+}
+
+.s-catalog__pagination-count p {
+  font-family: 'Apercu Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: right;
+  color: #9A9A9A;
+  margin: 0;
+}

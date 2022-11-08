@@ -1,0 +1,11 @@
+@import url(./__address-logo/header__address-logo.css);
+@import url(./__address/header__address.css);
+@import url(./__phone-logo/header__phone-logo.css);
+@import url(./__phone/header__phone.css);
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding: 20px 15%;
+}

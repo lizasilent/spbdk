@@ -1,0 +1,7 @@
+.s__item-pricecontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row;
+  width: 100%;
+}

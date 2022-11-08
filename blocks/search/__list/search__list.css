@@ -1,0 +1,23 @@
+.search__list {
+  margin: 0 auto;
+  padding: 0 29px 0 0;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* полоса прокрутки (скроллбар) */
+.search__list::-webkit-scrollbar {
+  width: 6px; /* ширина для вертикального скролла */
+  background-color: #eeeeee;
+  border-radius: 20px;
+}
+
+/* ползунок скроллбара */
+.search__list::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 20px;
+}
+
+.search__list::-webkit-scrollbar-thumb:hover {
+  background-color: #427e66;
+}

@@ -1,0 +1,6 @@
+@import url(./__img/banner__img.css);
+
+.banner {
+  margin: 0 auto;
+  min-height: 600px;
+}

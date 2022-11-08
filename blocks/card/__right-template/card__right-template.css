@@ -1,0 +1,14 @@
+.card__right-template {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 16px;
+  border-bottom: 1.8px solid #427e66;
+  padding-bottom: 41px;
+}
+
+.card__right-template p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+}

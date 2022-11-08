@@ -1,0 +1,17 @@
+.s-catalog__btn {
+  min-width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1.7px solid #9a9a9a;
+  border-radius: 30px;
+  padding: 15px;
+  font-family: "Apercu Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #9a9a9a;
+  background-color: transparent;
+}

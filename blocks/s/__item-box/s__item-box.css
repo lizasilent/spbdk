@@ -1,0 +1,6 @@
+.s__item-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 30px;
+}

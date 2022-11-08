@@ -1,0 +1,27 @@
+@import url(./__left-menu/card__left-menu.css);
+@import url(./__main-block/card__main-block.css);
+@import url(./__main-photo/card__main-photo.css);
+@import url(./__photo-block/card__photo-block.css);
+@import url(./__right-bottom/card__right-bottom.css);
+@import url(./__right-header/card__right-header.css);
+@import url(./__right-template/card__right-template.css);
+@import url(./__right-text/card__right-text.css);
+@import url(./__right/card__right.css);
+@import url(./__slider/card__slider.css);
+@import url(./__text-block-box/card__text-block-box.css);
+@import url(./__text-block-description/card__text-block-description.css);
+@import url(./__text-block-tab/card__text-block-tab.css);
+@import url(./__text-block/card__text-block.css);
+@import url(./_big-font/card_big-font.css);
+@import url(./_big-symbol/card_big-symbol.css);
+
+
+.card {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-between;
+  padding: 20px 8px;
+  width: 100%;
+}

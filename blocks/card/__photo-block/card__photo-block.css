@@ -1,0 +1,11 @@
+.card__photo-block {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 90px;
+  max-height: 100%;
+  position: relative;
+  min-width: 0;
+  padding-top: 10px;
+}

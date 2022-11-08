@@ -1,0 +1,6 @@
+.header__phone-logo {
+  background: url(../../../images/tel.png) no-repeat;
+  background-size: contain;
+  min-height: 15px;
+  width: 15px;
+}

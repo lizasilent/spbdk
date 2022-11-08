@@ -1,0 +1,16 @@
+.card__text-block-tab {
+  border: 1.7px solid #dfdfdf;
+  border-top-left-radius: 100px;
+  border-right: none;
+  border-bottom: none;
+  padding: 15px 50px;
+  color: #427E66;
+}
+
+.card__text-block-tab p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 19px;
+  margin: 0;
+}

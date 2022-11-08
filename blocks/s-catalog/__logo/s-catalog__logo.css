@@ -1,0 +1,6 @@
+.s-catalog__logo {
+  background: url(../../../images/DK_Logo.svg) no-repeat;
+  background-size: contain;
+  min-width: 119px;
+  height: 53px;
+}

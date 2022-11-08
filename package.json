@@ -16,7 +16,7 @@
     "babel-loader": "^8.3.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
-    "css-to-bem-file-structure": "0.0.2",
+    "css-to-bem-file-structure": "github:tadatuta/bem-tools-create-by-css",
     "cssnano": "^5.1.12",
     "eslint": "^8.19.0",
     "eslint-config-airbnb": "^19.0.4",

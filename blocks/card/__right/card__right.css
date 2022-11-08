@@ -1,0 +1,8 @@
+.card__right {
+  border: 2px solid #427e66;
+  border-bottom-left-radius: 100px;
+  border-right: none;
+  border-top: none;
+  padding-left: 60px;
+  width: 40%;
+}

@@ -1,0 +1,6 @@
+.card__left-menu {
+  border: 1px solid black;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,6 @@
+.search__item-pricecontainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 105px;
+  margin-left: 48px;
+}

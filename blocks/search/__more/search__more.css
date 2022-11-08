@@ -1,0 +1,7 @@
+.search__more {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 8px;
+}

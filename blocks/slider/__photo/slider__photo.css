@@ -1,0 +1,10 @@
+.slider__photo {
+  justify-self: center;
+  display: block;
+  overflow: hidden;
+}
+
+.slider__photo img {
+  height: 84px;
+  width: 100%;
+}

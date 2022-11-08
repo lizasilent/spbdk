@@ -1,0 +1,8 @@
+.s__item {
+  padding: 15px;
+  margin-bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}

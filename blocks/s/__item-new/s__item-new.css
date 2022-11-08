@@ -1,0 +1,11 @@
+.s__item-new {
+  font-family: "Manege Demo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 13px;
+  color: #d32d34;
+  padding-bottom: 11px;
+  align-self: flex-end;
+  text-transform: uppercase;
+}

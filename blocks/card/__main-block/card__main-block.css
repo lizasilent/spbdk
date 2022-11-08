@@ -1,0 +1,6 @@
+.card__main-block {
+  border: 1px solid yellow;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}

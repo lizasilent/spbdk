@@ -1,0 +1,25 @@
+@import url(./__bar/search__bar.css);
+@import url(./__icon/search__icon.css);
+@import url(./__item-autor/search__item-autor.css);
+@import url(./__item-availability/search__item-availability.css);
+@import url(./__item-box/search__item-box.css);
+@import url(./__item-icon/search__item-icon.css);
+@import url(./__item-image/search__item-image.css);
+@import url(./__item-name/search__item-name.css);
+@import url(./__item-price/search__item-price.css);
+@import url(./__item-pricecontainer/search__item-pricecontainer.css);
+@import url(./__item-texts/search__item-texts.css);
+@import url(./__item/search__item.css);
+@import url(./__list/search__list.css);
+@import url(./__more-icon/search__more-icon.css);
+@import url(./__more-text/search__more-text.css);
+@import url(./__more/search__more.css);
+@import url(./__results/search__results.css);
+
+
+.search {
+  padding: 50px 15% 48px;
+  position: relative;
+  border: 1px solid black;
+  margin: 0 auto;
+}

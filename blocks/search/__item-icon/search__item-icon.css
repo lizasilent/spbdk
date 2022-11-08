@@ -1,0 +1,7 @@
+.search__item-icon {
+  background: url(../../../images/rub.png) no-repeat;
+  background-size: contain;
+  height: 27px;
+  width: 21px;
+  margin-top: 3px;
+}

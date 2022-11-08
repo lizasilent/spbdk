@@ -1,0 +1,28 @@
+.search__bar {
+  height: 51px;
+  width: 773px;
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto;
+  border-bottom-right-radius: 50px;
+  border: 2px solid #427e66;
+  border-top: none;
+  border-left: none;
+  padding: 9px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search__bar input {
+  height: 50px;
+  width: 85%;
+  background-color: transparent;
+  color: #9a9a9a;
+  padding-left: 10px;
+  outline: none;
+  border: 0;
+  border-radius: 50px;
+  margin-bottom: 5px;
+  position: relative;
+}
