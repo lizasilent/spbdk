@@ -1,5 +1,4 @@
 .s-catalog__pagination {
-  border: 1px solid black;
   height: 57px;
   display: flex;
   flex-direction: row;
@@ -27,12 +26,22 @@
 }
 
 .s-catalog__pagination-count p {
-  font-family: 'Apercu Pro';
+  font-family: "Manege Demo";
   font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  text-align: right;
-  color: #9A9A9A;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #427e66;
   margin: 0;
+}
+
+.s-catalog__pagination hr {
+  color: #427e66;
+  background-color: #427e66;
+  height: 1px;
+  width: 80%;
+  margin: 0 20px;
 }
