@@ -1,8 +1,11 @@
+const loader = document.querySelector(".loader");
+
+
 function getitems() {
   fetch("http://10.0.0.55//home/app/production", {
     method: "GET",
     headers: {
-      authorization: "1b98b7f8-c29f-4d66-ae18-3d1d376d7ed7",
+      authorization: "",
       "Content-Type": "application/json"
     }
   })
@@ -31,6 +34,7 @@ function showSpinner(isLoading) {
     loader.classList.remove("loader_hidden");
   } else {
     loader.classList.add("loader_hidden");
-    cardErr.classList.remove("card__err_hidden");
   }
 }
+
+getitems();

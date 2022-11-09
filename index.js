@@ -16,15 +16,3 @@ function handlePopup() {
     searchForm.classList.add("disabled");
   }
 }
-
-
-// function closePopup() {
-
-// if (searchInput.value === "") {
-//   searchForm.classList.add("disabled")
-// }
-
-// }
-
-
-// closePopup();
