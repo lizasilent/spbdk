@@ -3,12 +3,28 @@ import './src/slider.js';
 
 const search = document.querySelector(".search");
 const searchForm = document.querySelector(".search__results");
+const searchInput = document.querySelector(".search__input");
 
 
-search.addEventListener("input", openPopup);
+search.addEventListener("input", handlePopup);
 
-function openPopup() {
-  searchForm.classList.remove("disabled")
+
+function handlePopup() {
+  searchForm.classList.remove("disabled");
+
+  if (searchInput.value === "") {
+    searchForm.classList.add("disabled");
+  }
 }
 
 
+// function closePopup() {
+
+// if (searchInput.value === "") {
+//   searchForm.classList.add("disabled")
+// }
+
+// }
+
+
+// closePopup();
