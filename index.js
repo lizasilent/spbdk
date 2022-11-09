@@ -1,5 +1,5 @@
 import './styles/index.css';
-import './slider.js';
+import './src/slider.js';
 
 const search = document.querySelector(".search");
 const searchForm = document.querySelector(".search__results");

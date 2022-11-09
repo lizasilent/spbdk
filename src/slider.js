@@ -2,7 +2,7 @@
   import Swiper from 'swiper';
   // import Swiper styles
   import 'swiper/css';
-  import './styles/index.css';
+  import '../styles/index.css';
 
   // Navigation
 const sliderPrev = document.querySelector('.slider__arrow-prev');
