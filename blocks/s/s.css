@@ -9,3 +9,5 @@
 @import url(./__item-pricecontainer/s__item-pricecontainer.css);
 @import url(./__item-texts/s__item-texts.css);
 @import url(./__item/s__item.css);
+@import url(../card/_big-font/card_big-font.css);
+@import url(../card/_big-symbol/card_big-symbol.css);

@@ -1,0 +1,23 @@
+.disabled {
+  display: none;
+}
+
+.green {
+  color: #427e66;
+}
+
+.no-border {
+  border: none;
+}
+
+.red {
+  color: #d32d34;
+}
+
+.long {
+  width: 100%;
+}
+
+.hidden {
+  opacity: 0;
+}

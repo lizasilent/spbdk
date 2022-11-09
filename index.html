@@ -1,315 +1,346 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Поисковая система «Санкт-Петербургский Дом книги»</title>
-    </head>
-    <body class="body">
-        <div class="page">
-            <div class="page__content">
-                <header class="header">
-                    <div class="header__address">
-                        <div class="header__address-logo"></div>
-                        <p>Невский, 28</p>
-                    </div>
-                    <div class="header__phone">
-                        <div class="header__phone-logo"></div>
-                        <p>+7 (812) 667 84 25</p>
-                    </div>
-                </header>
-                <main class="main">
-                    <div class="main__logo">
-                        <div class="main__logo-img"></div>
-                    </div>
-                    <div class="search">
-                        <form class="search__bar" method="get">
-                            <div class="search__icon"></div>
-                            <input name="search" placeholder="Найти в магазине" type="search">
-                        </form>
-                        <div class="search__results disabled">
-                            <ul class="search__list">
-                                <li class="search__item">
-                                    <div class="search__item-image"></div>
-                                    <div class="search__item-texts">
-                                        <p class="search__item-autor">Барбара Пиз</p>
-                                        <p class="search__item-name">Язык взаимоотношений</p>
-                                    </div>
-                                    <div class="search__item-pricecontainer">
-                                        <div class="search__item-box">
-                                            <p class="search__item-price">475</p>
-                                            <div class="search__item-icon"></div>
-                                        </div>
-                                        <p class="search__item-availability">В наличии 10 шт.</p>
-                                    </div>
-                                </li>
-                                <li class="search__item">
-                                  <div class="search__item-image"></div>
-                                  <div class="search__item-texts">
-                                      <p class="search__item-autor">Барбара Пиз</p>
-                                      <p class="search__item-name">Язык взаимоотношений</p>
-                                  </div>
-                                  <div class="search__item-pricecontainer">
-                                      <div class="search__item-box">
-                                          <p class="search__item-price">475</p>
-                                          <div class="search__item-icon"></div>
-                                      </div>
-                                      <p class="search__item-availability">В наличии 10 шт.</p>
-                                  </div>
-                              </li>
-                              <li class="search__item">
-                                <div class="search__item-image"></div>
-                                <div class="search__item-texts">
-                                    <p class="search__item-autor">Барбара Пиз</p>
-                                    <p class="search__item-name">Язык взаимоотношений</p>
-                                </div>
-                                <div class="search__item-pricecontainer">
-                                    <div class="search__item-box">
-                                        <p class="search__item-price">475</p>
-                                        <div class="search__item-icon"></div>
-                                    </div>
-                                    <p class="search__item-availability">В наличии 10 шт.</p>
-                                </div>
-                            </li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поисковая система «Санкт-Петербургский Дом книги»</title>
+  </head>
+  <body class="body">
+    <div class="page">
+      <div class="page__content">
+        <header class="header">
+          <div class="header__address">
+            <div class="header__address-logo"></div>
+            <p>Невский, 28</p>
+          </div>
+          <div class="header__phone">
+            <div class="header__phone-logo"></div>
+            <p>+7 (812) 667 84 25</p>
+          </div>
+        </header>
+        <main class="main">
+          <div class="main__logo">
+            <div class="main__logo-img"></div>
+          </div>
+          <div class="search">
+            <div class="search__container">
+            <form class="search__bar" method="get">
+              <div class="search__icon"></div>
+              <input
+                name="search"
+                placeholder="Найти в магазине"
+                type="search"
+              />
 
-                                            </ul>
-                                            <div class="search__more">
-                                                <a class="search__more-text" href="#">Все результаты</a>
-                                                <a href="#">
-                                                    <div class="search__more-icon"></div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="banner">
-                                        <div class="banner__img"></div>
-                                    </div>
-                                    <div class="s-catalog">
-                                        <div class="s-catalog__header">
-                                            <div class="s-catalog__logo"></div>
-                                            <div class="s-catalog__search">
-                                                <form class="search__bar long" method="get">
-                                                    <div class="search__icon"></div>
-                                                    <input name="search" placeholder="Найти в магазине" type="search">
-                                                </form>
-                                            </div>
-                                            <button class="s-catalog__btn">
-                                                <div class="s-catalog__btn-icon"></div>
-                                                Назад
-                                            </button>
-                                        </div>
-                                        <div class="s-catalog__main">
-                                            <div class="s-catalog__main-header">
-                                                <h2>Результаты поиска</h2>
-                                            </div>
-                                            <div class="s-catalog__template">
-                                                <div class="s__item">
-                                                    <div class="s__item-new hidden">Новинка</div>
-                                                    <div class="s__item-image"></div>
-                                                    <div class="s__item-texts">
-                                                        <p class="s__item-autor">Барбара Пиз</p>
-                                                        <p class="s__item-name">Язык взаимоотношений</p>
-                                                    </div>
-                                                    <div class="s__item-pricecontainer">
-                                                        <div class="s__item-box">
-                                                            <p class="s__item-price">475</p>
-                                                            <div class="s__item-icon"></div>
-                                                        </div>
-                                                        <p class="s__item-availability">В наличии 10 шт.</p>
-                                                        <!-- <p class="s__item-availability red">Нет в наличии</p> -->
-                                                    </div>
-                                                </div>
-                                                <div class="s__item">
-                                                    <div class="s__item-new hidden">Новинка</div>
-                                                    <div class="s__item-image"></div>
-                                                    <div class="s__item-texts">
-                                                        <p class="s__item-autor">Барбара Пиз</p>
-                                                        <p class="s__item-name">Язык взаимоотношений</p>
-                                                    </div>
-                                                    <div class="s__item-pricecontainer">
-                                                        <div class="s__item-box">
-                                                            <p class="s__item-price">475</p>
-                                                            <div class="s__item-icon"></div>
-                                                        </div>
-                                                        <p class="s__item-availability">В наличии 10 шт.</p>
-                                                        <!-- <p class="s__item-availability red">Нет в наличии</p> -->
-                                                    </div>
-                                                </div>
-                                                <div class="s__item">
-                                                    <div class="s__item-new hidden">Новинка</div>
-                                                    <div class="s__item-image"></div>
-                                                    <div class="s__item-texts">
-                                                        <p class="s__item-autor">Барбара Пиз</p>
-                                                        <p class="s__item-name">Язык взаимоотношений</p>
-                                                    </div>
-                                                    <div class="s__item-pricecontainer">
-                                                        <div class="s__item-box">
-                                                            <p class="s__item-price">475</p>
-                                                            <div class="s__item-icon"></div>
-                                                        </div>
-                                                        <p class="s__item-availability">В наличии 10 шт.</p>
-                                                        <!-- <p class="s__item-availability red">Нет в наличии</p> -->
-                                                    </div>
-                                                </div>
-                                                <div class="s__item">
-                                                    <div class="s__item-new hidden">Новинка</div>
-                                                    <div class="s__item-image"></div>
-                                                    <div class="s__item-texts">
-                                                        <p class="s__item-autor">Барбара Пиз</p>
-                                                        <p class="s__item-name">Язык взаимоотношений</p>
-                                                    </div>
-                                                    <div class="s__item-pricecontainer">
-                                                        <div class="s__item-box">
-                                                            <p class="s__item-price">475</p>
-                                                            <div class="s__item-icon"></div>
-                                                        </div>
-                                                        <p class="s__item-availability">В наличии 10 шт.</p>
-                                                        <!-- <p class="s__item-availability red">Нет в наличии</p> -->
-                                                    </div>
-                                                </div>
-                                                <div class="s__item">
-                                                    <div class="s__item-new hidden">Новинка</div>
-                                                    <div class="s__item-image"></div>
-                                                    <div class="s__item-texts">
-                                                        <p class="s__item-autor">Барбара Пиз</p>
-                                                        <p class="s__item-name">Язык взаимоотношений</p>
-                                                    </div>
-                                                    <div class="s__item-pricecontainer">
-                                                        <div class="s__item-box">
-                                                            <p class="s__item-price">475</p>
-                                                            <div class="s__item-icon"></div>
-                                                        </div>
-                                                        <p class="s__item-availability">В наличии 10 шт.</p>
-                                                        <!-- <p class="s__item-availability red">Нет в наличии</p> -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="s-catalog__pagination">
-                                              <hr>
-                                                <div class="s-catalog__pagination-list">
-                                                    <ul>
-                                                        <li>
-                                                            <a>1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a>2</a>
-                                                        </li>
-                                                        <li>
-                                                            <a>3</a>
-                                                        </li>
-                                                        <li>
-                                                            <a>4</a>
-                                                        </li>
-                                                        <li>...</li>
-                                                        <li>25</li>
-                                                    </ul>
-                                                </div>
-                                                <hr>
-                                                <div class="s-catalog__pagination-count">
-                                                    <p>Следующая</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-page">
-                                        <div class="card">
-                                            <div class="card__left-menu">
-                                                <div class="card__photo-block">
-                                                    <div class="card__slider slider">
-                                                        <div class="slider__arrow-prev disabled"></div>
-                                                        <div class="swiper slider__container">
-                                                            <div class="swiper-wrapper">
-                                                                <div class="swiper-slide slider__photo">
-                                                                    <img src="https://picsum.photos/id/231/112/84" alt="">
-                                                                </div>
-                                                                <div class="swiper-slide slider__photo">
-                                                                    <img src="https://picsum.photos/id/232/112/84" alt="">
-                                                                </div>
-                                                                <div class="swiper-slide slider__photo">
-                                                                    <img src="https://picsum.photos/id/233/112/84" alt="">
-                                                                </div>
-                                                                <div class="swiper-slide slider__photo">
-                                                                    <img src="https://picsum.photos/id/234/112/84" alt="">
-                                                                </div>
-                                                                <div class="swiper-slide slider__photo">
-                                                                    <img src="https://picsum.photos/id/235/112/84" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="slider__arrow-next"></div>
-                                                    </div>
-                                                    <div class="card__main-block">
-                                                        <div class="card__main-photo"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="card__text-block">
-                                                    <div class="card__text-block-box">
-                                                        <div class="card__text-block-tab">Аннотация</div>
-                                                        <div class="s__item-box">
-                                                            <p class="s__item-price card_big-font">475</p>
-                                                            <div class="s__item-icon card_big-symbol"></div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="card__text-block-description">
-                                                        Роман Андрея Николева «По ту сторону Тулы» вышел в 1931 году и стал одним из последних
-                                                        модернистских текстов, успевших появиться в официальной советской печати. Андрей Николев —
-                                                        псевдоним филолога-классика Андрея Николаевича Егунова (1895–1968), при жизни известного
-                                                        прежде всего как переводчик Платона и древнегреческих романов. «По ту сторону Тулы» —
-                                                        единственное дошедшее до нас крупное прозаическое сочинение Егунова (роман «Василий
-                                                        Остров» и сборник «Милетские новеллы», высоко оцененный Михаилом Кузминым,
-                                                        не сохранились).
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="card__right">
-                                                <div class="card__right-header">По ту сторону Тулы</div>
-                                                <div class="card-right__main">
-                                                    <div class="card__right-template">
-                                                        <p>Автор</p>
-                                                        <p>Николев А.</p>
-                                                        <p>Художник</p>
-                                                        <p>Алексеева А.</p>
-                                                        <p>Переводчик</p>
-                                                        <p>Дроздов Д.</p>
-                                                        <p>Серия</p>
-                                                        <p>Путешествия</p>
-                                                        <p>Издательство</p>
-                                                        <p>Носорог</p>
-                                                        <p>Год</p>
-                                                        <p>2022</p>
-                                                        <p>Переплёт</p>
-                                                        <p>Твердый</p>
-                                                        <p>Кол-во страниц</p>
-                                                        <p>456</p>
-                                                        <p>Формат</p>
-                                                        <p>170/240 мм</p>
-                                                        <p>Язык</p>
-                                                        <p>Русский</p>
-                                                        <p>ISBN</p>
-                                                        <p>438-934-629-4</p>
-                                                        <p>Артикул</p>
-                                                        <p>
-                                                            5936075
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="card__right-bottom">
-                                                    <p class="card__right-text">Наличие в магазинах</p>
-                                                    <div class="card__right-template no-border">
-                                                        <p>Невский, 28</p>
-                                                        <p class="green">В наличии 10 шт. / 2 этаж, секция В, полка 2</p>
-                                                        <p>Литейный, 64</p>
-                                                        <p class="red">Нет в наличии</p>
-                                                        <p>Кронштадт</p>
-                                                        <p class="green">В наличии 2 шт. / 1 этаж, секция А, полка 4</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </main>
-                            <footer class="footer"></footer>
-                        </div>
+
+            </form>
+            <div class="search__results disabled">
+              <ul class="search__list">
+                <li class="search__item">
+                  <div class="search__item-image"></div>
+                  <div class="search__item-texts">
+                    <p class="search__item-autor">Барбара Пиз</p>
+                    <p class="search__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="search__item-pricecontainer">
+                    <div class="search__item-box">
+                      <p class="search__item-price">475</p>
+                      <div class="search__item-icon"></div>
                     </div>
-                </body>
-            </html>
+                    <p class="search__item-availability">В наличии 10 шт.</p>
+                  </div>
+                </li>
+                <li class="search__item">
+                  <div class="search__item-image"></div>
+                  <div class="search__item-texts">
+                    <p class="search__item-autor">Барбара Пиз</p>
+                    <p class="search__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="search__item-pricecontainer">
+                    <div class="search__item-box">
+                      <p class="search__item-price">475</p>
+                      <div class="search__item-icon"></div>
+                    </div>
+                    <p class="search__item-availability">В наличии 10 шт.</p>
+                  </div>
+                </li>
+                <li class="search__item">
+                  <div class="search__item-image"></div>
+                  <div class="search__item-texts">
+                    <p class="search__item-autor">Барбара Пиз</p>
+                    <p class="search__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="search__item-pricecontainer">
+                    <div class="search__item-box">
+                      <p class="search__item-price">475</p>
+                      <div class="search__item-icon"></div>
+                    </div>
+                    <p class="search__item-availability">В наличии 10 шт.</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="search__more">
+                <a class="search__more-text" href="#">Все результаты</a>
+                <a href="#">
+                  <div class="search__more-icon"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="banner">
+            <div class="banner__img"></div>
+          </div>
+          <div class="s-catalog">
+            <div class="s-catalog__header">
+              <div class="s-catalog__logo"></div>
+              <div class="s-catalog__search">
+                <form class="search__bar long" method="get">
+                  <div class="search__icon"></div>
+                  <input
+                    name="search"
+                    placeholder="Найти в магазине"
+                    type="search"
+                  />
+                </form>
+              </div>
+              <button class="s-catalog__btn">
+                <div class="s-catalog__btn-icon"></div>
+                Назад
+              </button>
+            </div>
+            <div class="s-catalog__main">
+              <div class="s-catalog__main-header">
+                <h2>Результаты поиска</h2>
+              </div>
+              <div class="s-catalog__template">
+                <div class="s__item">
+                  <div class="s__item-new hidden">Новинка</div>
+                  <div class="s__item-image"></div>
+                  <div class="s__item-texts">
+                    <p class="s__item-autor">Барбара Пиз</p>
+                    <p class="s__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="s__item-pricecontainer">
+                    <div class="s__item-box">
+                      <p class="s__item-price">475</p>
+                      <div class="s__item-icon"></div>
+                    </div>
+                    <p class="s__item-availability">В наличии 10 шт.</p>
+                    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+                  </div>
+                </div>
+                <div class="s__item">
+                  <div class="s__item-new hidden">Новинка</div>
+                  <div class="s__item-image"></div>
+                  <div class="s__item-texts">
+                    <p class="s__item-autor">Барбара Пиз</p>
+                    <p class="s__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="s__item-pricecontainer">
+                    <div class="s__item-box">
+                      <p class="s__item-price">475</p>
+                      <div class="s__item-icon"></div>
+                    </div>
+                    <p class="s__item-availability">В наличии 10 шт.</p>
+                    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+                  </div>
+                </div>
+                <div class="s__item">
+                  <div class="s__item-new hidden">Новинка</div>
+                  <div class="s__item-image"></div>
+                  <div class="s__item-texts">
+                    <p class="s__item-autor">Барбара Пиз</p>
+                    <p class="s__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="s__item-pricecontainer">
+                    <div class="s__item-box">
+                      <p class="s__item-price">475</p>
+                      <div class="s__item-icon"></div>
+                    </div>
+                    <p class="s__item-availability">В наличии 10 шт.</p>
+                    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+                  </div>
+                </div>
+                <div class="s__item">
+                  <div class="s__item-new hidden">Новинка</div>
+                  <div class="s__item-image"></div>
+                  <div class="s__item-texts">
+                    <p class="s__item-autor">Барбара Пиз</p>
+                    <p class="s__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="s__item-pricecontainer">
+                    <div class="s__item-box">
+                      <p class="s__item-price">475</p>
+                      <div class="s__item-icon"></div>
+                    </div>
+                    <p class="s__item-availability">В наличии 10 шт.</p>
+                    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+                  </div>
+                </div>
+                <div class="s__item">
+                  <div class="s__item-new hidden">Новинка</div>
+                  <div class="s__item-image"></div>
+                  <div class="s__item-texts">
+                    <p class="s__item-autor">Барбара Пиз</p>
+                    <p class="s__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="s__item-pricecontainer">
+                    <div class="s__item-box">
+                      <p class="s__item-price">475</p>
+                      <div class="s__item-icon"></div>
+                    </div>
+                    <p class="s__item-availability">В наличии 10 шт.</p>
+                    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="s-catalog__pagination">
+                <hr />
+                <div class="s-catalog__pagination-list">
+                  <ul>
+                    <li>
+                      <a>1</a>
+                    </li>
+                    <li>
+                      <a>2</a>
+                    </li>
+                    <li>
+                      <a>3</a>
+                    </li>
+                    <li>
+                      <a>4</a>
+                    </li>
+                    <li>...</li>
+                    <li>25</li>
+                  </ul>
+                </div>
+                <hr />
+                <div class="s-catalog__pagination-count">
+                  <p>Следующая</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-page">
+            <div class="card">
+              <div class="card__left-menu">
+                <div class="card__photo-block">
+                  <div class="card__slider slider">
+                    <div class="slider__arrow-prev disabled"></div>
+                    <div class="swiper slider__container">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide slider__photo">
+                          <img
+                            src="https://picsum.photos/id/231/112/84"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img
+                            src="https://picsum.photos/id/232/112/84"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img
+                            src="https://picsum.photos/id/233/112/84"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img
+                            src="https://picsum.photos/id/234/112/84"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img
+                            src="https://picsum.photos/id/235/112/84"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__arrow-next"></div>
+                  </div>
+                  <div class="card__main-block">
+                    <div class="card__main-photo"></div>
+                  </div>
+                </div>
+                <div class="card__text-block">
+                  <div class="card__text-block-box">
+                    <div class="card__text-block-tab">Аннотация</div>
+                    <div class="s__item-box">
+                      <p class="s__item-price card_big-font">475</p>
+                      <div class="s__item-icon card_big-symbol"></div>
+                    </div>
+                  </div>
+                  <p class="card__text-block-description">
+                    Роман Андрея Николева «По ту сторону Тулы» вышел в 1931 году
+                    и стал одним из последних модернистских текстов, успевших
+                    появиться в официальной советской печати. Андрей Николев —
+                    псевдоним филолога-классика Андрея Николаевича Егунова
+                    (1895–1968), при жизни известного прежде всего как
+                    переводчик Платона и древнегреческих романов. «По ту сторону
+                    Тулы» — единственное дошедшее до нас крупное прозаическое
+                    сочинение Егунова (роман «Василий Остров» и сборник
+                    «Милетские новеллы», высоко оцененный Михаилом Кузминым, не
+                    сохранились).
+                  </p>
+                </div>
+              </div>
+              <div class="card__right">
+                <div class="card__right-header">По ту сторону Тулы</div>
+                <div class="card-right__main">
+                  <div class="card__right-template">
+                    <p>Автор</p>
+                    <p>Николев А.</p>
+                    <p>Художник</p>
+                    <p>Алексеева А.</p>
+                    <p>Переводчик</p>
+                    <p>Дроздов Д.</p>
+                    <p>Серия</p>
+                    <p>Путешествия</p>
+                    <p>Издательство</p>
+                    <p>Носорог</p>
+                    <p>Год</p>
+                    <p>2022</p>
+                    <p>Переплёт</p>
+                    <p>Твердый</p>
+                    <p>Кол-во страниц</p>
+                    <p>456</p>
+                    <p>Формат</p>
+                    <p>170/240 мм</p>
+                    <p>Язык</p>
+                    <p>Русский</p>
+                    <p>ISBN</p>
+                    <p>438-934-629-4</p>
+                    <p>Артикул</p>
+                    <p>5936075</p>
+                  </div>
+                </div>
+                <div class="card__right-bottom">
+                  <p class="card__right-text">Наличие в магазинах</p>
+                  <div class="card__right-template no-border">
+                    <p>Невский, 28</p>
+                    <p class="green">
+                      В наличии 10 шт. / 2 этаж, секция В, полка 2
+                    </p>
+                    <p>Литейный, 64</p>
+                    <p class="red">Нет в наличии</p>
+                    <p>Кронштадт</p>
+                    <p class="green">
+                      В наличии 2 шт. / 1 этаж, секция А, полка 4
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="footer"></footer>
+      </div>
+    </div>
+  </body>
+</html>

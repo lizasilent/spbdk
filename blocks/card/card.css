@@ -12,8 +12,7 @@
 @import url(./__text-block-description/card__text-block-description.css);
 @import url(./__text-block-tab/card__text-block-tab.css);
 @import url(./__text-block/card__text-block.css);
-@import url(./_big-font/card_big-font.css);
-@import url(./_big-symbol/card_big-symbol.css);
+
 
 
 .card {

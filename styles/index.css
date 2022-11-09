@@ -12,13 +12,7 @@
 @import url(../blocks/s/s.css);
 @import url(../blocks/search/search.css);
 @import url(../blocks/slider/slider.css);
-
-@import url(../blocks/disabled/disabled.css);
-@import url(../blocks/green/green.css);
-@import url(../blocks/hidden/hidden.css);
-@import url(../blocks/long/long.css);
-@import url(../blocks/no-border/no-border.css);
-@import url(../blocks/red/red.css);
+@import url(../blocks/modifiers/modifiers.css);
 
 
 * {

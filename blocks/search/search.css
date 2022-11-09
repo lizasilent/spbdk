@@ -15,10 +15,12 @@
 @import url(./__more-text/search__more-text.css);
 @import url(./__more/search__more.css);
 @import url(./__results/search__results.css);
+@import url(./__container/search__container.css);
 
 
 .search {
-  padding: 50px 15% 48px;
+  padding: 5px 15% 48px;
   position: relative;
   margin: 0 auto;
+  position: relative;
 }
