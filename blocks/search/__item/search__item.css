@@ -1,4 +1,4 @@
-.search__item {
+.search__item a {
   padding: 15px;
   list-style: none;
   display: flex;
@@ -7,6 +7,7 @@
   align-items: center;
   max-height: 131px;
   border-bottom: 1px solid #c4c4c4;
+  color: black;
 }
 
 .search__item:last-child {

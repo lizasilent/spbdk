@@ -42,10 +42,21 @@ module.exports = {
       },
     ]
   },
+  
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html'
+      filename: 'index.html',
+      template: './index.html',
     }),
+    new HtmlWebpackPlugin({
+      filename: 'card.html',
+      template: './pages/card.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'search-results.html',
+      template: './pages/search-results.html',
+    }),
+
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ]
