@@ -1,63 +1,69 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+/* eslint-disable no-undef */
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    main: './index.js'
+    main: "./index.js",
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'main.js',
-    publicPath: '',
+    path: path.resolve(__dirname, "./dist"),
+    filename: "main.js",
+    publicPath: "",
   },
-  mode: 'development',
+  mode: "development",
   devServer: {
-    static: path.resolve(__dirname, './dist'),
+    static: path.resolve(__dirname, "./dist"),
     open: true,
     compress: true,
-    port: 8080
+    port: 8080,
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
-        use: 'babel-loader',
-        exclude: '/node_modules/'
+        use: "babel-loader",
+        exclude: "/node_modules/",
       },
       {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
-            loader: 'css-loader',
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
             options: {
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
-          'postcss-loader'
-        ]
+          "postcss-loader",
+        ],
       },
-    ]
+    ],
   },
-  
+
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './index.html',
+      filename: "index.html",
+      template: "./index.html",
     }),
+
     new HtmlWebpackPlugin({
-      filename: 'card.html',
-      template: './pages/card.html',
+      filename: "card.html",
+      template: "./card.html",
     }),
+
     new HtmlWebpackPlugin({
-      filename: 'search-results.html',
-      template: './pages/search-results.html',
+      filename: "search-results.html",
+      template: "./search-results.html",
     }),
 
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-  ]
-}
+  ],
+};
