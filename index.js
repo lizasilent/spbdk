@@ -1,5 +1,5 @@
 import './styles/index.css';
 
-import "./src/popup";
-import "./src/slider";
+import "./src/popup.js";
+import "./src/slider.js";
 
