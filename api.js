@@ -1,4 +1,10 @@
-function getDataByQuery(query) {
+
+const searchInput = document.querySelector(".search__input");
+
+function getDataByQuery() {
+
+  let query = searchInput.value;
+
   fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
     method: "GET",
   })
@@ -10,8 +16,12 @@ function getDataByQuery(query) {
   })
     .then((data) => {
       // если мы попали в этот then, data — это объект
+      console.log(data);
       showSpinner(true);
-      createListElement(data);
+
+      data.forEach((dataObject) => {
+        createListElement(dataObject);
+      });
 
     })
     .catch((err) => {
@@ -24,34 +34,55 @@ function getDataByQuery(query) {
     });
 }
 
-  cardBtn.addEventListener("click", getDataByQuery);
 
+const searchContainer = document.querySelector(".search__container");
 
-  const loader = document.querySelector(".loader");
+searchContainer.addEventListener("input", getDataByQuery);
 
 
 function createListElement(data) {
-const searchItemImage = document.querySelector(".search__item-image");
-const searchItemAuthor = document.querySelector(".search__item-autor");
-const searchItemName = document.querySelector(".search__item-name");
-const searchItemPrice = document.querySelector(".search__item-price");
 
+return `
+<li class="search__item">
+<a class="search__item" href="card.html">
+  <img class="search__item-image" src=${data.photopath} alt=""></img>
+  <div class="search__item-texts">
+    <p class="search__item-autor">${data.authorstext}</p>
+    <p class="search__item-name">${data.description}</p>
+  </div>
+  <div class="search__item-pricecontainer">
+    <div class="search__item-box">
+      <p class="search__item-price">${data.price}</p>
+      <div class="search__item-icon"></div>
+    </div>
+    <p class="search__item-availability">
+      В наличии ${data.remain} шт.
+    </p>
+  </div>
+</a>
+</li>
+`
 
-searchItemAuthor.textContent = data.authorstext;
-searchItemName.textContent = data.description;
-searchItemPrice.textContent = data.price;
-searchItemImage.src = data.photopath;
-
-  return listElement;
 }
 
 const searchList = document.quertSelector(".search__list")
 
 function renderCard(data) {
-  searchList.prepend(createCard(data));
+  searchList.prepend(createListElement(data));
 }
 
-initialCards.forEach((data) => {
-  renderCard(data);
-});
+
+
+
+// Спиннер
+
+const loader = document.querySelector(".loader");
+
+function showSpinner(isLoading) {
+  if (isLoading) {
+    loader.classList.remove("loader_hidden");
+  } else {
+    loader.classList.add("loader_hidden");
+  }
+}
 

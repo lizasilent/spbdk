@@ -7,7 +7,6 @@ const searchContainer = document.querySelector(".search__container");
 
 if (searchContainer) {
   searchContainer.addEventListener("input", handlePopup);
-  document.addEventListener("keydown", closeModalByEsc);
 }
 
 
