@@ -59,7 +59,7 @@ function createListElement(data) {
 `;
 }
 
-const searchList = document.quertSelector(".search__list");
+const searchList = document.querySelector(".search__list");
 
 function renderCard(data) {
   searchList.prepend(createListElement(data));
