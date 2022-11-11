@@ -1,34 +1,57 @@
-/* eslint-disable no-undef */
+function getDataByQuery(query) {
+  fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
+    method: "GET",
+  })
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(res.status);
+  })
+    .then((data) => {
+      // если мы попали в этот then, data — это объект
+      showSpinner(true);
+      createListElement(data);
 
-import './styles/index.css';
+    })
+    .catch((err) => {
+      // cardErr.textContent = `Ошибка: ${err}`;
+      console.log(err);
 
-const { Pool } = require('pg');
-
-const pool = new Pool({
-  user: 'postgres',
-  host: '10.0.0.63',
-  database: 'ut_dk',
-  password: '',
-  port: 5432,
-});
-
-
-const searchInput = document.querySelector(".search__input");
-
-const text = 'select  nomen_id::text , description::text , ts_rank::text, remain::text, price::text, photopath::text, authorstext::text from get_search($1)'
-const values = [searchInput.value]
-
-// select * from get_fullpost(decode('8817002590f365c111ece8a66cae3f43','hex'));
-// select * from get_fullphoto(decode('8817002590f365c111ece8a66cae3f43','hex'));
-// select * from get_search('маяковский');
-
-
-// async/await
-try {
-  const res = await pool.query(text, values)
-  console.log(res.rows[0])
-} catch (err) {
-  console.log(err.stack)
+    })
+    .finally(() => {
+      showSpinner(false);
+    });
 }
 
+  cardBtn.addEventListener("click", getDataByQuery);
+
+
+  const loader = document.querySelector(".loader");
+
+
+function createListElement(data) {
+const searchItemImage = document.querySelector(".search__item-image");
+const searchItemAuthor = document.querySelector(".search__item-autor");
+const searchItemName = document.querySelector(".search__item-name");
+const searchItemPrice = document.querySelector(".search__item-price");
+
+
+searchItemAuthor.textContent = data.authorstext;
+searchItemName.textContent = data.description;
+searchItemPrice.textContent = data.price;
+searchItemImage.src = data.photopath;
+
+  return listElement;
+}
+
+const searchList = document.quertSelector(".search__list")
+
+function renderCard(data) {
+  searchList.prepend(createCard(data));
+}
+
+initialCards.forEach((data) => {
+  renderCard(data);
+});
 

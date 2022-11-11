@@ -1,6 +1,5 @@
 import '../styles/index.css';
 
-const search = document.querySelector(".search");
 const searchForm = document.querySelector(".search__results");
 const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
@@ -8,6 +7,7 @@ const searchContainer = document.querySelector(".search__container");
 
 if (searchContainer) {
   searchContainer.addEventListener("input", handlePopup);
+  document.addEventListener("keydown", closeModalByEsc);
 }
 
 
