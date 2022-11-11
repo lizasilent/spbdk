@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ \"./styles/index.css\");\n/* harmony import */ var _src_popup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/popup.js */ \"./src/popup.js\");\n/* harmony import */ var _src_slider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/slider.js */ \"./src/slider.js\");\n\n\n\n\n//# sourceURL=webpack://spbdk/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ \"./styles/index.css\");\n/* harmony import */ var _src_popup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/popup.js */ \"./src/popup.js\");\n/* harmony import */ var _src_slider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/slider.js */ \"./src/slider.js\");\n\n\n\n// import \"./api.js\";\n\n//# sourceURL=webpack://spbdk/./index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/index.css */ \"./styles/index.css\");\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }, _typeof(obj); }\n\nvar search = document.querySelector(\".search\");\nvar searchForm = document.querySelector(\".search__results\");\nvar searchInput = document.querySelector(\".search__input\");\nvar searchContainer = document.querySelector(\".search__container\");\nif (searchContainer) {\n  searchContainer.addEventListener(\"input\", handlePopup);\n}\nfunction handlePopup() {\n  searchForm.classList.remove(\"disabled\");\n  console.log(_typeof(searchInput.value));\n  if (searchInput.value === \"\") {\n    searchForm.classList.add(\"disabled\");\n  }\n}\nconsole.log(search);\n\n//# sourceURL=webpack://spbdk/./src/popup.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/index.css */ \"./styles/index.css\");\n\nvar search = document.querySelector(\".search\");\nvar searchForm = document.querySelector(\".search__results\");\nvar searchInput = document.querySelector(\".search__input\");\nvar searchContainer = document.querySelector(\".search__container\");\nif (searchContainer) {\n  searchContainer.addEventListener(\"input\", handlePopup);\n}\nfunction handlePopup() {\n  searchForm.classList.remove(\"disabled\");\n  if (searchInput.value === \"\") {\n    searchForm.classList.add(\"disabled\");\n  }\n}\n\n//# sourceURL=webpack://spbdk/./src/popup.js?");
 
 /***/ }),
 
