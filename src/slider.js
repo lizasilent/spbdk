@@ -31,10 +31,18 @@ function handleSlideNext() {
 
 }
 
-sliderPrev.addEventListener('click', handleSlidePrev);
-sliderNext.addEventListener('click', handleSlideNext);
-sliderNext.addEventListener('click', checkArrow);
-sliderPrev.addEventListener('click', checkArrow);
+if (sliderPrev) {
+  sliderPrev.addEventListener('click', handleSlidePrev);
+  sliderPrev.addEventListener('click', checkArrow);
+}
+
+if (sliderNext) {
+
+  sliderNext.addEventListener('click', handleSlideNext);
+  sliderNext.addEventListener('click', checkArrow);
+}
+
+
 
 function showArrow() {
   if ( (slider.slides.length) < 4 ) {
