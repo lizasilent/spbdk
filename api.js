@@ -32,6 +32,7 @@ function getDataByQuery() {
 
 const searchContainer = document.querySelector(".search__container");
 
+
 searchContainer.addEventListener("input", getDataByQuery);
 
 function createListElement(data) {
