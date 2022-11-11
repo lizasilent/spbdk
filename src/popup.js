@@ -14,11 +14,8 @@ if (searchContainer) {
 
 function handlePopup() {
   searchForm.classList.remove("disabled");
-  console.log(typeof searchInput.value)
 
   if (searchInput.value === "") {
     searchForm.classList.add("disabled");
   }
 }
-
-console.log(search)

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поисковая система «Санкт-Петербургский Дом книги»</title>
+  <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+  <body class="body">
+    <div class="page">
+      <div class="page__content">
+        <main class="main">
+          <div class="s-catalog">
+            <div class="s-catalog__header">
+              <div class="s-catalog__logo"></div>
+              <div class="s-catalog__search">
+                <form class="search__bar long" method="get">
+                  <div class="search__icon"></div>
+                  <input
+                    name="search"
+                    placeholder="Найти в магазине"
+                    type="search"
+                  />
+                </form>
+              </div>
+              <button class="s-catalog__btn">
+                <div class="s-catalog__btn-icon"></div>
+                Назад
+              </button>
+            </div>
+            <div class="s-catalog__main">
+              <div class="s-catalog__main-header">
+                <h2>Результаты поиска</h2>
+              </div>
+              <ul class="s-catalog__template">
+                <li class="s__item"> <a href="card.html">
+                  <div class="s__item-new hidden">Новинка</div>
+                  <div class="s__item-image"></div>
+                  <div class="s__item-texts">
+                    <p class="s__item-autor">Барбара Пиз</p>
+                    <p class="s__item-name">Язык взаимоотношений</p>
+                  </div>
+                  <div class="s__item-pricecontainer">
+                    <div class="s__item-box">
+                      <p class="s__item-price">475</p>
+                      <div class="s__item-icon"></div>
+                    </div>
+                    <p class="s__item-availability">В наличии 10 шт.</p>
+                    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+                  </div>
+                </a>
+                </li>
+
+              </ul>
+              <div class="s-catalog__pagination">
+                <hr />
+                <div class="s-catalog__pagination-list">
+                  <ul>
+                    <li>
+                      <a>1</a>
+                    </li>
+                    <li>
+                      <a>2</a>
+                    </li>
+                    <li>
+                      <a>3</a>
+                    </li>
+                    <li>
+                      <a>4</a>
+                    </li>
+                    <li>...</li>
+                    <li>25</li>
+                  </ul>
+                </div>
+                <hr />
+                <div class="s-catalog__pagination-count">
+                  <p>Следующая</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="footer"></footer>
+      </div>
+    </div>
+  </body>
+</html>
