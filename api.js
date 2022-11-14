@@ -53,6 +53,10 @@ if (searchContainer) {
 
 
 function createListElement(data) {
+
+  let price = Math.floor(data.price);
+  let remain = Math.floor(data.remain);
+
   return `
 <li class="search__item">
 <a class="search__item" href="card.html">
@@ -63,11 +67,11 @@ function createListElement(data) {
   </div>
   <div class="search__item-pricecontainer">
     <div class="search__item-box">
-      <p class="search__item-price">${data.price}</p>
+      <p class="search__item-price">${price}</p>
       <div class="search__item-icon"></div>
     </div>
     <p class="search__item-availability">
-      В наличии ${data.remain} шт.
+      В наличии ${remain} шт.
     </p>
   </div>
 </a>
