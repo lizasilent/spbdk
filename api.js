@@ -8,6 +8,7 @@ const searchList = document.querySelector(".search__list");
 function getDataByQuery() {
 
   let query = searchInput.value;
+  console.log(query);
 
   fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
     method: "GET",
@@ -22,11 +23,11 @@ function getDataByQuery() {
     .then((data) => {
       console.log(data);
       // если мы попали в этот then, data — это объект
-      // showSpinner(true);
-      // data.forEach((dataObject) => {
-      //   console.log(dataObject);
-      //   renderCard(dataObject);
-      // });
+      showSpinner(true);
+      data.forEach((dataObject) => {
+        console.log(dataObject);
+        renderCard(dataObject);
+      });
     })
     .catch((err) => {
       console.log( `Ошибка: ${err}`);
@@ -39,7 +40,7 @@ function getDataByQuery() {
 
 if (searchContainer) {
   // searchContainer.addEventListener("input", handlePopup);
-  searchContainer.addEventListener("submit", getDataByQuery);
+  searchContainer.addEventListener("input", getDataByQuery);
 }
 
 
