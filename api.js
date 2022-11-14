@@ -24,7 +24,9 @@ function getDataByQuery() {
       // если мы попали в этот then, data — это объект
       showSpinner(true);
       // handlePopup();
-      data.forEach((dataObject) => {
+      let firstItems = data.slice(0, 20);
+
+      firstItems.forEach((dataObject) => {
         renderCard(dataObject);
       });
     })
@@ -44,13 +46,13 @@ if (searchContainer) {
 
 
 
-function handlePopup() {
-  searchForm.classList.remove("disabled");
+// function handlePopup() {
+//   searchForm.classList.remove("disabled");
 
-  if (searchInput.value === "") {
-    searchForm.classList.add("disabled");
-  }
-}
+//   if (searchInput.value === "") {
+//     searchForm.classList.add("disabled");
+//   }
+// }
 
 
 function createListElement(data) {
