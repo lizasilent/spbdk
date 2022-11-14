@@ -137,7 +137,7 @@ function createSearchResultElement(data) {
 const searchMore = document.querySelector(".search__more");
 
 if (searchMore) {
-  searchContainer.addEventListener("click", getDataByQuery);
+  searchMore.addEventListener("click", getDataByQuery);
 }
 
 
