@@ -44,14 +44,11 @@ if (sliderNext) {
 }
 
 
-
 function showArrow() {
   if ( (slider.slides.length) < 4 ) {
 sliderNext.classList.add("disabled");
 }
 }
-
-
 
 
 function checkArrow() {
@@ -66,7 +63,15 @@ else if (slider.isBeginning) {
 }
 }
 
+// const sliderPhoto = document.querySelector(".slider__photo-img");
+// const mainPhoto = document.getElementById("main-photo");
 
+// function changeMainImage(event) {
+//   mainPhoto.src = event.currentTarget.src;
+//   console.log(event.currentTarget);
+// }
+
+// sliderPhoto.addEventListener("click", changeMainImage);
 
 
 export default slider;

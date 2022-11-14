@@ -8,33 +8,15 @@ const searchList = document.querySelector(".search__list");
 function getDataByQuery() {
 
   let query = searchInput.value;
-  console.log(query);
 
   fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
     method: "GET",
     mode: 'no-cors',
   })
     .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(res.status);
+      console.log(res);
     })
-    .then((data) => {
-      console.log(data);
-      // если мы попали в этот then, data — это объект
-      showSpinner(true);
-      data.forEach((dataObject) => {
-        console.log(dataObject);
-        renderCard(dataObject);
-      });
-    })
-    .catch((err) => {
-      console.log( `Ошибка: ${err}`);
-    })
-    .finally(() => {
-      showSpinner(false);
-    });
+
 }
 
 

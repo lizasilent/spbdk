@@ -8,3 +8,7 @@
   height: 84px;
   width: 100%;
 }
+
+.slider__photo:hover {
+  cursor: pointer;
+}
