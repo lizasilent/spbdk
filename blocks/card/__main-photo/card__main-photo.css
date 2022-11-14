@@ -1,6 +1,6 @@
 .card__main-photo {
-  /* width: 303px;
-  height: 428px; */
+  min-width: 303px;
+  min-height: 428px;
 }
 
 .card__main-photo img{
@@ -8,4 +8,5 @@
   max-height: 428px;
   width: 100%;
   max-width: fit-content;
+
 }

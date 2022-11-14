@@ -19,7 +19,6 @@ const slider = new Swiper('.swiper', {
 
 slider.on('slideChange', function () {
   console.log('slide changed');
-
 });
 
 
@@ -46,32 +45,37 @@ if (sliderNext) {
 
 function showArrow() {
   if ( (slider.slides.length) < 4 ) {
-sliderNext.classList.add("disabled");
+    sliderNext.classList.add("disabled");
+  }
 }
-}
-
 
 function checkArrow() {
-
-if (slider.isEnd) {
-  sliderPrev.classList.remove("disabled");
-  sliderNext.classList.add("disabled");
+  if (slider.isEnd) {
+    sliderPrev.classList.remove("disabled");
+    sliderNext.classList.add("disabled");
+  }
+  else if (slider.isBeginning) {
+    sliderPrev.classList.add("disabled");
+    sliderNext.classList.remove("disabled");
+  }
 }
-else if (slider.isBeginning) {
-  sliderPrev.classList.add("disabled");
-  sliderNext.classList.remove("disabled");
+
+const sliderPhotos = document.querySelectorAll(".slider__photo-img");
+const mainPhoto = document.getElementById("main-photo");
+
+console.log('sliderPhoto', sliderPhotos)
+
+
+
+function changeMainImage(event) {
+  mainPhoto.src = event.currentTarget.src;
+  console.log(event.currentTarget);
 }
-}
 
-// const sliderPhoto = document.querySelector(".slider__photo-img");
-// const mainPhoto = document.getElementById("main-photo");
+sliderPhotos.forEach((photo) => {
+  photo.addEventListener("click", changeMainImage);
+});
 
-// function changeMainImage(event) {
-//   mainPhoto.src = event.currentTarget.src;
-//   console.log(event.currentTarget);
-// }
-
-// sliderPhoto.addEventListener("click", changeMainImage);
 
 
 export default slider;

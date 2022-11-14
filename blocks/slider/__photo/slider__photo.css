@@ -2,11 +2,14 @@
   justify-self: center;
   display: block;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .slider__photo img {
   height: 84px;
-  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slider__photo:hover {
