@@ -77,7 +77,7 @@ function createListElement(data) {
 
 
 function renderCard(data) {
-  searchList.innerHTML(createListElement(data));
+  searchList.innerHTML = (createListElement(data));
   console.log(data);
 }
 
