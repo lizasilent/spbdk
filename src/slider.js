@@ -40,6 +40,7 @@ if (sliderNext) {
 
   sliderNext.addEventListener('click', handleSlideNext);
   sliderNext.addEventListener('click', checkArrow);
+  showArrow();
 }
 
 
@@ -50,7 +51,7 @@ sliderNext.classList.add("disabled");
 }
 }
 
-showArrow();
+
 
 
 function checkArrow() {

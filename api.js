@@ -1,6 +1,11 @@
+
 const searchInput = document.querySelector(".search__input");
+const searchContainer = document.querySelector(".search__container");
+const searchForm = document.querySelector(".search__results");
+
 
 function getDataByQuery() {
+
   let query = searchInput.value;
 
   fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
@@ -20,6 +25,7 @@ function getDataByQuery() {
 
       data.forEach((dataObject) => {
         renderCard(dataObject);
+        handlePopup();
       });
     })
     .catch((err) => {
@@ -31,11 +37,22 @@ function getDataByQuery() {
     });
 }
 
-const searchContainer = document.querySelector(".search__container");
+
+if (searchContainer) {
+  // searchContainer.addEventListener("input", handlePopup);
+  searchContainer.addEventListener("input", getDataByQuery);
+}
 
 
 
-searchContainer.addEventListener("input", getDataByQuery);
+function handlePopup() {
+  searchForm.classList.remove("disabled");
+
+  if (searchInput.value === "") {
+    searchForm.classList.add("disabled");
+  }
+}
+
 
 function createListElement(data) {
   return `
