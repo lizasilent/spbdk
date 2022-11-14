@@ -4,7 +4,6 @@ import nopic from "./images/nopicture.png";
 const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
 const searchList = document.querySelector(".search__list");
-const searchImage = document.querySelector(".search__item-image");
 const searchForm = document.querySelector(".search__results");
 
 
@@ -24,7 +23,7 @@ function getDataByQuery() {
     .then((data) => {
       // если мы попали в этот then, data — это объект
       showSpinner(true);
-      handlePopup();
+      // handlePopup();
       data.forEach((dataObject) => {
         renderCard(dataObject);
       });
@@ -59,15 +58,11 @@ function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
 
-  if (!searchImage) {
-    searchImage.src === nopic;
-  }
-
 
   return `
 <li class="search__item">
 <a class="search__item" href="card.html">
-  <img class="search__item-image" src="${data.photopath}" alt=${data.authorstext}></img>
+  <img class="search__item-image" src="${data.photopath || nopic}" alt=${data.authorstext}></img>
   <div class="search__item-texts">
     <p class="search__item-autor">${data.authorstext}</p>
     <p class="search__item-name">${data.description}</p>
