@@ -58,7 +58,7 @@ function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
 
-  if (data.photopath === "null") {
+  if (data.photopath === null) {
     searchImage.src === nopic;
   }
 
