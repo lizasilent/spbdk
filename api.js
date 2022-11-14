@@ -22,14 +22,9 @@ function getDataByQuery() {
     })
     .then((data) => {
       // если мы попали в этот then, data — это объект
-
+      showSpinner(true);
       // handlePopup();
       let firstItems = data.slice(0, 20);
-      console.log(firstItems.length);
-      console.log(firstItems);
-
-      showSpinner(true);
-
       firstItems.forEach((dataObject) => {
         renderCard(dataObject);
       });
@@ -45,18 +40,21 @@ function getDataByQuery() {
 
 
 if (searchContainer) {
-  searchContainer.addEventListener("input", getDataByQuery);
+  searchContainer.addEventListener("input", handlePopup);
 }
 
 
+function handlePopup() {
 
-// function handlePopup() {
-//   searchForm.classList.remove("disabled");
+  if (searchInput.value.length > 2) {
+    searchForm.classList.remove("disabled");
+    getDataByQuery();
+  }
 
-//   if (searchInput.value === "") {
-//     searchForm.classList.add("disabled");
-//   }
-// }
+  else {
+    searchForm.classList.add("disabled");
+  }
+}
 
 
 function createListElement(data) {
