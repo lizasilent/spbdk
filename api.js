@@ -25,7 +25,6 @@ function getDataByQuery() {
 
       data.forEach((dataObject) => {
         renderCard(dataObject);
-        handlePopup();
       });
     })
     .catch((err) => {
@@ -39,7 +38,7 @@ function getDataByQuery() {
 
 
 if (searchContainer) {
-  // searchContainer.addEventListener("input", handlePopup);
+  searchContainer.addEventListener("input", handlePopup);
   searchContainer.addEventListener("input", getDataByQuery);
 }
 
