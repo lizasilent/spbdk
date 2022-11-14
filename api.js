@@ -1,20 +1,20 @@
-
 const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
 // const searchForm = document.querySelector(".search__results");
 const searchList = document.querySelector(".search__list");
 
-
 function getDataByQuery() {
-
   let query = searchInput.value;
 
   fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
     method: "GET",
-    mode: 'no-cors',
+    mode: "no-cors",
   })
     .then((res) => {
+      if (res.ok) {
         return res.json();
+      }
+      return Promise.reject(res);
     })
     .then((data) => {
       console.log(data);
@@ -26,20 +26,17 @@ function getDataByQuery() {
       });
     })
     .catch((err) => {
-      console.log( `Ошибка: ${err}`);
+      console.log(`Ошибка: ${err}`);
     })
     .finally(() => {
       showSpinner(false);
     });
 }
 
-
 if (searchContainer) {
   // searchContainer.addEventListener("input", handlePopup);
   searchContainer.addEventListener("input", getDataByQuery);
 }
-
-
 
 // function handlePopup() {
 //   searchForm.classList.remove("disabled");
@@ -48,7 +45,6 @@ if (searchContainer) {
 //     searchForm.classList.add("disabled");
 //   }
 // }
-
 
 function createListElement(data) {
   return `
@@ -72,8 +68,6 @@ function createListElement(data) {
 </li>
 `;
 }
-
-
 
 function renderCard(data) {
   searchList.prepend(createListElement(data));
