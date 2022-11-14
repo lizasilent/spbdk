@@ -14,6 +14,7 @@ function getDataByQuery() {
     mode: 'no-cors',
   })
     .then((res) => {
+      console.log(res);
       if (res.ok) {
         return res.json();
       }
