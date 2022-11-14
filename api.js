@@ -29,8 +29,7 @@ function getDataByQuery() {
       });
     })
     .catch((err) => {
-      // cardErr.textContent = `Ошибка: ${err}`;
-      console.log(err);
+      console.log( `Ошибка: ${err}`);
     })
     .finally(() => {
       showSpinner(false);
