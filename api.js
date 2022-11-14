@@ -5,6 +5,7 @@ const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
 const searchList = document.querySelector(".search__list");
 const searchForm = document.querySelector(".search__results");
+const loader = document.querySelector(".loader");
 
 
 function getDataByQuery() {
@@ -37,12 +38,22 @@ function getDataByQuery() {
     });
 }
 
+// Спиннер
 
+function showSpinner(isLoading) {
+  if (isLoading) {
+    console.log("я загружаюсь");
+    loader.classList.remove("loader_hidden");
+  } else {
+    loader.classList.add("loader_hidden");
+  }
+}
+
+// Открыть попап
 
 if (searchContainer) {
   searchContainer.addEventListener("input", handlePopup);
 }
-
 
 function handlePopup() {
 
@@ -56,6 +67,7 @@ function handlePopup() {
   }
 }
 
+// Создать элемент списка
 
 function createListElement(data) {
 
@@ -90,14 +102,8 @@ function renderCard(data) {
   searchList.insertAdjacentHTML('afterbegin', createListElement(data));
 }
 
-// Спиннер
 
-const loader = document.querySelector(".loader");
 
-function showSpinner(isLoading) {
-  if (isLoading) {
-    loader.classList.remove("loader_hidden");
-  } else {
-    loader.classList.add("loader_hidden");
-  }
-}
+
+
+
