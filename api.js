@@ -13,7 +13,6 @@ function getDataByQuery() {
     method: "GET",
   })
     .then((res) => {
-      console.log(res);
       if (res.ok) {
         return res.json();
       }
@@ -54,8 +53,8 @@ if (searchContainer) {
 
 function createListElement(data) {
 
-  let price = Math.floor(data.price);
-  let remain = Math.floor(data.remain);
+  let price = Number(Math.floor(data.price));
+  let remain = Number(Math.floor(data.remain));
 
   return `
 <li class="search__item">
