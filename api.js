@@ -1,4 +1,3 @@
-
 import nopic from "./images/nopicture.png";
 
 const searchInput = document.querySelector(".search__input");
@@ -6,10 +5,9 @@ const searchContainer = document.querySelector(".search__container");
 const searchList = document.querySelector(".search__list");
 const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
-
+const resultTemplate = document.querySelector(".s-catalog__template");
 
 function getDataByQuery() {
-
   let query = searchInput.value;
 
   fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
@@ -29,9 +27,11 @@ function getDataByQuery() {
       firstItems.forEach((dataObject) => {
         renderListElement(dataObject);
       });
+
+      RenderFullResult(data);
     })
     .catch((err) => {
-      console.log( `Ошибка: ${err}`);
+      console.log(`Ошибка: ${err}`);
     })
     .finally(() => {
       showSpinner(false);
@@ -42,7 +42,6 @@ function getDataByQuery() {
 
 function showSpinner(isLoading) {
   if (isLoading) {
-    console.log("я загружаюсь");
     loader.classList.remove("loader_hidden");
   } else {
     loader.classList.add("loader_hidden");
@@ -56,13 +55,10 @@ if (searchContainer) {
 }
 
 function handlePopup() {
-
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
     getDataByQuery();
-  }
-
-  else {
+  } else {
     searchForm.classList.add("disabled");
   }
 }
@@ -70,15 +66,15 @@ function handlePopup() {
 // Создать элемент списка
 
 function createListElement(data) {
-
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
-
 
   return `
 <li class="search__item">
 <a class="search__item" href="card.html">
-  <img class="search__item-image" src="${data.photopath || nopic}" alt=${data.authorstext}></img>
+  <img class="search__item-image" src="${data.photopath || nopic}" alt=${
+    data.authorstext
+  }></img>
   <div class="search__item-texts">
     <p class="search__item-autor">${data.authorstext}</p>
     <p class="search__item-name">${data.description}</p>
@@ -100,13 +96,47 @@ function createListElement(data) {
 // Вставить элемент списка в разметку
 
 function renderListElement(data) {
-  searchList.insertAdjacentHTML('afterbegin', createListElement(data));
-
-  return
+  searchList.insertAdjacentHTML("afterbegin", createListElement(data));
 }
 
 
+// Создать элемент сетки
 
 
+function createSearchResultElement(data) {
+  let price = Number(Math.floor(data.price));
+  let remain = Number(Math.floor(data.remain));
 
+  return `
+  <li class="s__item"> <a href="card.html">
+  <div class="s__item-new hidden">Новинка</div>
+  <img class="s__item-image" src="${data.photopath || nopic}" alt=${
+    data.authorstext
+  }></img>
+  <div class="s__item-texts">
+    <p class="s__item-autor">${data.authorstext}</p>
+    <p class="s__item-name">${data.description}</p>
+  </div>
+  <div class="s__item-pricecontainer">
+    <div class="s__item-box">
+      <p class="s__item-price">${price}</p>
+      <div class="s__item-icon"></div>
+    </div>
+    <p class="s__item-availability">В наличии ${remain} шт.</p>
+    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+  </div>
+</a>
+</li>
+`;
+}
+
+function RenderFullResult(data) {
+  resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
+}
+
+const searchMore = document.querySelector(".search__more");
+
+if (searchMore) {
+  searchContainer.addEventListener("click", getDataByQuery);
+}
 
