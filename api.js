@@ -39,7 +39,7 @@ function getDataByQuery() {
 
 if (searchContainer) {
   // searchContainer.addEventListener("input", handlePopup);
-  searchContainer.addEventListener("input", getDataByQuery);
+  searchContainer.addEventListener("submit", getDataByQuery);
 }
 
 
