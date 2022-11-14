@@ -13,9 +13,10 @@
 /*!****************!*\
   !*** ./api.js ***!
   \****************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("var searchInput = document.querySelector(\".search__input\");\nvar searchContainer = document.querySelector(\".search__container\");\n// const searchForm = document.querySelector(\".search__results\");\nvar searchList = document.querySelector(\".search__list\");\nfunction getDataByQuery() {\n  var query = searchInput.value;\n  fetch(\"http://dk.searchsystem.local/api/search.php?q=\".concat(query), {\n    method: \"GET\"\n  }).then(function (res) {\n    if (res.ok) {\n      return res.json();\n    }\n    return Promise.reject(res.statusText);\n  }).then(function (data) {\n    // если мы попали в этот then, data — это объект\n    showSpinner(true);\n    data.forEach(function (dataObject) {\n      renderCard(dataObject);\n    });\n  }).catch(function (err) {\n    console.log(\"\\u041E\\u0448\\u0438\\u0431\\u043A\\u0430: \".concat(err));\n  }).finally(function () {\n    showSpinner(false);\n  });\n}\nif (searchContainer) {\n  // searchContainer.addEventListener(\"input\", handlePopup);\n  searchContainer.addEventListener(\"input\", getDataByQuery);\n}\n\n// function handlePopup() {\n//   searchForm.classList.remove(\"disabled\");\n\n//   if (searchInput.value === \"\") {\n//     searchForm.classList.add(\"disabled\");\n//   }\n// }\n\nfunction createListElement(data) {\n  var price = Number(Math.floor(data.price));\n  var remain = Number(Math.floor(data.remain));\n  return \"\\n<li class=\\\"search__item\\\">\\n<a class=\\\"search__item\\\" href=\\\"card.html\\\">\\n  <img class=\\\"search__item-image\\\" src=\\\"\".concat(data.photopath, \"\\\" alt=\\\"\\\"></img>\\n  <div class=\\\"search__item-texts\\\">\\n    <p class=\\\"search__item-autor\\\">\").concat(data.authorstext, \"</p>\\n    <p class=\\\"search__item-name\\\">\").concat(data.description, \"</p>\\n  </div>\\n  <div class=\\\"search__item-pricecontainer\\\">\\n    <div class=\\\"search__item-box\\\">\\n      <p class=\\\"search__item-price\\\">\").concat(price, \"</p>\\n      <div class=\\\"search__item-icon\\\"></div>\\n    </div>\\n    <p class=\\\"search__item-availability\\\">\\n      \\u0412 \\u043D\\u0430\\u043B\\u0438\\u0447\\u0438\\u0438 \").concat(remain, \" \\u0448\\u0442.\\n    </p>\\n  </div>\\n</a>\\n</li>\\n\");\n}\nfunction renderCard(data) {\n  searchList.insertAdjacentHTML('afterbegin', createListElement(data));\n  console.log(data);\n}\n\n// Спиннер\n\nvar loader = document.querySelector(\".loader\");\nfunction showSpinner(isLoading) {\n  if (isLoading) {\n    loader.classList.remove(\"loader_hidden\");\n  } else {\n    loader.classList.add(\"loader_hidden\");\n  }\n}\n\n//# sourceURL=webpack://spbdk/./api.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _images_nopicture_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/nopicture.png */ \"./images/nopicture.png\");\n\nvar searchInput = document.querySelector(\".search__input\");\nvar searchContainer = document.querySelector(\".search__container\");\nvar searchList = document.querySelector(\".search__list\");\nvar searchImage = document.querySelector(\".search__item-image\");\nfunction getDataByQuery() {\n  var query = searchInput.value;\n  fetch(\"http://dk.searchsystem.local/api/search.php?q=\".concat(query), {\n    method: \"GET\"\n  }).then(function (res) {\n    if (res.ok) {\n      return res.json();\n    }\n    return Promise.reject(res.statusText);\n  }).then(function (data) {\n    // если мы попали в этот then, data — это объект\n    showSpinner(true);\n    data.forEach(function (dataObject) {\n      renderCard(dataObject);\n    });\n  }).catch(function (err) {\n    console.log(\"\\u041E\\u0448\\u0438\\u0431\\u043A\\u0430: \".concat(err));\n  }).finally(function () {\n    showSpinner(false);\n  });\n}\nif (searchContainer) {\n  // searchContainer.addEventListener(\"input\", handlePopup);\n  searchContainer.addEventListener(\"input\", getDataByQuery);\n}\n\n// function handlePopup() {\n//   searchForm.classList.remove(\"disabled\");\n\n//   if (searchInput.value === \"\") {\n//     searchForm.classList.add(\"disabled\");\n//   }\n// }\n\nfunction createListElement(data) {\n  var price = Number(Math.floor(data.price));\n  var remain = Number(Math.floor(data.remain));\n  if (data.photopath === \"null\") {\n    searchImage.src === _images_nopicture_png__WEBPACK_IMPORTED_MODULE_0__;\n  }\n  return \"\\n<li class=\\\"search__item\\\">\\n<a class=\\\"search__item\\\" href=\\\"card.html\\\">\\n  <img class=\\\"search__item-image\\\" src=\\\"\".concat(data.photopath, \"\\\" alt=\").concat(data.authorstext, \"></img>\\n  <div class=\\\"search__item-texts\\\">\\n    <p class=\\\"search__item-autor\\\">\").concat(data.authorstext, \"</p>\\n    <p class=\\\"search__item-name\\\">\").concat(data.description, \"</p>\\n  </div>\\n  <div class=\\\"search__item-pricecontainer\\\">\\n    <div class=\\\"search__item-box\\\">\\n      <p class=\\\"search__item-price\\\">\").concat(price, \"</p>\\n      <div class=\\\"search__item-icon\\\"></div>\\n    </div>\\n    <p class=\\\"search__item-availability\\\">\\n      \\u0412 \\u043D\\u0430\\u043B\\u0438\\u0447\\u0438\\u0438 \").concat(remain, \" \\u0448\\u0442.\\n    </p>\\n  </div>\\n</a>\\n</li>\\n\");\n}\nfunction renderCard(data) {\n  searchList.insertAdjacentHTML('afterbegin', createListElement(data));\n  console.log(data);\n}\n\n// Спиннер\n\nvar loader = document.querySelector(\".loader\");\nfunction showSpinner(isLoading) {\n  if (isLoading) {\n    loader.classList.remove(\"loader_hidden\");\n  } else {\n    loader.classList.add(\"loader_hidden\");\n  }\n}\n\n//# sourceURL=webpack://spbdk/./api.js?");
 
 /***/ }),
 
@@ -26,7 +27,7 @@ eval("var searchInput = document.querySelector(\".search__input\");\nvar searchC
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ \"./styles/index.css\");\n/* harmony import */ var _src_popup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/popup.js */ \"./src/popup.js\");\n/* harmony import */ var _src_popup_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_popup_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _src_slider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/slider.js */ \"./src/slider.js\");\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api.js */ \"./api.js\");\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_api_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n//# sourceURL=webpack://spbdk/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ \"./styles/index.css\");\n/* harmony import */ var _src_popup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/popup.js */ \"./src/popup.js\");\n/* harmony import */ var _src_popup_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_popup_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _src_slider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/slider.js */ \"./src/slider.js\");\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api.js */ \"./api.js\");\n\n\n\n\n\n//# sourceURL=webpack://spbdk/./index.js?");
 
 /***/ }),
 
@@ -70,6 +71,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://spbdk/./styles/index.css?");
+
+/***/ }),
+
+/***/ "./images/nopicture.png":
+/*!******************************!*\
+  !*** ./images/nopicture.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"1bbeb2df2f68d989c700.png\";\n\n//# sourceURL=webpack://spbdk/./images/nopicture.png?");
 
 /***/ }),
 
@@ -1260,6 +1272,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "";
 /******/ 	})();
 /******/ 	
 /************************************************************************/

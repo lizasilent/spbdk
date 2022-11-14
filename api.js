@@ -1,8 +1,10 @@
 
+import nopic from "./images/nopicture.png";
+
 const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
-// const searchForm = document.querySelector(".search__results");
 const searchList = document.querySelector(".search__list");
+const searchImage = document.querySelector(".search__item-image");
 
 
 function getDataByQuery() {
@@ -56,10 +58,15 @@ function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
 
+  if (data.photopath === "null") {
+    searchImage.src === nopic;
+  }
+
+
   return `
 <li class="search__item">
 <a class="search__item" href="card.html">
-  <img class="search__item-image" src="${data.photopath}" alt=""></img>
+  <img class="search__item-image" src="${data.photopath}" alt=${data.authorstext}></img>
   <div class="search__item-texts">
     <p class="search__item-autor">${data.authorstext}</p>
     <p class="search__item-name">${data.description}</p>
