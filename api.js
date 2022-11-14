@@ -27,7 +27,7 @@ function getDataByQuery() {
       // handlePopup();
       let firstItems = data.slice(0, 20);
       firstItems.forEach((dataObject) => {
-        renderCard(dataObject);
+        renderListElement(dataObject);
       });
     })
     .catch((err) => {
@@ -98,7 +98,7 @@ function createListElement(data) {
 }
 
 
-function renderCard(data) {
+function renderListElement(data) {
   searchList.insertAdjacentHTML('afterbegin', createListElement(data));
 }
 
