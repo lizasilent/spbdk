@@ -20,11 +20,9 @@ function getDataByQuery() {
       return Promise.reject(res.statusText);
     })
     .then((data) => {
-      console.log(data);
       // если мы попали в этот then, data — это объект
       showSpinner(true);
       data.forEach((dataObject) => {
-        console.log(dataObject);
         renderCard(dataObject);
       });
     })
@@ -35,31 +33,6 @@ function getDataByQuery() {
       showSpinner(false);
     });
 }
-
-// function getData() {
-
-//   fetch("http://api.searchsystem.local/getdata.php?q=8817002590f365c111ece8e1d910b959", {
-//     method: "GET",
-//     mode: 'no-cors',
-//   })
-//     .then((res) => {
-//       if (res.ok) {
-//         return res.json();
-//       }
-//       return Promise.reject(res.statusText);
-//     })
-//     .then((data) => {
-//       console.log(data);
-//       // если мы попали в этот then, data — это объект
-//     })
-//     .catch((err) => {
-//       console.log( `Ошибка: ${err}`);
-//     })
-//     .finally(() => {
-//       showSpinner(false);
-//     });
-// }
-
 
 
 
@@ -103,9 +76,8 @@ function createListElement(data) {
 }
 
 
-
 function renderCard(data) {
-  searchList.prepend(createListElement(data));
+  searchList.innerHTML(createListElement(data));
   console.log(data);
 }
 

@@ -63,9 +63,6 @@ function checkArrow() {
 const sliderPhotos = document.querySelectorAll(".slider__photo-img");
 const mainPhoto = document.getElementById("main-photo");
 
-console.log('sliderPhoto', sliderPhotos)
-
-
 
 function changeMainImage(event) {
   mainPhoto.src = event.currentTarget.src;
