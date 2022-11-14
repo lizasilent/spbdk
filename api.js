@@ -10,7 +10,7 @@ function getDataByQuery() {
   let query = searchInput.value;
   console.log(query);
 
-  fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
+  fetch(`http://api.searchsystem.local/search.php?q=пушкин`, {
     method: "GET",
     mode: 'no-cors',
   })
