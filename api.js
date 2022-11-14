@@ -1,7 +1,8 @@
 
 const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
-const searchForm = document.querySelector(".search__results");
+// const searchForm = document.querySelector(".search__results");
+const searchList = document.querySelector(".search__list");
 
 
 function getDataByQuery() {
@@ -20,9 +21,7 @@ function getDataByQuery() {
     })
     .then((data) => {
       // если мы попали в этот then, data — это объект
-      console.log(data);
       showSpinner(true);
-
       data.forEach((dataObject) => {
         renderCard(dataObject);
       });
@@ -38,19 +37,19 @@ function getDataByQuery() {
 
 
 if (searchContainer) {
-  searchContainer.addEventListener("input", handlePopup);
+  // searchContainer.addEventListener("input", handlePopup);
   searchContainer.addEventListener("input", getDataByQuery);
 }
 
 
 
-function handlePopup() {
-  searchForm.classList.remove("disabled");
+// function handlePopup() {
+//   searchForm.classList.remove("disabled");
 
-  if (searchInput.value === "") {
-    searchForm.classList.add("disabled");
-  }
-}
+//   if (searchInput.value === "") {
+//     searchForm.classList.add("disabled");
+//   }
+// }
 
 
 function createListElement(data) {
@@ -76,10 +75,11 @@ function createListElement(data) {
 `;
 }
 
-const searchList = document.querySelector(".search__list");
+
 
 function renderCard(data) {
   searchList.prepend(createListElement(data));
+  console.log(data);
 }
 
 // Спиннер
