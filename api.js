@@ -22,13 +22,17 @@ function getDataByQuery() {
     .then((data) => {
       // если мы попали в этот then, data — это объект
       showSpinner(true);
-      // handlePopup();
+
+      data.forEach((result) => {
+        RenderFullResult(result);
+      });
+
       let firstItems = data.slice(0, 20);
       firstItems.forEach((dataObject) => {
         renderListElement(dataObject);
       });
 
-      RenderFullResult(data);
+
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
