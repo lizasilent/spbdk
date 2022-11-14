@@ -20,9 +20,11 @@ function getDataByQuery() {
       return Promise.reject(res.status);
     })
     .then((data) => {
+      console.log(data);
       // если мы попали в этот then, data — это объект
       showSpinner(true);
       data.forEach((dataObject) => {
+        console.log(dataObject);
         renderCard(dataObject);
       });
     })
