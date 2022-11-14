@@ -14,10 +14,11 @@ function getDataByQuery() {
     mode: 'no-cors',
   })
     .then((res) => {
+      const contentType = res.headers.get('content-type');
       if (res.ok) {
         return res.json();
       }
-      return Promise.reject(res.statusText);
+      return Promise.reject(contentType);
     })
     .then((data) => {
       console.log(data);
