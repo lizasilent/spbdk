@@ -22,9 +22,13 @@ function getDataByQuery() {
     })
     .then((data) => {
       // если мы попали в этот then, data — это объект
-      showSpinner(true);
+
       // handlePopup();
       let firstItems = data.slice(0, 20);
+      console.log(firstItems.length);
+      console.log(firstItems);
+
+      showSpinner(true);
 
       firstItems.forEach((dataObject) => {
         renderCard(dataObject);
