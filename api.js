@@ -97,9 +97,12 @@ function createListElement(data) {
 `;
 }
 
+// Вставить элемент списка в разметку
 
 function renderListElement(data) {
   searchList.insertAdjacentHTML('afterbegin', createListElement(data));
+
+  return
 }
 
 
