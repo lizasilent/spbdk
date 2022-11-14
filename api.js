@@ -11,7 +11,6 @@ function getDataByQuery() {
 
   fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
     method: "GET",
-    mode: 'no-cors',
   })
     .then((res) => {
       console.log(res);
