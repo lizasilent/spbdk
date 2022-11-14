@@ -5,6 +5,7 @@ const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
 const searchList = document.querySelector(".search__list");
 const searchImage = document.querySelector(".search__item-image");
+const searchForm = document.querySelector(".search__results");
 
 
 function getDataByQuery() {
@@ -23,6 +24,7 @@ function getDataByQuery() {
     .then((data) => {
       // если мы попали в этот then, data — это объект
       showSpinner(true);
+      handlePopup();
       data.forEach((dataObject) => {
         renderCard(dataObject);
       });
@@ -38,19 +40,18 @@ function getDataByQuery() {
 
 
 if (searchContainer) {
-  // searchContainer.addEventListener("input", handlePopup);
   searchContainer.addEventListener("input", getDataByQuery);
 }
 
 
 
-// function handlePopup() {
-//   searchForm.classList.remove("disabled");
+function handlePopup() {
+  searchForm.classList.remove("disabled");
 
-//   if (searchInput.value === "") {
-//     searchForm.classList.add("disabled");
-//   }
-// }
+  if (searchInput.value === "") {
+    searchForm.classList.add("disabled");
+  }
+}
 
 
 function createListElement(data) {
@@ -58,7 +59,7 @@ function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
 
-  if (!data.photopath) {
+  if (!searchImage) {
     searchImage.src === nopic;
   }
 
@@ -88,7 +89,6 @@ function createListElement(data) {
 
 function renderCard(data) {
   searchList.insertAdjacentHTML('afterbegin', createListElement(data));
-  console.log(data);
 }
 
 // Спиннер
