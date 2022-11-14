@@ -130,13 +130,18 @@ function createSearchResultElement(data) {
 `;
 }
 
-function RenderFullResult(data) {
-  resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
-}
-
 const searchMore = document.querySelector(".search__more");
 
 if (searchMore) {
   searchContainer.addEventListener("click", getDataByQuery);
 }
+
+
+function RenderFullResult(data) {
+  if (resultTemplate) {
+    resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
+  }
+
+}
+
 
