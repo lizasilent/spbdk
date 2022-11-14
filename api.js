@@ -14,9 +14,23 @@ function getDataByQuery() {
     mode: 'no-cors',
   })
     .then((res) => {
-      console.log(res);
+        return res.json();
     })
-
+    .then((data) => {
+      console.log(data);
+      // если мы попали в этот then, data — это объект
+      showSpinner(true);
+      data.forEach((dataObject) => {
+        console.log(dataObject);
+        renderCard(dataObject);
+      });
+    })
+    .catch((err) => {
+      console.log( `Ошибка: ${err}`);
+    })
+    .finally(() => {
+      showSpinner(false);
+    });
 }
 
 
