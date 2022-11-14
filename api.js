@@ -9,7 +9,7 @@ function getDataByQuery() {
 
   let query = searchInput.value;
 
-  fetch(`http://api.searchsystem.local/search.php?q=${query}`, {
+  fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
     method: "GET",
   })
     .then((res) => {
