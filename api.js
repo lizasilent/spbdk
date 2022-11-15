@@ -10,16 +10,16 @@ const resultTemplate = document.querySelector(".s-catalog__template");
 const searchMoreText = document.querySelector(".search__more-text");
 
 
-let query = searchInput.value;
 
 function getDataByQuery() {
-
+  let query = searchInput.value;
 
   fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
     method: "GET",
   })
     .then((res) => {
       if (res.ok) {
+        console.log("Всё ок я просто туплю");
         return res.json();
       }
       return Promise.reject(res.statusText);
@@ -30,7 +30,6 @@ function getDataByQuery() {
 
       data.forEach((result) => {
         RenderFullResult(result);
-        console.log(result);
       });
 
       let firstItems = data.slice(0, 20);
@@ -65,7 +64,7 @@ if (searchContainer) {
 
 function handlePopup() {
 
-  createLink(query);
+  createLink(searchInput.value);
 
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
@@ -110,7 +109,6 @@ function createListElement(data) {
 function renderListElement(data) {
   searchList.insertAdjacentHTML("afterbegin", createListElement(data));
 }
-
 
 // Создать элемент сетки
 
