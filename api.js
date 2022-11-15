@@ -10,10 +10,11 @@ const resultTemplate = document.querySelector(".s-catalog__template");
 const searchMoreText = document.querySelector(".search__more-text");
 
 
-let query = searchInput.value;
+
 
 function getDataByQuery() {
-
+  let query = searchInput.value;
+  console.log(query);
 
 
   fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
