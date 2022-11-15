@@ -1,3 +1,4 @@
+@import url(./__template/s-catalog__template.css);
 @import url(./__btn-icon/s-catalog__btn-icon.css);
 @import url(./__btn/s-catalog__btn.css);
 @import url(./__header/s-catalog__header.css);
@@ -5,7 +6,7 @@
 @import url(./__main-header/s-catalog__main-header.css);
 @import url(./__pagination/s-catalog__pagination.css);
 @import url(./__search/s-catalog__search.css);
-@import url(./__template/s-catalog__template.css);
+
 
 
 
