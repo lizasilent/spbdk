@@ -8,8 +8,11 @@ const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
 
+
+let query = searchInput.value;
+
 function getDataByQuery() {
-  let query = searchInput.value;
+
 
   fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
     method: "GET",
@@ -63,6 +66,7 @@ function handlePopup() {
 
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
+    createLink(searchInput.value);
     getDataByQuery();
   } else {
     searchForm.classList.add("disabled");
@@ -108,9 +112,7 @@ function renderListElement(data) {
 
 // Создать элемент сетки
 
-searchInpFull.value = searchInput.value;
 
-searchInpFull.addEventListener("input", getDataByQuery)
 
 function createSearchResultElement(data) {
   let price = Number(Math.floor(data.price));
@@ -139,16 +141,20 @@ function createSearchResultElement(data) {
 `;
 }
 
-const searchMore = document.querySelector(".search__more");
-
-if (searchMore) {
-  searchMore.addEventListener("click", getDataByQuery);
-}
-
-
 function RenderFullResult(data) {
-    resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
-
+  resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
 }
+
+
+const searchMoreText = document.querySelector(".search__more-text");
+
+function createLink(query) {
+  searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`
+  getDataByQuery();
+}
+
+searchInpFull.addEventListener("input", getDataByQuery)
+
+
 
 
