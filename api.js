@@ -177,3 +177,35 @@ function handleFillResults(data) {
     renderFullResult(result);
   });
 }
+
+// Карточка товара
+
+
+
+
+function getCardData() {
+
+  let cardId = "8817002590f365c111ece8e1d910b959";
+
+  fetch(`http://api.searchsystem.local/getdata.php?q=${cardId}`, {
+    method: "GET",
+  })
+    .then((res) => {
+      if (res.ok) {
+        console.log("Всё ок я просто туплю");
+        return res.json();
+      }
+      return Promise.reject(res.statusText);
+    })
+    .then((data) => {
+     console.log(data)
+    })
+    .catch((err) => {
+      console.log(`Ошибка: ${err}`);
+    })
+    .finally(() => {
+      showSpinner(false);
+    });
+}
+
+getCardData();
