@@ -51,16 +51,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./index.html",
+      inject: "body",
     }),
 
     new HtmlWebpackPlugin({
       filename: "card.html",
       template: "./card.html",
+      inject: "body",
     }),
 
     new HtmlWebpackPlugin({
       filename: "search-results.html",
       template: "./search-results.html",
+      inject: "body",
     }),
 
     new CleanWebpackPlugin(),
