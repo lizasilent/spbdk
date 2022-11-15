@@ -1,7 +1,6 @@
 .s-catalog__template {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-flow: column;
   margin: 0 auto;
   width: 100%;
   padding: 0;
