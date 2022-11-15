@@ -86,7 +86,7 @@ function handleResults() {
 function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
-  let id = data.nomen_id.slice(3);
+  let id = data.nomen_id.slice(2);
 
   return `
 <li class="search__item" id="${id}">
@@ -123,7 +123,7 @@ function renderListElement(data) {
 function createSearchResultElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
-  let id = data.nomen_id.slice(3);
+  let id = data.nomen_id.slice(2);
 
   return `
   <li class="s__item"> <a href="card.html" id="${id}">
@@ -221,7 +221,7 @@ function createCard(data) {
   let remaindk = Number(Math.floor(data.data.remain_dk));
   let remainlit = Number(Math.floor(data.data.remain_lit));
   let remaincron = Number(Math.floor(data.data.remain_cron));
-  let id = data.data.nomen_id.slice(3);
+  let id = data.data.nomen_id.slice(2);
   console.log(id);
 
   return `
@@ -234,13 +234,13 @@ function createCard(data) {
           <div class="swiper-wrapper">
             <div class="swiper-slide slider__photo">
               <img class="slider__photo-img"
-                src="https://www.podpisnie.ru/upload/resize_cache/iblock/25e/1262_575_1/u38hevc8s16tugwoc1au0cvqf0w0br4n.jpg"
+                src="${data.photos[0].photopath}"
                 alt=""
               />
             </div>
             <div class="swiper-slide slider__photo">
               <img class="slider__photo-img"
-                src="https://picsum.photos/id/232/112/84"
+                src="${data.photos[1].photopath}"
                 alt=""
               />
             </div>
@@ -347,7 +347,19 @@ function createCard(data) {
 
 getCardData();
 
-/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //  <p>Автор</p>
 //                     <p>Николев А.</p>
