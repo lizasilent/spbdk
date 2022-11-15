@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import nopic from "./images/nopicture.png";
 
 const searchInput = document.querySelector(".search__input");
@@ -268,7 +267,7 @@ function createCard(data) {
       </div>
       <div class="card__main-block">
         <div class="card__main-photo">
-          <img id="main-photo" src="https://www.podpisnie.ru/upload/resize_cache/iblock/725/1262_575_1/13l1ditbsai4154iaqkmxxbo0imlqwl5.jpg" alt=""></div>
+          <img id="main-photo" src="${data.photos[0].photopath}" alt=""></div>
       </div>
     </div>
     <div class="card__text-block">
