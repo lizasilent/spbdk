@@ -149,14 +149,18 @@ function RenderFullResult(data) {
 }
 
 
-
-
 function createLink(query) {
   searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`
-  getDataByQuery();
 }
 
+if (searchMoreText) {
+  const url = new URL(searchMoreText.href);
+const searchParam = url.searchParams.get("search");
 
+console.log(searchParam);
+
+
+}
 
 
 
