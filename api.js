@@ -100,6 +100,7 @@ function createListElement(data) {
 // Вставить элемент списка в разметку
 
 function renderListElement(data) {
+  searchList.innerHTML = "";
   searchList.insertAdjacentHTML("afterbegin", createListElement(data));
 }
 
