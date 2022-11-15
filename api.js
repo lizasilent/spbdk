@@ -285,7 +285,7 @@ function createCard(data) {
     </div>
   </div>
   <div class="card__right">
-    <div class="card__right-header">${data.description}</div>
+    <div class="card__right-header">${data.data.description}</div>
     <div class="card-right__main">
       <div class="card__right-template">
         <p>Автор</p>
