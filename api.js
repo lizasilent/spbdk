@@ -9,9 +9,9 @@ const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
 
 
-let query = searchInput.value;
 
 function getDataByQuery() {
+  let query = searchInput.value;
 
 
   fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
@@ -153,7 +153,6 @@ function createLink(query) {
   getDataByQuery();
 }
 
-searchInpFull.addEventListener("input", getDataByQuery)
 
 
 
