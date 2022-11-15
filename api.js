@@ -6,6 +6,7 @@ const searchList = document.querySelector(".search__list");
 const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
+const searchInpFull = document.querySelector(".search__input-full");
 
 function getDataByQuery() {
   let query = searchInput.value;
@@ -25,13 +26,13 @@ function getDataByQuery() {
 
       data.forEach((result) => {
         RenderFullResult(result);
+        console.log(result);
       });
 
       let firstItems = data.slice(0, 20);
       firstItems.forEach((dataObject) => {
         renderListElement(dataObject);
       });
-
 
     })
     .catch((err) => {
@@ -107,6 +108,9 @@ function renderListElement(data) {
 
 // Создать элемент сетки
 
+searchInpFull.value = searchInput.value;
+
+searchInpFull.addEventListener("input", getDataByQuery)
 
 function createSearchResultElement(data) {
   let price = Number(Math.floor(data.price));
@@ -143,9 +147,7 @@ if (searchMore) {
 
 
 function RenderFullResult(data) {
-  if (resultTemplate) {
     resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
-  }
 
 }
 
