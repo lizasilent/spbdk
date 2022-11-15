@@ -187,7 +187,7 @@ function getCardData() {
 
   let cardId = "8817002590f365c111ece8e1d910b959";
 
-  fetch(`http://api.searchsystem.local/getdata.php?q=${cardId}`, {
+  fetch(`http://dk.searchsystem.local/api/getdata.php?q=${cardId}`, {
     method: "GET",
   })
     .then((res) => {
