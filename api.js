@@ -6,7 +6,7 @@ const searchList = document.querySelector(".search__list");
 const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
-const searchInpFull = document.querySelector(".search__input-full");
+// const searchInpFull = document.querySelector(".search__input-full");
 
 
 
@@ -64,9 +64,10 @@ if (searchContainer) {
 
 function handlePopup() {
 
+  createLink(searchInput.value);
+
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
-    createLink(searchInput.value);
     getDataByQuery();
   } else {
     searchForm.classList.add("disabled");
