@@ -1,5 +1,4 @@
 import nopic from "./images/nopicture.png";
-
 document.onload = parseLink();
 
 const searchInput = document.querySelector(".search__input");
@@ -153,6 +152,8 @@ function RenderFullResult(data) {
 
 function createLink(query) {
   searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`
+  getDataByQuery();
+
 }
 
 
@@ -164,9 +165,5 @@ function parseLink() {
 
     return console.log(searchParam)
 }
-
-
-
-
 
 
