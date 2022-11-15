@@ -60,8 +60,6 @@ if (searchContainer) {
 
 function handlePopup() {
 
-   searchList.innerHTML = "";
-
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
     getDataByQuery();
