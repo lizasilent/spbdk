@@ -1,5 +1,4 @@
 import nopic from "./images/nopicture.png";
-document.onload = parseLink();
 
 const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
@@ -7,13 +6,27 @@ const searchList = document.querySelector(".search__list");
 const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
-// const searchInpFull = document.querySelector(".search__input-full");
+const searchInpFull = document.querySelector(".search__input-full");
 const searchMoreText = document.querySelector(".search__more-text");
 
+if (searchContainer) {
+  searchContainer.addEventListener("input", handlePopup);
+}
+if (searchInpFull) {
+  searchInpFull.addEventListener("input", handleResults);
+}
 
+window.onload = () => {
+  const queryString = parseLink();
+  console.log('queryString', queryString)
+  if (queryString) {
+    searchInpFull.value = queryString;
+    searchInpFull.dispatchEvent(new Event('input', {bubbles:true}));
+  }
+};
 
-function getDataByQuery() {
-  let query = searchInput.value;
+function getDataByQuery(element, successCallback) {
+  let query = element.value;
 
   fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
     method: "GET",
@@ -29,15 +42,7 @@ function getDataByQuery() {
       // если мы попали в этот then, data — это объект
       showSpinner(true);
 
-      data.forEach((result) => {
-        RenderFullResult(result);
-      });
-
-      let firstItems = data.slice(0, 20);
-      firstItems.forEach((dataObject) => {
-        renderListElement(dataObject);
-      });
-
+      successCallback(data);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
@@ -50,29 +55,29 @@ function getDataByQuery() {
 // Спиннер
 
 function showSpinner(isLoading) {
-  if (isLoading) {
-    loader.classList.remove("loader_hidden");
-  } else {
-    loader.classList.add("loader_hidden");
+  if (loader) {
+    if (isLoading) {
+      loader.classList.remove("loader_hidden");
+    } else {
+      loader.classList.add("loader_hidden");
+    }
   }
 }
 
 // Открыть попап
-
-if (searchContainer) {
-  searchContainer.addEventListener("input", handlePopup);
-}
-
 function handlePopup() {
-
   createLink(searchInput.value);
 
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
-    getDataByQuery();
+    getDataByQuery(searchInput, handleFillPopup);
   } else {
     searchForm.classList.add("disabled");
   }
+}
+
+function handleResults() {
+  getDataByQuery(searchInpFull, handleFillResults);
 }
 
 // Создать элемент списка
@@ -142,28 +147,33 @@ function createSearchResultElement(data) {
 `;
 }
 
-function RenderFullResult(data) {
+function renderFullResult(data) {
   if (resultTemplate) {
     resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
   }
-
 }
-
 
 function createLink(query) {
   searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`
-  getDataByQuery();
-
 }
 
-
-
 function parseLink() {
-
   const parsedUrl = new URL(window.location.href);
   const searchParam = parsedUrl.searchParams.get("search");
 
-    return console.log(searchParam)
+  return searchParam
 }
 
 
+function handleFillPopup(data) {
+  let firstItems = data.slice(0, 20);
+  firstItems.forEach((dataObject) => {
+    renderListElement(dataObject);
+  });
+}
+
+function handleFillResults(data) {
+  data.forEach((result) => {
+    renderFullResult(result);
+  });
+}
