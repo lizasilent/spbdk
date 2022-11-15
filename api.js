@@ -1,27 +1,38 @@
+import { parseUrlParam, prepareCardId } from "./src/utils";
 import nopic from "./images/nopicture.png";
 
+// Elements
 const searchInput = document.querySelector(".search__input");
-// const searchContainer = document.querySelector(".search__container");
 const searchList = document.querySelector(".search__list");
 const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
 const searchMoreText = document.querySelector(".search__more-text");
-
-if (searchInput) {
-  searchInput.addEventListener("input", handlePopup);
-}
-if (searchInpFull) {
-  searchInpFull.addEventListener("input", handleResults);
-}
+const cardPage = document.querySelector(".card-page");
 
 window.onload = () => {
-  const queryString = parseLink();
-  console.log("queryString", queryString);
-  if (queryString) {
-    searchInpFull.value = queryString;
+  // Listeners
+  if (searchInput) {
+    searchInput.addEventListener("input", handlePopup);
+  }
+  if (searchInpFull) {
+    searchInpFull.addEventListener("input", handleResults);
+  }
+
+  // Search param
+  const searchQuery = parseUrlParam("search");
+  console.log("searchQuery", searchQuery);
+  if (searchQuery) {
+    searchInpFull.value = searchQuery;
     searchInpFull.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+
+  // ID param
+  const cardIdParam = parseUrlParam("id");
+  console.log("cardIdParam", cardIdParam);
+  if (cardIdParam) {
+    getCardData(cardIdParam);
   }
 };
 
@@ -41,7 +52,6 @@ function getDataByQuery(element, successCallback) {
     .then((data) => {
       // если мы попали в этот then, data — это объект
       showSpinner(true);
-
       successCallback(data);
     })
     .catch((err) => {
@@ -53,7 +63,6 @@ function getDataByQuery(element, successCallback) {
 }
 
 // Спиннер
-
 function showSpinner(isLoading) {
   if (loader) {
     if (isLoading) {
@@ -81,15 +90,14 @@ function handleResults() {
 }
 
 // Создать элемент списка
-
 function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
-  let id = data.nomen_id.slice(2);
+  let id = prepareCardId(data.nomen_id);
 
   return `
 <li class="search__item" id="${id}">
-<a class="search__item" href="card.html">
+<a class="search__item" href="/card.html?id=${id}">
   <img class="search__item-image" src="${data.photopath || nopic}" alt=${
     data.authorstext
   }></img>
@@ -112,20 +120,19 @@ function createListElement(data) {
 }
 
 // Вставить элемент списка в разметку
-
 function renderListElement(data) {
   searchList.insertAdjacentHTML("afterbegin", createListElement(data));
 }
 
 // Создать элемент сетки
-
 function createSearchResultElement(data) {
+  // createCardLink(id);
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
-  let id = data.nomen_id.slice(2);
+  let id = prepareCardId(data.nomen_id);
 
   return `
-  <li class="s__item"> <a href="card.html" id="${id}">
+  <li class="s__item"> <a href="/card.html?id=${id}">
   <div class="s__item-new hidden">Новинка</div>
   <img class="s__item-image" src="${data.photopath || nopic}" alt=${
     data.authorstext
@@ -157,14 +164,7 @@ function renderFullResult(data) {
 }
 
 function createLink(query) {
-  searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`;
-}
-
-function parseLink() {
-  const parsedUrl = new URL(window.location.href);
-  const searchParam = parsedUrl.searchParams.get("search");
-
-  return searchParam;
+  searchMoreText.href = `/search-results.html?search=${query}`;
 }
 
 function handleFillPopup(data) {
@@ -181,10 +181,7 @@ function handleFillResults(data) {
 }
 
 // Карточка товара
-
-function getCardData() {
-  let cardId = "8817002590f365c111ece8e1d910b959";
-
+function getCardData(cardId) {
   fetch(`http://dk.searchsystem.local/api/getdata.php?q=${cardId}`, {
     method: "GET",
   })
@@ -207,8 +204,6 @@ function getCardData() {
     });
 }
 
-const cardPage = document.querySelector(".card-page");
-
 function renderCardPage(data) {
   if (cardPage) {
     cardPage.innerHTML = createCard(data);
@@ -220,8 +215,7 @@ function createCard(data) {
   let remaindk = Number(Math.floor(data.data.remain_dk));
   let remainlit = Number(Math.floor(data.data.remain_lit));
   let remaincron = Number(Math.floor(data.data.remain_cron));
-  let id = data.data.nomen_id.slice(2);
-  console.log(id);
+  let id = prepareCardId(data.data.nomen_id);
 
   return `
   <div class="card" id="${id}">
@@ -344,22 +338,18 @@ function createCard(data) {
 </div>`;
 }
 
-getCardData();
+// const searchItem = document.querySelector(".search__item");
+// const sItem = document.querySelector(".s__item");
 
+// if (searchItem) {
+//   searchItem.addEventListener("click", getCardData);
+// }
 
+// if (sItem) {
+//   sItem.addEventListener("click", getCardData);
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
+//
 //  <p>Автор</p>
 //                     <p>Николев А.</p>
 //                     <p>Художник</p>
