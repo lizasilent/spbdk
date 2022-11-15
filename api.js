@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import nopic from "./images/nopicture.png";
 
 const searchInput = document.querySelector(".search__input");
@@ -87,7 +88,7 @@ function createListElement(data) {
   let remain = Number(Math.floor(data.remain));
 
   return `
-<li class="search__item">
+<li class="search__item" id="${data.nomen_id}">
 <a class="search__item" href="card.html">
   <img class="search__item-image" src="${data.photopath || nopic}" alt=${
     data.authorstext
@@ -125,7 +126,7 @@ function createSearchResultElement(data) {
   let remain = Number(Math.floor(data.remain));
 
   return `
-  <li class="s__item"> <a href="card.html">
+  <li class="s__item"> <a href="card.html" id="${data.nomen_id}">
   <div class="s__item-new hidden">Новинка</div>
   <img class="s__item-image" src="${data.photopath || nopic}" alt=${
     data.authorstext
@@ -209,3 +210,199 @@ function getCardData() {
 }
 
 getCardData();
+
+
+
+
+
+
+
+
+
+
+
+remain_cron
+:
+"1.000"
+remain_dk
+:
+"9.000"
+remain_lit
+:
+"0.000"
+
+tr_text
+:
+null
+_code
+:
+"00-00036227"
+annotation
+:
+"Повесть А. Пушкина \"Дубровский\" рассказывает о любви Владимира Дубровского и Марии Троекуровой — потомков двух враждующих помещичьих семейств. Существуют разные мнения о повести: как о неудаче поэта, писавшего совсем в духе Вальтера Скотта и наоборот, как о достижении - именно с этой повести А. Пушкин завершил провинциальную и открыл мировую русскую прозу."
+article
+:
+"00036227"
+authorstext
+:
+"не ипользуется_Пушкин А. С."
+bindingtype
+:
+null
+description
+:
+"Пушкин А.С. Дубровский"
+ill_text
+:
+null
+isbn
+:
+"978-5-04-112778-7"
+lang
+:
+null
+nomen_id
+:
+"\\x8817002590f365c111ece8e1d910b959"
+pagesnum
+:
+"224"
+price
+:
+"399.00"
+publishername
+:
+"Эксмо"
+publishingyear
+:
+"2020"
+remain_cron
+:
+"1.000"
+remain_dk
+:
+"9.000"
+remain_lit
+:
+"0.000"
+seriesname
+:
+"Яркие страницы"
+tr_text
+:
+null
+_code
+:
+"00-00036227"
+
+\\x8817002590f365c111ece8e1d910b959
+
+<div class="card" id="${data.nomen_id}">
+              <div class="card__left-menu">
+                <div class="card__photo-block">
+                  <div class="card__slider slider">
+                    <div class="slider__arrow-prev disabled"></div>
+                    <div class="swiper slider__container">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide slider__photo">
+                          <img class="slider__photo-img"
+                            src="https://www.podpisnie.ru/upload/resize_cache/iblock/25e/1262_575_1/u38hevc8s16tugwoc1au0cvqf0w0br4n.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img class="slider__photo-img"
+                            src="https://picsum.photos/id/232/112/84"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img class="slider__photo-img"
+                            src="https://picsum.photos/id/233/112/84"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img class="slider__photo-img"
+                            src="https://picsum.photos/id/234/112/84"
+                            alt=""
+                          />
+                        </div>
+                        <div class="swiper-slide slider__photo">
+                          <img class="slider__photo-img"
+                            src="https://picsum.photos/id/235/112/84"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__arrow-next"></div>
+                  </div>
+                  <div class="card__main-block">
+                    <div class="card__main-photo">
+                      <img id="main-photo" src="https://www.podpisnie.ru/upload/resize_cache/iblock/725/1262_575_1/13l1ditbsai4154iaqkmxxbo0imlqwl5.jpg" alt=""></div>
+                  </div>
+                </div>
+                <div class="card__text-block">
+                  <div class="card__text-block-box">
+                    <div class="card__text-block-tab">Аннотация</div>
+                    <div class="s__item-box">
+                      <p class="s__item-price card_big-font">${data.price}</p>
+                      <div class="s__item-icon card_big-symbol"></div>
+                    </div>
+                  </div>
+                  <p class="card__text-block-description">
+                   ${data.annotation}
+                  </p>
+                </div>
+              </div>
+              <div class="card__right">
+                <div class="card__right-header">${data.description}</div>
+                <div class="card-right__main">
+                  <div class="card__right-template">
+                    <p>Автор</p>
+                    <p>${data.authorstext}</p>
+                    {/* <p>Художник</p>
+                    <p></p>
+                    <p>Переводчик</p>
+                    <p></p> */}
+                    <p>Серия</p>
+                    <p>${data.seriesname}</p>
+                    <p>Издательство</p>
+                    <p>${data.publishername}</p>
+                    <p>Год</p>
+                    <p>${data.publishingyear}</p>
+                    {/* <p>Переплёт</p>
+                    <p>Твердый</p> */}
+                    <p>Кол-во страниц</p>
+                    <p>${data.pagesnum}</p>
+                    {/* <p>Формат</p>
+                    <p>170/240 мм</p> */}
+                    <p>Язык</p>
+                    <p>Русский</p>
+                    <p>ISBN</p>
+                    <p>${data.isbn}</p>
+                    <p>Артикул</p>
+                    <p>${data.article}</p>
+                  </div>
+                </div>
+                <div class="card__right-bottom">
+                  <p class="card__right-text">Наличие в магазинах</p>
+                  <div class="card__right-template no-border">
+                    <p>Невский, 28</p>
+                    <p class="green">
+                      В наличии ${data.remain_dk} шт. / 2 этаж, секция В, полка 2
+                    </p>
+                    <p>Литейный, 64</p>
+                    {/* <p class="red">Нет в наличии</p> */}
+                    <p class="green">
+                      В наличии ${data.remain_lit} шт. / 2 этаж, секция В, полка 2
+                    </p>
+                    <p>Кронштадт</p>
+                    <p class="green">
+                      В наличии ${data.remain_cron} шт. / 1 этаж, секция А, полка 4
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
