@@ -86,9 +86,10 @@ function handleResults() {
 function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
+  let id = (data.nomen_id).slice(3);
 
   return `
-<li class="search__item" id="${data.nomen_id}">
+<li class="search__item" id="${id}">
 <a class="search__item" href="card.html">
   <img class="search__item-image" src="${data.photopath || nopic}" alt=${
     data.authorstext
@@ -124,9 +125,10 @@ function renderListElement(data) {
 function createSearchResultElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
+  let id = (data.nomen_id).slice(3);
 
   return `
-  <li class="s__item"> <a href="card.html" id="${data.nomen_id}">
+  <li class="s__item"> <a href="card.html" id="${id}">
   <div class="s__item-new hidden">Новинка</div>
   <img class="s__item-image" src="${data.photopath || nopic}" alt=${
     data.authorstext
@@ -184,7 +186,7 @@ function handleFillResults(data) {
 
 
 
-function getCardData() {
+function getCardData(){
 
   let cardId = "8817002590f365c111ece8e1d910b959";
 
@@ -199,7 +201,8 @@ function getCardData() {
       return Promise.reject(res.statusText);
     })
     .then((data) => {
-     console.log(data)
+    renderCardPage(data);
+     console.log(data);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
@@ -209,14 +212,27 @@ function getCardData() {
     });
 }
 
-getCardData();
 
+const cardPage = document.querySelector(".card-page");
 
-createCard(data) {
+function renderCardPage(data) {
+  if (cardPage) {
+    cardPage.innerHTML = createCard(data);
+  }
+
+}
+
+function createCard(data){
+
+  let price = Number(Math.floor(data.data.price));
+  let remaindk = Number(Math.floor(data.data.remain_dk));
+  let remainlit = Number(Math.floor(data.data.remain_lit));
+  let remaincron = Number(Math.floor(data.data.remain_cron));
+  let id = (data.data.nomen_id).slice(3);
 
 
   return `
-  <div class="card" id="${data.nomen_id}">
+  <div class="card" id="${id}">
   <div class="card__left-menu">
     <div class="card__photo-block">
       <div class="card__slider slider">
@@ -266,12 +282,12 @@ createCard(data) {
       <div class="card__text-block-box">
         <div class="card__text-block-tab">Аннотация</div>
         <div class="s__item-box">
-          <p class="s__item-price card_big-font">${data.price}</p>
+          <p class="s__item-price card_big-font">${price}</p>
           <div class="s__item-icon card_big-symbol"></div>
         </div>
       </div>
       <p class="card__text-block-description">
-       ${data.annotation}
+       ${data.data.annotation}
       </p>
     </div>
   </div>
@@ -280,29 +296,29 @@ createCard(data) {
     <div class="card-right__main">
       <div class="card__right-template">
         <p>Автор</p>
-        <p>${data.authorstext}</p>
+        <p>${data.data.authorstext}</p>
         {/* <p>Художник</p>
         <p></p>
         <p>Переводчик</p>
         <p></p> */}
         <p>Серия</p>
-        <p>${data.seriesname}</p>
+        <p>${data.data.seriesname}</p>
         <p>Издательство</p>
-        <p>${data.publishername}</p>
+        <p>${data.data.publishername}</p>
         <p>Год</p>
-        <p>${data.publishingyear}</p>
+        <p>${data.data.publishingyear}</p>
         {/* <p>Переплёт</p>
         <p>Твердый</p> */}
         <p>Кол-во страниц</p>
-        <p>${data.pagesnum}</p>
+        <p>${data.data.pagesnum}</p>
         {/* <p>Формат</p>
         <p>170/240 мм</p> */}
         <p>Язык</p>
         <p>Русский</p>
         <p>ISBN</p>
-        <p>${data.isbn}</p>
+        <p>${data.data.isbn}</p>
         <p>Артикул</p>
-        <p>${data.article}</p>
+        <p>${data.data.article}</p>
       </div>
     </div>
     <div class="card__right-bottom">
@@ -310,16 +326,16 @@ createCard(data) {
       <div class="card__right-template no-border">
         <p>Невский, 28</p>
         <p class="green">
-          В наличии ${data.remain_dk} шт. / 2 этаж, секция В, полка 2
+          В наличии ${remaindk} шт. / 2 этаж, секция В, полка 2
         </p>
         <p>Литейный, 64</p>
         {/* <p class="red">Нет в наличии</p> */}
         <p class="green">
-          В наличии ${data.remain_lit} шт. / 2 этаж, секция В, полка 2
+          В наличии ${remainlit} шт. / 2 этаж, секция В, полка 2
         </p>
         <p>Кронштадт</p>
         <p class="green">
-          В наличии ${data.remain_cron} шт. / 1 этаж, секция А, полка 4
+          В наличии ${remaincron} шт. / 1 этаж, секция А, полка 4
         </p>
       </div>
     </div>
@@ -327,6 +343,4 @@ createCard(data) {
 </div>`
 }
 
-// x8817002590f365c111ece8e1d910b959
-
-
+getCardData();
