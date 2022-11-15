@@ -59,6 +59,9 @@ if (searchContainer) {
 }
 
 function handlePopup() {
+
+   searchList.innerHTML = "";
+
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
     getDataByQuery();
@@ -101,7 +104,6 @@ function createListElement(data) {
 
 function renderListElement(data) {
   searchList.insertAdjacentHTML("afterbegin", createListElement(data));
-  // searchList.innerHTML = createListElement(data);
 }
 
 
