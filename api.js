@@ -1,7 +1,7 @@
 import nopic from "./images/nopicture.png";
 
 const searchInput = document.querySelector(".search__input");
-const searchContainer = document.querySelector(".search__container");
+// const searchContainer = document.querySelector(".search__container");
 const searchList = document.querySelector(".search__list");
 const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
@@ -9,8 +9,8 @@ const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
 const searchMoreText = document.querySelector(".search__more-text");
 
-if (searchContainer) {
-  searchContainer.addEventListener("input", handlePopup);
+if (searchInput) {
+  searchInput.addEventListener("input", handlePopup);
 }
 if (searchInpFull) {
   searchInpFull.addEventListener("input", handleResults);
