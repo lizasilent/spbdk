@@ -23,7 +23,7 @@ window.onload = () => {
   // Search param
   const searchQuery = parseUrlParam("search");
   console.log("searchQuery", searchQuery);
-  if (searchQuery) {
+  if (searchQuery && searchInpFull) {
     searchInpFull.value = searchQuery;
     searchInpFull.dispatchEvent(new Event("input", { bubbles: true }));
   }
