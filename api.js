@@ -7,11 +7,13 @@ const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
 // const searchInpFull = document.querySelector(".search__input-full");
+const searchMoreText = document.querySelector(".search__more-text");
 
 
+let query = searchInput.value;
 
 function getDataByQuery() {
-  let query = searchInput.value;
+
 
 
   fetch(`http://dk.searchsystem.local/api/search.php?q=${query}`, {
@@ -64,7 +66,7 @@ if (searchContainer) {
 
 function handlePopup() {
 
-  createLink(searchInput.value);
+  createLink(query);
 
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
@@ -143,11 +145,14 @@ function createSearchResultElement(data) {
 }
 
 function RenderFullResult(data) {
-  resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
+  if (resultTemplate) {
+    resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
+  }
+
 }
 
 
-const searchMoreText = document.querySelector(".search__more-text");
+
 
 function createLink(query) {
   searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`
