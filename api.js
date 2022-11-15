@@ -1,5 +1,7 @@
 import nopic from "./images/nopicture.png";
 
+document.onload = parseLink();
+
 const searchInput = document.querySelector(".search__input");
 const searchContainer = document.querySelector(".search__container");
 const searchList = document.querySelector(".search__list");
@@ -153,14 +155,18 @@ function createLink(query) {
   searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`
 }
 
-if (searchMoreText) {
-  const url = new URL(searchMoreText.href);
-const searchParam = url.searchParams.get("search");
-
-console.log(searchParam);
 
 
+function parseLink() {
+
+  const parsedUrl = new URL(window.location.href);
+  const searchParam = parsedUrl.searchParams.get("search");
+
+    return console.log(searchParam)
 }
+
+
+
 
 
 
