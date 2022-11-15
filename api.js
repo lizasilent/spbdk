@@ -19,10 +19,10 @@ if (searchInpFull) {
 
 window.onload = () => {
   const queryString = parseLink();
-  console.log('queryString', queryString)
+  console.log("queryString", queryString);
   if (queryString) {
     searchInpFull.value = queryString;
-    searchInpFull.dispatchEvent(new Event('input', {bubbles:true}));
+    searchInpFull.dispatchEvent(new Event("input", { bubbles: true }));
   }
 };
 
@@ -86,7 +86,7 @@ function handleResults() {
 function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
-  let id = (data.nomen_id).slice(3);
+  let id = data.nomen_id.slice(3);
 
   return `
 <li class="search__item" id="${id}">
@@ -120,12 +120,10 @@ function renderListElement(data) {
 
 // Создать элемент сетки
 
-
-
 function createSearchResultElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
-  let id = (data.nomen_id).slice(3);
+  let id = data.nomen_id.slice(3);
 
   return `
   <li class="s__item"> <a href="card.html" id="${id}">
@@ -152,21 +150,23 @@ function createSearchResultElement(data) {
 
 function renderFullResult(data) {
   if (resultTemplate) {
-    resultTemplate.insertAdjacentHTML("afterbegin", createSearchResultElement(data));
+    resultTemplate.insertAdjacentHTML(
+      "afterbegin",
+      createSearchResultElement(data)
+    );
   }
 }
 
 function createLink(query) {
-  searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`
+  searchMoreText.href = `http://dk.searchsystem.local/search-results.html?search=${query}`;
 }
 
 function parseLink() {
   const parsedUrl = new URL(window.location.href);
   const searchParam = parsedUrl.searchParams.get("search");
 
-  return searchParam
+  return searchParam;
 }
-
 
 function handleFillPopup(data) {
   let firstItems = data.slice(0, 20);
@@ -183,11 +183,7 @@ function handleFillResults(data) {
 
 // Карточка товара
 
-
-
-
-function getCardData(){
-
+function getCardData() {
   let cardId = "8817002590f365c111ece8e1d910b959";
 
   fetch(`http://dk.searchsystem.local/api/getdata.php?q=${cardId}`, {
@@ -201,8 +197,8 @@ function getCardData(){
       return Promise.reject(res.statusText);
     })
     .then((data) => {
-    renderCardPage(data);
-     console.log(data);
+      renderCardPage(data);
+      console.log(data);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
@@ -212,24 +208,21 @@ function getCardData(){
     });
 }
 
-
 const cardPage = document.querySelector(".card-page");
 
 function renderCardPage(data) {
   if (cardPage) {
     cardPage.innerHTML = createCard(data);
   }
-
 }
 
-function createCard(data){
-
+function createCard(data) {
   let price = Number(Math.floor(data.data.price));
   let remaindk = Number(Math.floor(data.data.remain_dk));
   let remainlit = Number(Math.floor(data.data.remain_lit));
   let remaincron = Number(Math.floor(data.data.remain_cron));
-  let id = (data.data.nomen_id).slice(3);
-
+  let id = data.data.nomen_id.slice(3);
+  console.log(id);
 
   return `
   <div class="card" id="${id}">
@@ -317,27 +310,44 @@ function createCard(data){
       <p class="card__right-text">Наличие в магазинах</p>
       <div class="card__right-template no-border">
         <p>Невский, 28</p>
-        <p class="green">
-          В наличии ${remaindk} шт. / 2 этаж, секция В, полка 2
-        </p>
+
+        ${
+          remaindk > 0
+            ? `<p class="green"> В наличии ${remaindk} шт. / 2 этаж, секция В, полка 2
+        </p>`
+            : `<p class="red">Нет в наличии</p>`
+        }
+
         <p>Литейный, 64</p>
 
-        <p class="green">
-          В наличии ${remainlit} шт. / 2 этаж, секция В, полка 2
-        </p>
+        ${
+          remainlit > 0
+            ? `<p class="green">
+        В наличии ${remainlit} шт. / 2 этаж, секция В, полка 2
+      </p>`
+            : `<p class="red">Нет в наличии</p>`
+        }
+
+
         <p>Кронштадт</p>
-        <p class="green">
+
+        ${
+          remaincron > 0
+            ? ` <p class="green">
           В наличии ${remaincron} шт. / 1 этаж, секция А, полка 4
-        </p>
+        </p>`
+            : `<p class="red">Нет в наличии</p>`
+        }
+
       </div>
     </div>
   </div>
-</div>`
+</div>`;
 }
 
 getCardData();
 
- /* <p class="red">Нет в наличии</p> */
+/*  */
 
 //  <p>Автор</p>
 //                     <p>Николев А.</p>
