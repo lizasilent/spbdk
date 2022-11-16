@@ -222,10 +222,16 @@ function createCard(data) {
   let remaincron = Number(Math.floor(data.data.remain_cron));
   let id = prepareCardId(data.data.nomen_id);
 
-    const mainPhoto = data.photos.find((photo) => photo.isfirstphoto === 't');
+  let mainPhoto;
+  let sliderPhotos;
 
-    const sliderPhotos = data.photos.filter((photo) => photo.isfirstphoto === 'f');
+  if (data.photos) {
+     mainPhoto = data.photos.find((photo) => photo.isfirstphoto === 't');
+    sliderPhotos = data.photos.filter((photo) => photo.isfirstphoto === 'f');
     console.log(sliderPhotos);
+  }
+
+
 
 
   return `
