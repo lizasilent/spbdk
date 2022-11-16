@@ -7,7 +7,7 @@ import slider from "./src/slider";
 const RESULTS_PAGE_SIZE = 10;
 let resultsData = [];
 let resultsSearchQuery = '';
-let resultsPageNumber = 0;
+let resultsPageNumber = 1;
 
 // Elements
 const searchInput = document.querySelector(".search__input");
@@ -29,20 +29,23 @@ window.onload = () => {
     searchInpFull.addEventListener("input", handleResults);
   }
 
+  // Page param
+  const pageCountParam = parseUrlParam("page");
+  const resultsDataCount = resultsData.length;
+  console.log("pageCountParam", pageCountParam);
+  if (pageCountParam !== undefined) {
+    resultsPageNumber = pageCountParam;
+  }
+  if (resultsDataCount > RESULTS_PAGE_SIZE) {
+    renderPagination();
+  }
+
   // Search param
   const searchQuery = parseUrlParam("search");
   if (searchQuery && searchInpFull) {
     searchInpFull.value = searchQuery;
     resultsSearchQuery = searchQuery;
     searchInpFull.dispatchEvent(new Event("input", { bubbles: true }));
-  }
-
-  // ID param
-  const pageCountParam = parseUrlParam("page");
-  const resultsDataCount = resultsData.length;
-  console.log("pageCountParam", pageCountParam);
-  if (resultsDataCount > RESULTS_PAGE_SIZE) {
-    renderPagination();
   }
 
   // ID param
@@ -199,7 +202,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
 
   const paginationContent =  `
 <div class="s-catalog__pagination-count s-catalog__pagination-prev">
-  ${resultsPageNumber === 0 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>`}
+  ${resultsPageNumber === 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>`}
   </div>
   <hr />
   <div class="s-catalog__pagination-block">
