@@ -7,6 +7,20 @@
   padding: 15px;
 }
 
+.s-catalog__pagination-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  list-style: none;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 21px;
+  color: #427e66;
+  padding: 0;
+}
+
 .s-catalog__pagination-list ul {
   display: flex;
   flex-direction: row;
@@ -46,6 +60,4 @@
   margin: 0 20px;
 }
 
-/* .s-catalog__pagination-block {
 
-} */

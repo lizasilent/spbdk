@@ -192,7 +192,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   for (let i = 1; i <= pagesCount; i++) {
     pageItems = pageItems + `
     <li class="s-catalog__pagination-elem">
-      <a href="">${i}</a>
+      <a class="s-catalog__pagination-elem" href="">${i}</a>
     </li>
     `
   }
