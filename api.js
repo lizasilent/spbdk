@@ -214,7 +214,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   </div>
   <hr />
   <div class="s-catalog__pagination-count s-catalog__pagination-next">
-  ${resultsPageNumber === pagesCount ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber + 1}">Следующая</a>` : ''}
+  ${resultsPageNumber === pagesCount ? "" : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber + 1}">Следующая</a>` }
 </div>
  `
 
