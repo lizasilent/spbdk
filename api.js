@@ -195,14 +195,14 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   for (let i = 1; i <= pagesCount; i++) {
     pageItems = pageItems + `
     <li class="s-catalog__pagination-elem">
-      <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i - 1}">${i}</a>
+      <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i}">${i}</a>
     </li>
     `
   }
 
   const paginationContent =  `
 <div class="s-catalog__pagination-count s-catalog__pagination-prev">
-  ${resultsPageNumber === 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>`}
+  ${resultsPageNumber <= 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>`}
   </div>
   <hr />
   <div class="s-catalog__pagination-block">

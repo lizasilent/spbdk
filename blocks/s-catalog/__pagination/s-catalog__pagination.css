@@ -47,7 +47,8 @@
 
 }
 
-.s-catalog__pagination-count p {
+.s-catalog__pagination-count a {
+  text-decoration: none;
   font-family: "Manege Demo";
   font-style: normal;
   font-weight: 300;
