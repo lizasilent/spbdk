@@ -18,6 +18,7 @@ const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
 const searchMoreText = document.querySelector(".search__more-text");
 const cardPage = document.querySelector(".card-page");
+const resultsSearchPagination = document.querySelector(".s-catalog__pagination");
 
 window.onload = () => {
   // Listeners
@@ -196,7 +197,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
     `
   }
 
-  return `
+  const paginationContent =  `
 <div class="s-catalog__pagination-count s-catalog__pagination-prev">
   ${resultsPageNumber < 2 ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>` : ''}
   </div>
@@ -211,6 +212,10 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   ${resultsPageNumber === pagesCount ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Следующая</a>` : ''}
 </div>
  `
+
+ if (resultsSearchPagination) {
+  resultsSearchPagination.innerHTML = paginationContent;
+ }
 }
 
 function createLink(query) {
