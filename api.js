@@ -202,13 +202,13 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
     <hr />
     <div class="s-catalog__pagination-block">
     <ul class="s-catalog__pagination-list">
-      ${pageItems.forEach((pageItem) => (
+      ${pageItems.map((pageItem) => (
         `
         <li class="s-catalog__pagination-elem">
           <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${pageItem}">${pageItem}</a>
         </li>
         `
-      ))}
+      )).join('')}
     </ul>
     </div>
     <hr />
