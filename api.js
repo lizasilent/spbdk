@@ -122,7 +122,7 @@ function createListElement(data) {
 
 // Вставить элемент списка в разметку
 function renderListElement(data) {
-  searchList.innerHTML(createListElement(data));
+  searchList.innerHTML = createListElement(data);
 }
 
 // Создать элемент сетки
