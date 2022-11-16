@@ -1,4 +1,4 @@
-import { parseUrlParam, prepareCardId, paginationGenerator } from "./src/utils";
+import { parseUrlParam, prepareCardId, paginationGenerator, debounce } from "./src/utils";
 import nopic from "./images/nopicture.png";
 import nopicsmall from "./images/no-pic-small.png";
 import slider from "./src/slider";
@@ -23,10 +23,10 @@ const resultsSearchPagination = document.querySelector(".s-catalog__pagination")
 window.onload = () => {
   // Listeners
   if (searchInput) {
-    searchInput.addEventListener("input", handlePopup);
+    searchInput.addEventListener("input", debounce(handlePopup, 2000));
   }
   if (searchInpFull) {
-    searchInpFull.addEventListener("input", handleResults);
+    searchInpFull.addEventListener("input", debounce(handleResults, 2000));
   }
   // Search param
   const searchQuery = parseUrlParam("search");

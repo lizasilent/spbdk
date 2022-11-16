@@ -9,7 +9,6 @@ export function prepareCardId(nomenId) {
   return nomenId.slice(2);
 }
 
-
 /**
  * Generate pagination.
  * @param {number} current Current page.
@@ -18,7 +17,7 @@ export function prepareCardId(nomenId) {
  * @returns {Array} Returns array of pages.
  */
 
- export function paginationGenerator(current, last, width = 2) {
+export function paginationGenerator(current, last, width = 2) {
   const left = current - width;
   const right = current + width + 1;
   const range = [];
@@ -36,12 +35,12 @@ export function prepareCardId(nomenId) {
     }
   }
 
-  range.forEach(i => {
+  range.forEach((i) => {
     if (l) {
       if (i - l === 2) {
         rangeWithDots.push(l + 1);
       } else if (i - l !== 1) {
-        rangeWithDots.push('...');
+        rangeWithDots.push("...");
       }
     }
     rangeWithDots.push(i);
@@ -49,4 +48,18 @@ export function prepareCardId(nomenId) {
   });
 
   return rangeWithDots;
+}
+
+export function debounce(f, ms) {
+  let isCooldown = false;
+
+  return function () {
+    if (isCooldown) return;
+
+    f.apply(this, arguments);
+
+    isCooldown = true;
+
+    setTimeout(() => (isCooldown = false), ms);
+  };
 }
