@@ -1,4 +1,4 @@
-import { parseUrlParam, prepareCardId } from "./src/utils";
+import { parseUrlParam, prepareCardId, paginationGenerator } from "./src/utils";
 import nopic from "./images/nopicture.png";
 import nopicsmall from "./images/no-pic-small.png";
 import slider from "./src/slider";
@@ -191,15 +191,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
     const pagesCount = Math.ceil(itemsCount / pageSize);
     const prevPageNumber = resultsPageNumber - 1;
     const nextPageNumber = resultsPageNumber + 1;
-
-    let pageItems = "";
-    for (let i = 1; i <= pagesCount; i++) {
-      pageItems = pageItems + `
-      <li class="s-catalog__pagination-elem">
-        <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i}">${i}</a>
-      </li>
-      `
-    }
+    const pageItems = paginationGenerator(resultsPageNumber, pagesCount);
 
     console.log("renderPagination", itemsCount, resultsPageNumber, pagesCount);
 
@@ -210,7 +202,13 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
     <hr />
     <div class="s-catalog__pagination-block">
     <ul class="s-catalog__pagination-list">
-      ${pageItems}
+      ${pageItems.map((pageItem) => (
+        `
+        <li class="s-catalog__pagination-elem">
+          <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${pageItem}">${pageItem}</a>
+        </li>
+        `
+      ))}
     </ul>
     </div>
     <hr />
