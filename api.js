@@ -3,6 +3,12 @@ import nopic from "./images/nopicture.png";
 import nopicsmall from "./images/no-pic-small.png";
 import slider from "./src/slider";
 
+// Constants
+const RESULTS_PAGE_SIZE = 10;
+let resultsData = [];
+let resultsSearchQuery = '';
+let resultsPageNumber = 0;
+
 // Elements
 const searchInput = document.querySelector(".search__input");
 const searchList = document.querySelector(".search__list");
@@ -26,7 +32,15 @@ window.onload = () => {
   const searchQuery = parseUrlParam("search");
   if (searchQuery && searchInpFull) {
     searchInpFull.value = searchQuery;
+    resultsSearchQuery = searchQuery;
     searchInpFull.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+
+  // ID param
+  const pageCountParam = parseUrlParam("page");
+  console.log("pageCountParam", pageCountParam);
+  if (pageCountParam > 0) {
+    renderPagination(resultsData.length);
   }
 
   // ID param
@@ -54,6 +68,7 @@ function getDataByQuery(element, successCallback) {
       // если мы попали в этот then, data — это объект
       showSpinner(true);
       successCallback(data);
+      resultsData = data;
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
@@ -166,6 +181,33 @@ function renderFullResult(data) {
   }
 }
 
+
+// Pagination
+function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
+  const pagesCount = itemsCount / pageSize;
+ return `
+<div class="s-catalog__pagination-count s-catalog__pagination-prev">
+  ${resultsPageNumber < 2 ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>` : ''}
+  </div>
+  <hr />
+  <div class="s-catalog__pagination-list">
+  <ul class="s-catalog__pagination-list">
+    ${pagesCount.map((pageCount) => (
+      `
+      <li class="s-catalog__pagination-elem" href=>
+        <a>${pageCount}</a>
+      </li>
+      `
+    ))}
+  </ul>
+  </div>
+  <hr />
+  <div class="s-catalog__pagination-count s-catalog__pagination-next">
+  ${resultsPageNumber === pagesCount ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Следующая</a>` : ''}
+</div>
+ `
+}
+
 function createLink(query) {
   searchMoreText.href = `/search-results.html?search=${query}`;
 }
@@ -178,11 +220,15 @@ function handleFillPopup(data) {
   });
 }
 
-function handleFillResults(data) {
-  data.forEach((result) => {
+function handleFillResults(data, pageNumber = resultsPageNumber) {
+  const listData =  data.slice(pageNumber * 10, RESULTS_PAGE_SIZE + pageNumber * 10);
+  resultTemplate.innerHTML = '';
+  listData.forEach((result) => {
     renderFullResult(result);
   });
+  renderPagination(data.length);
 }
+
 
 // Карточка товара
 function getCardData(cardId) {
