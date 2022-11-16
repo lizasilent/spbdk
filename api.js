@@ -146,8 +146,10 @@ function createSearchResultElement(data) {
       <p class="s__item-price">${price}</p>
       <div class="s__item-icon"></div>
     </div>
-    <p class="s__item-availability">В наличии ${remain} шт.</p>
-    <!-- <p class="s__item-availability red">Нет в наличии</p> -->
+    ${ remain > 0 ?
+      ` <p class="s__item-availability">В наличии ${remain} шт.</p>` :
+       `<p class="s__item-availability red">Нет в наличии</p>` }
+
   </div>
 </a>
 </li>
@@ -186,8 +188,8 @@ function getCardData(cardId) {
     method: "GET",
   })
     .then((res) => {
+      console.log("Всё ок я просто туплю", res);
       if (res.ok) {
-        console.log("Всё ок я просто туплю");
         return res.json();
       }
       return Promise.reject(res.statusText);
@@ -283,12 +285,18 @@ function createCard(data) {
       <div class="card__right-template">
         <p>Автор</p>
         <p>${data.data.authorstext}</p>
+        <p>Художник</p>
+        <p>${data.data.ill_text}</p>
+        <p>Переводчик</p>
+        <p>${data.data.tr_text}</p>
         <p>Серия</p>
         <p>${data.data.seriesname}</p>
         <p>Издательство</p>
         <p>${data.data.publishername}</p>
         <p>Год</p>
         <p>${data.data.publishingyear}</p>
+        <p>Переплёт</p>
+        <p>${data.data.bindingtype}</p>
         <p>Кол-во страниц</p>
         <p>${data.data.pagesnum}</p>
         <p>Язык</p>
@@ -352,18 +360,14 @@ function createCard(data) {
 //
 //  <p>Автор</p>
 //                     <p>Николев А.</p>
-//                     <p>Художник</p>
-//                     <p>Алексеева А.</p>
-//                     <p>Переводчик</p>
-//                     <p>Дроздов Д.</p>
+
 //                     <p>Серия</p>
 //                     <p>Путешествия</p>
 //                     <p>Издательство</p>
 //                     <p>Носорог</p>
 //                     <p>Год</p>
 //                     <p>2022</p>
-//                     <p>Переплёт</p>
-//                     <p>Твердый</p>
+//
 //                     <p>Кол-во страниц</p>
 //                     <p>456</p>
 //                     <p>Формат</p>
@@ -374,3 +378,4 @@ function createCard(data) {
 //                     <p>438-934-629-4</p>
 //                     <p>Артикул</p>
 //                     <p>5936075</p>
+//lang

@@ -161,7 +161,7 @@
 /*!*****************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/s/__item-autor/s__item-autor.css ***!
   \*****************************************************************************************************************************************************************/
-.s__item-autor{color:#9a9a9a;font-size:13px;font-style:normal;font-weight:400;line-height:16px;margin:0 0 2px}
+.s__item-autor{color:#9a9a9a;font-size:13px;font-style:normal;font-weight:400;height:35px;line-height:16px;margin:0 0 2px;overflow:hidden}
 /*!*******************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/s/__item-availability/s__item-availability.css ***!
   \*******************************************************************************************************************************************************************************/
@@ -181,7 +181,7 @@
 /*!***************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/s/__item-name/s__item-name.css ***!
   \***************************************************************************************************************************************************************/
-.s__item-name{color:#427e66;font-size:15px;font-style:normal;font-weight:700;line-height:19px;margin:0}
+.s__item-name{color:#427e66;font-size:15px;font-style:normal;font-weight:700;height:40px;line-height:19px;margin:0;overflow:hidden}
 /*!*************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/s/__item-new/s__item-new.css ***!
   \*************************************************************************************************************************************************************/
