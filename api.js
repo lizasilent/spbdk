@@ -1,5 +1,6 @@
 import { parseUrlParam, prepareCardId } from "./src/utils";
 import nopic from "./images/nopicture.png";
+import nopicsmall from "./images/no-pic-small.png";
 
 // Elements
 const searchInput = document.querySelector(".search__input");
@@ -230,13 +231,13 @@ function createCard(data) {
           <div class="swiper-wrapper">
             <div class="swiper-slide slider__photo">
               <img class="slider__photo-img"
-                src="${data.photos ? data.photos[0].photopath : nopic}"
+                src="${data.photos ? data.photos[0].photopath : nopicsmall}"
                 alt=""
               />
             </div>
             <div class="swiper-slide slider__photo">
               <img class="slider__photo-img"
-                src="${data.photos ? data.photos[0].photopath : nopic}"
+                src="${data.photos ? data.photos[0].photopath : nopicsmall}"
                 alt=""
               />
             </div>
