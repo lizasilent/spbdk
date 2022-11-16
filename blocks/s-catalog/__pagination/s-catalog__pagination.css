@@ -21,7 +21,7 @@
   padding: 0;
 }
 
-.s-catalog__pagination-list ul {
+.s-catalog__pagination-list{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,7 +35,7 @@
   padding: 0;
 }
 
-.s-catalog__pagination-list li {
+.s-catalog__pagination-elem {
   margin-right: 20px;
 }
 
