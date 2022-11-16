@@ -122,7 +122,7 @@ function createListElement(data) {
 
 // Вставить элемент списка в разметку
 function renderListElement(data) {
-  searchList.innerHTML = createListElement(data);
+  searchList.insertAdjacentHTML("afterbegin", createListElement(data));
 }
 
 // Создать элемент сетки
@@ -171,6 +171,7 @@ function createLink(query) {
 }
 
 function handleFillPopup(data) {
+  searchList.innerHTML = '';
   let firstItems = data.slice(0, 20);
   firstItems.forEach((dataObject) => {
     renderListElement(dataObject);
@@ -252,7 +253,7 @@ function createCard(data) {
               )) : ""}
           </div>
         </div>
-        <div class="slider__arrow-next"></div>
+        <div class="slider__arrow-next disabled"></div>
       </div>
       <div class="card__main-block">
         <div class="card__main-photo">
