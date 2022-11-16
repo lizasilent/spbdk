@@ -38,9 +38,10 @@ window.onload = () => {
 
   // ID param
   const pageCountParam = parseUrlParam("page");
+  const resultsDataCount = resultsData.length;
   console.log("pageCountParam", pageCountParam);
-  if (pageCountParam > 0) {
-    renderPagination(resultsData.length);
+  if (resultsDataCount > RESULTS_PAGE_SIZE) {
+    renderPagination();
   }
 
   // ID param
@@ -185,20 +186,24 @@ function renderFullResult(data) {
 // Pagination
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   const pagesCount = itemsCount / pageSize;
- return `
+
+  let pageItems;
+  for (let i = 1; i <= pagesCount; i++) {
+    pageItems = pageItems + `
+    <li class="s-catalog__pagination-elem" href=>
+      <a>${i}</a>
+    </li>
+    `
+  }
+
+  return `
 <div class="s-catalog__pagination-count s-catalog__pagination-prev">
   ${resultsPageNumber < 2 ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>` : ''}
   </div>
   <hr />
   <div class="s-catalog__pagination-list">
   <ul class="s-catalog__pagination-list">
-    ${pagesCount.map((pageCount) => (
-      `
-      <li class="s-catalog__pagination-elem" href=>
-        <a>${pageCount}</a>
-      </li>
-      `
-    ))}
+    ${pageItems}
   </ul>
   </div>
   <hr />
