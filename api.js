@@ -34,7 +34,7 @@ window.onload = () => {
   const resultsDataCount = resultsData.length;
   console.log("pageCountParam", pageCountParam);
   if (pageCountParam !== undefined) {
-    resultsPageNumber = pageCountParam;
+    resultsPageNumber = Number(pageCountParam);
   }
   if (resultsDataCount > RESULTS_PAGE_SIZE) {
     renderPagination();
