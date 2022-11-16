@@ -220,10 +220,9 @@ function createCard(data) {
   let remaincron = Number(Math.floor(data.data.remain_cron));
   let id = prepareCardId(data.data.nomen_id);
 
-  if (data.photos) {
     const mainPhoto = data.photos.find((photo) => photo.isfirstphoto === 't');
-    console.log('createCard', mainPhoto);
-  }
+
+    const sliderPhotos = data.photos.find((photo) => photo.isfirstphoto === 'f');
 
 
   return `
@@ -234,25 +233,23 @@ function createCard(data) {
         <div class="slider__arrow-prev disabled"></div>
         <div class="swiper slider__container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide slider__photo">
-              <img class="slider__photo-img"
-                src="${data.photos ? data.photos[0].photopath : nopicsmall}"
-                alt=""
-              />
-            </div>
-            <div class="swiper-slide slider__photo">
-              <img class="slider__photo-img"
-                src="${data.photos ? data.photos[0].photopath : nopicsmall}"
-                alt=""
-              />
-            </div>
+              ${ sliderPhotos.forEach((element) => {
+                `
+                <div class="swiper-slide slider__photo">
+                <img class="slider__photo-img"
+                  src="${data.photos ? element.photopath : nopicsmall}"
+                  alt=""
+                />
+              </div>
+                `
+              })}
           </div>
         </div>
         <div class="slider__arrow-next"></div>
       </div>
       <div class="card__main-block">
         <div class="card__main-photo">
-          <img id="main-photo" src="${data.photos ? data.photos[0].photopath : nopic}" alt=""></div>
+          <img id="main-photo" src="${data.photos ? mainPhoto.photopath : nopic}" alt=""></div>
       </div>
     </div>
     <div class="card__text-block">
