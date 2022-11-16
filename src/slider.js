@@ -14,11 +14,20 @@ const slider = new Swiper('.swiper', {
   centerInsufficientSlides: true,
   slidesPerView: 3,
   navigation: false,
+  on: {
+    init: function () {
+      showArrow();
+    },
+    update: function () {
+      showArrow();
+    },
+  },
 });
 
 
 slider.on('slideChange', function () {
   console.log('slide changed');
+  showArrow();
 });
 
 
@@ -36,10 +45,8 @@ if (sliderPrev) {
 }
 
 if (sliderNext) {
-
   sliderNext.addEventListener('click', handleSlideNext);
   sliderNext.addEventListener('click', checkArrow);
-  showArrow();
 }
 
 const sliderPhotos = document.querySelectorAll(".slider__photo-img");
