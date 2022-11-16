@@ -222,7 +222,7 @@ function createCard(data) {
 
     const mainPhoto = data.photos.find((photo) => photo.isfirstphoto === 't');
 
-    const sliderPhotos = data.photos.find((photo) => photo.isfirstphoto === 'f');
+    const sliderPhotos = data.photos.filter((photo) => photo.isfirstphoto === 'f');
 
 
   return `
@@ -233,7 +233,8 @@ function createCard(data) {
         <div class="slider__arrow-prev disabled"></div>
         <div class="swiper slider__container">
           <div class="swiper-wrapper">
-              ${ sliderPhotos.forEach((element) => {
+
+              ${sliderPhotos.forEach((element) => (
                 `
                 <div class="swiper-slide slider__photo">
                 <img class="slider__photo-img"
@@ -242,7 +243,7 @@ function createCard(data) {
                 />
               </div>
                 `
-              })}
+              ))}
           </div>
         </div>
         <div class="slider__arrow-next"></div>
