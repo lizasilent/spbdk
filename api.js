@@ -189,7 +189,7 @@ function renderFullResult(data) {
 
 // Pagination
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
-  const pagesCount = itemsCount / pageSize;
+  const pagesCount = Math.ceil(itemsCount / pageSize);
 
   let pageItems = "";
   for (let i = 1; i <= pagesCount; i++) {
