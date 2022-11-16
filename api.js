@@ -24,7 +24,6 @@ window.onload = () => {
 
   // Search param
   const searchQuery = parseUrlParam("search");
-  console.log("searchQuery", searchQuery);
   if (searchQuery && searchInpFull) {
     searchInpFull.value = searchQuery;
     searchInpFull.dispatchEvent(new Event("input", { bubbles: true }));
@@ -123,6 +122,7 @@ function createListElement(data) {
 
 // Вставить элемент списка в разметку
 function renderListElement(data) {
+  searchList.innerHTML = "";
   searchList.insertAdjacentHTML("afterbegin", createListElement(data));
 }
 
@@ -232,8 +232,6 @@ function createCard(data) {
   }
 
 
-
-
   return `
   <div class="card" id="${id}">
   <div class="card__left-menu">
@@ -279,8 +277,9 @@ function createCard(data) {
     <div class="card__right-header">${data.data.description}</div>
     <div class="card-right__main">
       <div class="card__right-template">
-        <p>Автор</p>
-        <p>${data.data.authorstext}</p>
+      ${data.data.authorstext === null ?  "" :
+      `<p>Автор</p>
+      <p>${data.data.authorstext}</p>`}
         ${data.data.ill_text === null ?  "" :
         `<p>Художник</p>
         <p>${data.data.ill_text}</p>`}
