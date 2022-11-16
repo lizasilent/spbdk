@@ -223,6 +223,7 @@ function createCard(data) {
     const mainPhoto = data.photos.find((photo) => photo.isfirstphoto === 't');
 
     const sliderPhotos = data.photos.filter((photo) => photo.isfirstphoto === 'f');
+    console.log(sliderPhotos);
 
 
   return `
