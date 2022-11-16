@@ -189,36 +189,38 @@ function renderFullResult(data) {
 
 // Pagination
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
-  const pagesCount = Math.ceil(itemsCount / pageSize);
+  if (resultsSearchPagination) {
+    const pagesCount = Math.ceil(itemsCount / pageSize);
+    const prevPageNumber = resultsPageNumber - 1;
+    const nextPageNumber = resultsPageNumber + 1;
 
-  let pageItems = "";
-  for (let i = 1; i <= pagesCount; i++) {
-    pageItems = pageItems + `
-    <li class="s-catalog__pagination-elem">
-      <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i}">${i}</a>
-    </li>
-    `
-  }
+    let pageItems = "";
+    for (let i = 1; i <= pagesCount; i++) {
+      pageItems = pageItems + `
+      <li class="s-catalog__pagination-elem">
+        <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i}">${i}</a>
+      </li>
+      `
+    }
 
-  console.log("renderpag", itemsCount, resultsPageNumber, pagesCount);
+    console.log("renderPagination", itemsCount, resultsPageNumber, pagesCount);
 
-  const paginationContent =  `
-<div class="s-catalog__pagination-count s-catalog__pagination-prev">
-  ${resultsPageNumber <= 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber - 1}">Предыдущая</a>`}
+    const paginationContent =  `
+  <div class="s-catalog__pagination-count s-catalog__pagination-prev">
+    ${resultsPageNumber <= 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${prevPageNumber}">Предыдущая</a>`}
+    </div>
+    <hr />
+    <div class="s-catalog__pagination-block">
+    <ul class="s-catalog__pagination-list">
+      ${pageItems}
+    </ul>
+    </div>
+    <hr />
+    <div class="s-catalog__pagination-count s-catalog__pagination-next">
+    ${resultsPageNumber >= pagesCount ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${nextPageNumber}">Следующая</a>` }
   </div>
-  <hr />
-  <div class="s-catalog__pagination-block">
-  <ul class="s-catalog__pagination-list">
-    ${pageItems}
-  </ul>
-  </div>
-  <hr />
-  <div class="s-catalog__pagination-count s-catalog__pagination-next">
-  ${resultsPageNumber === pagesCount ? "" : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber + 1}">Следующая</a>` }
-</div>
- `
+  `
 
- if (resultsSearchPagination) {
   resultsSearchPagination.innerHTML = paginationContent;
  }
 }
