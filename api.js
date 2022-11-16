@@ -202,7 +202,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   ${resultsPageNumber === 0 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>`}
   </div>
   <hr />
-  <div class="s-catalog__pagination-list">
+  <div class="s-catalog__pagination-block">
   <ul class="s-catalog__pagination-list">
     ${pageItems}
   </ul>
