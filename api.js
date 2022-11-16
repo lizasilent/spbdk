@@ -188,11 +188,11 @@ function renderFullResult(data) {
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   const pagesCount = itemsCount / pageSize;
 
-  let pageItems;
+  let pageItems = "";
   for (let i = 1; i <= pagesCount; i++) {
     pageItems = pageItems + `
     <li class="s-catalog__pagination-elem">
-      <a class="s-catalog__pagination-elem" href="">${i}</a>
+      <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i}">${i}</a>
     </li>
     `
   }
@@ -209,7 +209,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   </div>
   <hr />
   <div class="s-catalog__pagination-count s-catalog__pagination-next">
-  ${resultsPageNumber === pagesCount ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Следующая</a>` : ''}
+  ${resultsPageNumber === pagesCount ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${pagesCount - 1}">Следующая</a>` : ''}
 </div>
  `
 
