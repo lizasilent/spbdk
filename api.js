@@ -235,7 +235,7 @@ function createCard(data) {
         <div class="swiper slider__container">
           <div class="swiper-wrapper">
 
-              ${sliderPhotos.forEach((element) => (
+              ${sliderPhotos.map((element) => (
                 `
                 <div class="swiper-slide slider__photo">
                 <img class="slider__photo-img"
