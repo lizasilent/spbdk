@@ -188,12 +188,12 @@ function renderFullResult(data) {
 // Pagination
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   if (resultsSearchPagination) {
-    const pagesCount = Math.ceil(itemsCount / pageSize);
+    const pagesCount = Math.floor(itemsCount / pageSize);
     const prevPageNumber = resultsPageNumber - 1;
     const nextPageNumber = resultsPageNumber + 1;
     const pageItems = paginationGenerator(resultsPageNumber, pagesCount);
 
-    console.log("renderPagination", itemsCount, resultsPageNumber, pagesCount);
+    console.log("renderPagination", itemsCount, resultsPageNumber, pagesCount, pageItems);
 
     const paginationContent =  `
   <div class="s-catalog__pagination-count s-catalog__pagination-prev">
@@ -202,7 +202,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
     <hr />
     <div class="s-catalog__pagination-block">
     <ul class="s-catalog__pagination-list">
-      ${pageItems.map((pageItem) => (
+      ${pageItems.forEach((pageItem) => (
         `
         <li class="s-catalog__pagination-elem">
           <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${pageItem}">${pageItem}</a>
