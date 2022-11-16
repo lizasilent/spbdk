@@ -192,7 +192,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   for (let i = 1; i <= pagesCount; i++) {
     pageItems = pageItems + `
     <li class="s-catalog__pagination-elem">
-      <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i}">${i}</a>
+      <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${i - 1}">${i}</a>
     </li>
     `
   }
@@ -230,8 +230,8 @@ function handleFillPopup(data) {
   });
 }
 
-function handleFillResults(data, pageNumber = resultsPageNumber) {
-  const listData =  data.slice(pageNumber * 10, RESULTS_PAGE_SIZE + pageNumber * 10);
+function handleFillResults(data) {
+  const listData =  data.slice(resultsPageNumber * 10, RESULTS_PAGE_SIZE + resultsPageNumber * 10);
   resultTemplate.innerHTML = '';
   listData.forEach((result) => {
     renderFullResult(result);
