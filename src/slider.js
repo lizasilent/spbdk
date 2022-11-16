@@ -42,9 +42,11 @@ if (sliderNext) {
   showArrow();
 }
 
+const sliderPhotos = document.querySelectorAll(".slider__photo-img");
+const sliderPhotoDivs = document.querySelectorAll(".slider__photo");
 
 function showArrow() {
-  if ( (slider.slides.length) < 4 ) {
+  if ( (sliderPhotoDivs.length) < 4 ) {
     sliderNext.classList.add("disabled");
   }
 }
@@ -60,7 +62,6 @@ function checkArrow() {
   }
 }
 
-const sliderPhotos = document.querySelectorAll(".slider__photo-img");
 const mainPhoto = document.getElementById("main-photo");
 
 
