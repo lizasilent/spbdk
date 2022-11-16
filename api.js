@@ -220,6 +220,11 @@ function createCard(data) {
   let remaincron = Number(Math.floor(data.data.remain_cron));
   let id = prepareCardId(data.data.nomen_id);
 
+  if (data.photos) {
+    const mainPhoto = data.photos.find((photo) => photo.isfirstphoto === 't');
+    console.log('createCard', mainPhoto);
+  }
+
 
   return `
   <div class="card" id="${id}">
@@ -318,7 +323,7 @@ function createCard(data) {
 
         ${
           remaindk > 0
-            ? `<p class="green"> В наличии ${remaindk} шт. / 2 этаж, секция В, полка 2
+            ? `<p class="green"> В наличии ${remaindk} шт.
         </p>`
             : `<p class="red">Нет в наличии</p>`
         }
@@ -328,7 +333,7 @@ function createCard(data) {
         ${
           remainlit > 0
             ? `<p class="green">
-        В наличии ${remainlit} шт. / 2 этаж, секция В, полка 2
+        В наличии ${remainlit} шт.
       </p>`
             : `<p class="red">Нет в наличии</p>`
         }
@@ -339,7 +344,7 @@ function createCard(data) {
         ${
           remaincron > 0
             ? ` <p class="green">
-          В наличии ${remaincron} шт. / 1 этаж, секция А, полка 4
+          В наличии ${remaincron} шт.
         </p>`
             : `<p class="red">Нет в наличии</p>`
         }
@@ -349,37 +354,3 @@ function createCard(data) {
   </div>
 </div>`;
 }
-
-// const searchItem = document.querySelector(".search__item");
-// const sItem = document.querySelector(".s__item");
-
-// if (searchItem) {
-//   searchItem.addEventListener("click", getCardData);
-// }
-
-// if (sItem) {
-//   sItem.addEventListener("click", getCardData);
-// }
-
-//
-//  <p>Автор</p>
-//                     <p>Николев А.</p>
-
-//                     <p>Серия</p>
-//                     <p>Путешествия</p>
-//                     <p>Издательство</p>
-//                     <p>Носорог</p>
-//                     <p>Год</p>
-//                     <p>2022</p>
-//
-//                     <p>Кол-во страниц</p>
-//                     <p>456</p>
-//                     <p>Формат</p>
-//                     <p>170/240 мм</p>
-//                     <p>Язык</p>
-//                     <p>Русский</p>
-//                     <p>ISBN</p>
-//                     <p>438-934-629-4</p>
-//                     <p>Артикул</p>
-//                     <p>5936075</p>
-//lang
