@@ -43,10 +43,10 @@ if (sliderNext) {
 }
 
 const sliderPhotos = document.querySelectorAll(".slider__photo-img");
-const sliderPhotoDivs = document.querySelectorAll(".slider__photo");
+// const sliderPhotoDivs = document.querySelectorAll(".slider__photo");
 
 function showArrow() {
-  if ( (sliderPhotoDivs.length) < 4 ) {
+  if ( (slider.slides.length) < 4 ) {
     sliderNext.classList.add("disabled");
   }
 }

@@ -1,6 +1,7 @@
 import { parseUrlParam, prepareCardId } from "./src/utils";
 import nopic from "./images/nopicture.png";
 import nopicsmall from "./images/no-pic-small.png";
+import slider from "./src/slider";
 
 // Elements
 const searchInput = document.querySelector(".search__input");
@@ -210,6 +211,7 @@ function getCardData(cardId) {
 function renderCardPage(data) {
   if (cardPage) {
     cardPage.innerHTML = createCard(data);
+    slider.update();
   }
 }
 
