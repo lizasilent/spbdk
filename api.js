@@ -23,10 +23,10 @@ const resultsSearchPagination = document.querySelector(".s-catalog__pagination")
 window.onload = () => {
   // Listeners
   if (searchInput) {
-    searchInput.addEventListener("input", debounce(handlePopup, 2000));
+    searchInput.addEventListener("input", debounce(handlePopup, 1000));
   }
   if (searchInpFull) {
-    searchInpFull.addEventListener("input", debounce(handleResults, 2000));
+    searchInpFull.addEventListener("input", debounce(handleResults, 1000));
   }
   // Search param
   const searchQuery = parseUrlParam("search");
