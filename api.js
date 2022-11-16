@@ -202,7 +202,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
 
   const paginationContent =  `
 <div class="s-catalog__pagination-count s-catalog__pagination-prev">
-  ${resultsPageNumber <= 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber}">Предыдущая</a>`}
+  ${resultsPageNumber <= 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber - 1}">Предыдущая</a>`}
   </div>
   <hr />
   <div class="s-catalog__pagination-block">
@@ -212,7 +212,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   </div>
   <hr />
   <div class="s-catalog__pagination-count s-catalog__pagination-next">
-  ${resultsPageNumber === pagesCount ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${pagesCount - 1}">Следующая</a>` : ''}
+  ${resultsPageNumber === pagesCount ? `<a href="/search-results.html?search=${resultsSearchQuery}&page=${resultsPageNumber + 1}">Следующая</a>` : ''}
 </div>
  `
 
