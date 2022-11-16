@@ -229,34 +229,18 @@ function createCard(data) {
           <div class="swiper-wrapper">
             <div class="swiper-slide slider__photo">
               <img class="slider__photo-img"
-                src="${data.photos[0].photopath}"
+                src="${data.photos[0].photopath || nopic}"
                 alt=""
               />
             </div>
             <div class="swiper-slide slider__photo">
               <img class="slider__photo-img"
-                src="${data.photos[1].photopath}"
+                src="${data.photos[1].photopath || nopic}"
                 alt=""
               />
             </div>
-            <div class="swiper-slide slider__photo">
-              <img class="slider__photo-img"
-                src="https://picsum.photos/id/233/112/84"
-                alt=""
-              />
-            </div>
-            <div class="swiper-slide slider__photo">
-              <img class="slider__photo-img"
-                src="https://picsum.photos/id/234/112/84"
-                alt=""
-              />
-            </div>
-            <div class="swiper-slide slider__photo">
-              <img class="slider__photo-img"
-                src="https://picsum.photos/id/235/112/84"
-                alt=""
-              />
-            </div>
+
+
           </div>
         </div>
         <div class="slider__arrow-next"></div>
