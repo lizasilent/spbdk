@@ -247,7 +247,7 @@ function createCard(data) {
       </div>
       <div class="card__main-block">
         <div class="card__main-photo">
-          <img id="main-photo" src="${data.photos[0].photopath}" alt=""></div>
+          <img id="main-photo" src="${data.photos[0].photopath  || nopic}" alt=""></div>
       </div>
     </div>
     <div class="card__text-block">
@@ -259,7 +259,7 @@ function createCard(data) {
         </div>
       </div>
       <p class="card__text-block-description">
-       ${data.data.annotation}
+       ${data.data.annotation  || ""}
       </p>
     </div>
   </div>
@@ -274,21 +274,21 @@ function createCard(data) {
         <p>Переводчик</p>
         <p>${data.data.tr_text}</p>
         <p>Серия</p>
-        <p>${data.data.seriesname}</p>
+        <p>${data.data.seriesname  || ""}</p>
         <p>Издательство</p>
-        <p>${data.data.publishername}</p>
+        <p>${data.data.publishername  || ""}</p>
         <p>Год</p>
-        <p>${data.data.publishingyear}</p>
+        <p>${data.data.publishingyear  || ""}</p>
         <p>Переплёт</p>
-        <p>${data.data.bindingtype}</p>
+        <p>${data.data.bindingtype  || ""}</p>
         <p>Кол-во страниц</p>
-        <p>${data.data.pagesnum}</p>
+        <p>${data.data.pagesnum || ""}</p>
         <p>Язык</p>
-        <p>Русский</p>
+        <p>${data.data.lang || ""}</p>
         <p>ISBN</p>
-        <p>${data.data.isbn}</p>
+        <p>${data.data.isbn  || ""}</p>
         <p>Артикул</p>
-        <p>${data.data.article}</p>
+        <p>${data.data.article  || ""}</p>
       </div>
     </div>
     <div class="card__right-bottom">
