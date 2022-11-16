@@ -243,7 +243,7 @@ function createCard(data) {
         <div class="swiper slider__container">
           <div class="swiper-wrapper">
 
-              ${sliderPhotos.map((element) => (
+              ${ sliderPhotos ?  sliderPhotos.map((element) => (
                 `
                 <div class="swiper-slide slider__photo">
                 <img class="slider__photo-img"
@@ -252,7 +252,7 @@ function createCard(data) {
                 />
               </div>
                 `
-              ))}
+              )) : ""}
           </div>
         </div>
         <div class="slider__arrow-next"></div>
