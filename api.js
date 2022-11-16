@@ -28,24 +28,23 @@ window.onload = () => {
   if (searchInpFull) {
     searchInpFull.addEventListener("input", handleResults);
   }
-
-  // Page param
-  const pageCountParam = parseUrlParam("page");
-  const resultsDataCount = resultsData.length;
-  console.log("pageCountParam", pageCountParam);
-  if (pageCountParam !== undefined) {
-    resultsPageNumber = Number(pageCountParam);
-  }
-  if (resultsDataCount > RESULTS_PAGE_SIZE) {
-    renderPagination();
-  }
-
   // Search param
   const searchQuery = parseUrlParam("search");
   if (searchQuery && searchInpFull) {
     searchInpFull.value = searchQuery;
     resultsSearchQuery = searchQuery;
     searchInpFull.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+
+  // Page param
+  const pageCountParam = parseUrlParam("page");
+  const resultsDataCount = resultsData.length;
+  console.log("pageCountParam", pageCountParam);
+  if (pageCountParam) {
+    resultsPageNumber = Number(pageCountParam);
+  }
+  if (resultsDataCount > RESULTS_PAGE_SIZE) {
+    renderPagination();
   }
 
   // ID param
@@ -64,7 +63,6 @@ function getDataByQuery(element, successCallback) {
   })
     .then((res) => {
       if (res.ok) {
-        console.log("Всё ок я просто туплю");
         return res.json();
       }
       return Promise.reject(res.statusText);
