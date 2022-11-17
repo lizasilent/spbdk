@@ -25,6 +25,12 @@ window.onload = () => {
   // Listeners
   if (searchInput) {
     searchInput.addEventListener("input", handlePopup);
+    searchInput.addEventListener("keypress", (event) => {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        window.location.href = generateSearchResultsHref(searchInput.value);
+      }
+    });
   }
   if (searchInpFull) {
     searchInpFull.addEventListener("input", debounce(handleResults, 1000));
@@ -223,9 +229,13 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
  }
 }
 
+function generateSearchResultsHref(query) {
+  return `/search-results.html?search=${query}`;
+}
+
 function createLink(query) {
-  searchMoreText.href = `/search-results.html?search=${query}`;
-  searchMoreLink.href = `/search-results.html?search=${query}`;
+  searchMoreText.href = generateSearchResultsHref(query);
+  searchMoreLink.href = generateSearchResultsHref(query);
 }
 
 function handleFillPopup(data) {
