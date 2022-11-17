@@ -17,17 +17,17 @@ const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
 const searchMoreText = document.querySelector(".search__more-text");
-// const searchMoreLink = document.querySelector(".search__more-link");
+const searchMoreLink = document.querySelector(".search__more-link");
 const cardPage = document.querySelector(".card-page");
 const resultsSearchPagination = document.querySelector(".s-catalog__pagination");
 
 window.onload = () => {
   // Listeners
   if (searchInput) {
-    searchInput.addEventListener("input", debounce(handlePopup, 500));
+    searchInput.addEventListener("input", handlePopup);
   }
   if (searchInpFull) {
-    searchInpFull.addEventListener("input", debounce(handleResults, 500));
+    searchInpFull.addEventListener("input", debounce(handleResults, 1000));
   }
   // Search param
   const searchQuery = parseUrlParam("search");
@@ -100,7 +100,7 @@ function handlePopup() {
   createLink(searchInput.value);
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
-    getDataByQuery(searchInput, handleFillPopup);
+    debounce(getDataByQuery(searchInput, handleFillPopup), 1000);
   } else {
     searchForm.classList.add("disabled");
   }
@@ -225,7 +225,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
 
 function createLink(query) {
   searchMoreText.href = `/search-results.html?search=${query}`;
-  // searchMoreLink.href = `/search-results.html?search=${query}`;
+  searchMoreLink.href = `/search-results.html?search=${query}`;
 }
 
 function handleFillPopup(data) {
