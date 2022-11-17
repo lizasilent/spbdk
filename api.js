@@ -93,14 +93,11 @@ function showSpinner(isLoading) {
   }
 }
 
-if (searchInput) {
-  createLink(searchInput.value);
-}
 
 
 // Открыть попап
 function handlePopup() {
-
+  createLink(searchInput.value);
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
     getDataByQuery(searchInput, handleFillPopup);
