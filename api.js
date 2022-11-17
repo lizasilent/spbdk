@@ -123,7 +123,9 @@ function createListElement(data) {
   let id = prepareCardId(data.nomen_id);
 
   return `
-<li class="search__item" id="${id}">
+
+  ${data ? `
+  <li class="search__item" id="${id}">
 <a class="search__item" href="/card.html?id=${id}">
   <img class="search__item-image" src="${data.photopath || nopic}" alt=${
     data.authorstext
@@ -143,6 +145,8 @@ function createListElement(data) {
   </div>
 </a>
 </li>
+  ` :
+`<div class="search__no-results">Нет результатов по запросу</div>`}
 `;
 }
 
