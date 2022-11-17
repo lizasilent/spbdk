@@ -16,7 +16,7 @@ const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
-const searchMoreText = document.querySelector(".search__more");
+const searchMoreText = document.querySelector(".search__more-text");
 const cardPage = document.querySelector(".card-page");
 const resultsSearchPagination = document.querySelector(".s-catalog__pagination");
 
