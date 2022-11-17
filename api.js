@@ -17,7 +17,7 @@ const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
 const searchMoreText = document.querySelector(".search__more-text");
-const searchMoreLink = document.querySelector(".search__more-link");
+// const searchMoreLink = document.querySelector(".search__more-link");
 const cardPage = document.querySelector(".card-page");
 const resultsSearchPagination = document.querySelector(".s-catalog__pagination");
 
@@ -228,7 +228,7 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
 
 function createLink(query) {
   searchMoreText.href = `/search-results.html?search=${query}`;
-  searchMoreLink.href = `/search-results.html?search=${query}`;
+  // searchMoreLink.href = `/search-results.html?search=${query}`;
 }
 
 function handleFillPopup(data) {
