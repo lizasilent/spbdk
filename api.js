@@ -16,7 +16,7 @@ const searchForm = document.querySelector(".search__results");
 const loader = document.querySelector(".loader");
 const resultTemplate = document.querySelector(".s-catalog__template");
 const searchInpFull = document.querySelector(".search__input-full");
-const searchMoreText = document.querySelector(".search__more-text");
+const searchMoreText = document.querySelector(".search__more");
 const cardPage = document.querySelector(".card-page");
 const resultsSearchPagination = document.querySelector(".s-catalog__pagination");
 
@@ -24,6 +24,7 @@ window.onload = () => {
   // Listeners
   if (searchInput) {
     searchInput.addEventListener("input", debounce(handlePopup, 1000));
+    searchInput.addEventListener("submit", handlePopup);
   }
   if (searchInpFull) {
     searchInpFull.addEventListener("input", debounce(handleResults, 1000));
