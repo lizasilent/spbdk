@@ -24,11 +24,10 @@ const resultsSearchPagination = document.querySelector(".s-catalog__pagination")
 window.onload = () => {
   // Listeners
   if (searchInput) {
-    searchInput.addEventListener("input", debounce(handlePopup, 1000));
-    searchInput.addEventListener("submit", handlePopup);
+    searchInput.addEventListener("input", debounce(handlePopup, 500));
   }
   if (searchInpFull) {
-    searchInpFull.addEventListener("input", debounce(handleResults, 1000));
+    searchInpFull.addEventListener("input", debounce(handleResults, 500));
   }
   // Search param
   const searchQuery = parseUrlParam("search");
@@ -94,9 +93,13 @@ function showSpinner(isLoading) {
   }
 }
 
+if (searchInput) {
+  createLink(searchInput.value);
+}
+
+
 // Открыть попап
 function handlePopup() {
-  createLink(searchInput.value);
 
   if (searchInput.value.length > 2) {
     searchForm.classList.remove("disabled");
