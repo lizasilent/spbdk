@@ -109,7 +109,7 @@
 /*!***********************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/card/__text-block-description/card__text-block-description.css ***!
   \***********************************************************************************************************************************************************************************************/
-.card__text-block-description{margin-top:40px}.card__text-block-description,.card__text-block-description p{font-size:15px;font-weight:400;letter-spacing:0;line-height:19px;text-align:left}.card__text-block-description p{margin:0}
+.card__text-block-description{font-size:15px;font-weight:400;letter-spacing:0;line-height:19px;margin-top:40px;text-align:left}
 /*!*******************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/card/__text-block-tab/card__text-block-tab.css ***!
   \*******************************************************************************************************************************************************************************/
