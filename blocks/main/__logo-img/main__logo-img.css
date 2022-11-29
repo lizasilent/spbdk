@@ -1,7 +1,8 @@
 .main__logo-img {
   background: url(../../../images/dk-logo.png) no-repeat;
   background-size: contain;
+  background-position: center;
   height: 180px;
-  max-width: 100%;
+  max-width: 1174px;
   margin: 0 auto;
 }

@@ -4,8 +4,16 @@
 @import url(./__phone/header__phone.css);
 
 .header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: right;
+  max-width: 1174px;
+
+}
+
+.header__inner {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: right;
-  padding: 0 15%;
 }

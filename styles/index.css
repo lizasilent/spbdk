@@ -31,12 +31,27 @@ a:hover {
 
 
 
-
-
 html,
 body {
   scrollbar-color: #c4c4c4 #eeeeee; /* «цвет ползунка» «цвет полосы скроллбара» */
   scrollbar-width: thin; /* толщина */
 }
 
+.main-info {
+width: 70vw;
+position: relative;
+box-sizing: border-box;
+padding: 0 2%;
+}
+
+
+.banner-new {
+  background: url(../images/174.png) no-repeat;
+  background-size: contain;
+  justify-content: right;
+  min-height: 100vh;
+  width: 30vw;
+  border: 1px solid black;
+  position: relative;
+}
 
