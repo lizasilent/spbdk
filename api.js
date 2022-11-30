@@ -4,7 +4,7 @@ import nopicsmall from "./images/no-pic-small.png";
 import slider from "./src/slider";
 
 // Constants
-const RESULTS_PAGE_SIZE = 10;
+const RESULTS_PAGE_SIZE = 20;
 let resultsData = [];
 let resultsSearchQuery = '';
 let resultsPageNumber = 1;
