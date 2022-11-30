@@ -37,7 +37,7 @@
 /*!**************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/header/header.css ***!
   \**************************************************************************************************************************************************/
-.header{margin:0 auto;max-width:1174px;padding:0 5%}.header,.header__inner{display:flex;justify-content:right}.header__inner{flex-direction:row;width:100%}
+.header{margin:0 auto;max-width:1174px}.header,.header__inner{display:flex;justify-content:right}.header__inner{flex-direction:row;width:100%}
 /*!*******************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/main/__logo-img/main__logo-img.css ***!
   \*******************************************************************************************************************************************************************/
@@ -61,7 +61,7 @@
 /*!********************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/card-page/card-page.css ***!
   \********************************************************************************************************************************************************/
-.card-page{background-color:#fff;min-height:1078px;padding:73px 12% 80px}
+.card-page{background-color:#fff;min-height:1078px;padding:73px 5% 80px}
 /*!*********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/card/__left-menu/card__left-menu.css ***!
   \*********************************************************************************************************************************************************************/
@@ -157,7 +157,7 @@
 /*!********************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/s-catalog/s-catalog.css ***!
   \********************************************************************************************************************************************************/
-.s-catalog{background-color:#fff;height:1078px;padding:73px 12% 80px}
+.s-catalog{background-color:#fff;min-height:1078px;padding:73px 5% 80px}
 /*!*****************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/s/__item-autor/s__item-autor.css ***!
   \*****************************************************************************************************************************************************************/
@@ -201,7 +201,7 @@
 /*!*****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/s/__item/s__item.css ***!
   \*****************************************************************************************************************************************************/
-.s__item a{align-items:center;color:#000;display:flex;flex-direction:column;margin-bottom:90px;padding:15px}
+.s__item a{align-items:center;color:#000;display:flex;flex-direction:column;margin-bottom:60px;padding:15px}
 /*!*****************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/card/_big-font/card_big-font.css ***!
   \*****************************************************************************************************************************************************************/
