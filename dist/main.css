@@ -9,7 +9,7 @@
 /*!*****************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/page/__content/page__content.css ***!
   \*****************************************************************************************************************************************************************/
-.page__content{display:flex;flex-direction:row;justify-content:center;margin:0 auto;min-height:100vh;overflow:hidden}
+.page__content{display:flex;flex-direction:row;justify-content:center;margin:0 auto;overflow:hidden}
 /*!**********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./blocks/page/page.css ***!
   \**********************************************************************************************************************************************/
@@ -325,7 +325,7 @@
 /*!******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./styles/index.css ***!
   \******************************************************************************************************************************************/
-*{box-sizing:border-box}a{cursor:pointer;text-decoration:none}a:hover{opacity:.5}body,html{scrollbar-color:#c4c4c4 #eee;scrollbar-width:thin}.main-info{box-sizing:border-box;width:70%}.banner-new,.main-info{min-height:100%;position:relative}.banner-new{background:url(f4643fde9fff259d0721.png) no-repeat;background-color:#427e66;background-position:100% 0;background-size:contain;max-width:579px;width:30%}
+*{box-sizing:border-box}a{cursor:pointer;text-decoration:none}a:hover{opacity:.5}body,html{scrollbar-color:#c4c4c4 #eee;scrollbar-width:thin}.main-info{box-sizing:border-box;min-height:100%;position:relative;width:70%}.banner-new{background:url(f4643fde9fff259d0721.png) no-repeat;background-color:#427e66;background-position:100% 0;background-size:contain;max-width:579px;min-height:1078px;position:relative;width:30%}
 /*!************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/swiper/swiper.min.css ***!
   \************************************************************************************************************************************************************/
