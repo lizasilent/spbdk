@@ -15,3 +15,8 @@
   padding: 73px 5% 80px;
   min-height: 1078px;
 }
+
+.s-catalog__main {
+  max-height: 980px;
+  overflow-y: auto;
+}
