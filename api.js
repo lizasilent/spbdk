@@ -247,7 +247,7 @@ function handleFillPopup(data) {
 }
 
 function handleFillResults(data) {
-  const listData =  data.slice(resultsPageNumber * 10, RESULTS_PAGE_SIZE + resultsPageNumber * 10);
+  const listData =  data.slice(resultsPageNumber * 20, RESULTS_PAGE_SIZE + resultsPageNumber * 20);
   resultTemplate.innerHTML = '';
   listData.forEach((result) => {
     renderFullResult(result);
