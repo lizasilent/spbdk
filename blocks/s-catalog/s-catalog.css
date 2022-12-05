@@ -8,20 +8,34 @@
 @import url(./__search/s-catalog__search.css);
 
 
-
-
 .s-catalog {
   background-color: #ffffff;
   padding: 73px 5% 80px;
   min-height: 1078px;
 }
 
-/* .s-catalog__main {
 
-} */
 
 .s-catalog__main-wrapper
 {
   max-height: 800px;
   overflow-y: auto;
+  padding-right: 29px;
+}
+
+/* полоса прокрутки (скроллбар) */
+.s-catalog__main-wrapper::-webkit-scrollbar {
+  width: 6px; /* ширина для вертикального скролла */
+  background-color: #eeeeee;
+  border-radius: 20px;
+}
+
+/* ползунок скроллбара */
+.s-catalog__main-wrapper::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 20px;
+}
+
+.s-catalog__main-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #427e66;
 }
