@@ -219,11 +219,6 @@ function createSearchResultElement(data) {
 `;
 }
 
-// function renderFullResult(data) {
-//   if (resultTemplate) {
-//     resultTemplate.innerHTML = createSearchResultElement(data);
-//   }
-// }
 
 // Pagination
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
@@ -289,6 +284,7 @@ function createLink(query) {
 
 function handleFillPopup(data) {
   searchList.innerHTML = "";
+
   let firstItems = data.slice(0, 20);
   firstItems.forEach((dataObject) => {
     renderListElement(dataObject);
@@ -298,13 +294,15 @@ function handleFillPopup(data) {
 function handleFillResults(data) {
   console.log("handleFillResults", data);
 
-  const listData = data.slice(
+  resultTemplate.innerHTML = "";
+
+  let listData = data.slice(
     resultsPageNumber * 20,
     RESULTS_PAGE_SIZE + resultsPageNumber * 20
   );
 
-
-  resultTemplate.innerHTML = "";
+  console.log(resultsPageNumber * 20);
+  console.log(RESULTS_PAGE_SIZE + resultsPageNumber * 20);
 
   if (resultTemplate) {
 
