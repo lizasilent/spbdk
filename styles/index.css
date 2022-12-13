@@ -42,6 +42,8 @@ position: relative;
 width: 70%;
 box-sizing: border-box;
 min-height: 100%;
+padding-top: 70px;
+padding-left: 20px;
 }
 
 
