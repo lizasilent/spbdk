@@ -76,7 +76,6 @@ window.onload = () => {
   // Page param
   const pageCountParam = parseUrlParam("page");
   const resultsDataCount = resultsData.length;
-  console.log("pageCountParam", pageCountParam);
   if (pageCountParam) {
     resultsPageNumber = Number(pageCountParam);
   }
@@ -86,7 +85,6 @@ window.onload = () => {
 
   // ID param
   const cardIdParam = parseUrlParam("id");
-  console.log("cardIdParam", cardIdParam);
   if (cardIdParam) {
     getCardData(cardIdParam);
   }
@@ -224,10 +222,7 @@ function createSearchResultElement(data) {
 
 function renderFullResult(data) {
   if (resultTemplate) {
-    resultTemplate.insertAdjacentHTML(
-      "afterbegin",
-      createSearchResultElement(data)
-    );
+    resultTemplate.innerHTML = createSearchResultElement(data);
   }
 }
 
