@@ -190,7 +190,6 @@ function renderListElement(data) {
 
 // Создать элемент сетки
 function createSearchResultElement(data) {
-  // createCardLink(id);
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
   let id = prepareCardId(data.nomen_id);
@@ -220,11 +219,11 @@ function createSearchResultElement(data) {
 `;
 }
 
-function renderFullResult(data) {
-  if (resultTemplate) {
-    resultTemplate.innerHTML = createSearchResultElement(data);
-  }
-}
+// function renderFullResult(data) {
+//   if (resultTemplate) {
+//     resultTemplate.innerHTML = createSearchResultElement(data);
+//   }
+// }
 
 // Pagination
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
@@ -303,10 +302,22 @@ function handleFillResults(data) {
     resultsPageNumber * 20,
     RESULTS_PAGE_SIZE + resultsPageNumber * 20
   );
+
+
   resultTemplate.innerHTML = "";
-  listData.forEach((result) => {
-    renderFullResult(result);
-  });
+
+  if (resultTemplate) {
+
+    let newResults = "";
+
+    listData.forEach((result) => {
+      newResults = newResults + createSearchResultElement(result);
+
+  })
+
+  resultTemplate.innerHTML = newResults
+  }
+
   renderPagination(data.length);
 }
 
