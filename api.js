@@ -297,12 +297,12 @@ function handleFillResults(data) {
   resultTemplate.innerHTML = "";
 
   let listData = data.slice(
-    resultsPageNumber * 20,
-    RESULTS_PAGE_SIZE + resultsPageNumber * 20
+    (resultsPageNumber - 1) * 20,
+    RESULTS_PAGE_SIZE + (resultsPageNumber - 1) * 20
   );
 
-  console.log(resultsPageNumber * 20);
-  console.log(RESULTS_PAGE_SIZE + resultsPageNumber * 20);
+  console.log((resultsPageNumber - 1) * 20);
+  console.log(RESULTS_PAGE_SIZE + (resultsPageNumber - 1) * 20);
 
   if (resultTemplate) {
 
