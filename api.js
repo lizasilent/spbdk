@@ -37,6 +37,7 @@ window.onload = () => {
   // Listeners
   if (searchInput) {
     searchInput.addEventListener("input", handlePopup);
+
     searchInput.addEventListener("keypress", (event) => {
       if (event.keyCode === 13) {
         event.preventDefault();
@@ -58,7 +59,6 @@ window.onload = () => {
     cardSearch.addEventListener("keypress", (event) => {
       if (event.keyCode === 13) {
         event.preventDefault();
-        console.log(cardSearch.value);
         window.location.href = generateSearchResultsHref(cardSearch.value);
       }
     });
@@ -302,6 +302,8 @@ function handleFillPopup(data) {
 }
 
 function handleFillResults(data) {
+  console.log("handleFillResults", data);
+
   const listData = data.slice(
     resultsPageNumber * 20,
     RESULTS_PAGE_SIZE + resultsPageNumber * 20
