@@ -1,4 +1,9 @@
-import { parseUrlParam, prepareCardId, paginationGenerator, debounce } from "./src/utils";
+import {
+  parseUrlParam,
+  prepareCardId,
+  paginationGenerator,
+  debounce,
+} from "./src/utils";
 import nopic from "./images/nopicture.png";
 import nopicsmall from "./images/no-pic-small.png";
 import slider from "./src/slider";
@@ -6,7 +11,7 @@ import slider from "./src/slider";
 // Constants
 const RESULTS_PAGE_SIZE = 20;
 let resultsData = [];
-let resultsSearchQuery = '';
+let resultsSearchQuery = "";
 let resultsPageNumber = 1;
 
 // Elements
@@ -19,7 +24,10 @@ const searchInpFull = document.querySelector(".search__input-full");
 const searchMoreText = document.querySelector(".search__more-text");
 const searchMoreLink = document.querySelector(".search__more-link");
 const cardPage = document.querySelector(".card-page");
-const resultsSearchPagination = document.querySelector(".s-catalog__pagination");
+const resultsSearchPagination = document.querySelector(
+  ".s-catalog__pagination"
+);
+const backButton = document.querySelector(".s-catalog__btn");
 
 window.onload = () => {
   // Listeners
@@ -60,7 +68,20 @@ window.onload = () => {
   if (cardIdParam) {
     getCardData(cardIdParam);
   }
+
+  // Back Button
+
+  if (backButton) {
+    backButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.history.back();
+    });
+  }
 };
+
+// if (backButton) {
+//   backButton.href = back;
+// }
 
 function getDataByQuery(element, successCallback) {
   let query = element.value;
@@ -99,8 +120,6 @@ function showSpinner(isLoading) {
   }
 }
 
-
-
 // Открыть попап
 function handlePopup() {
   createLink(searchInput.value);
@@ -125,9 +144,9 @@ function createListElement(data) {
   return `
 <li class="search__item" id="${id}">
 <a class="search__item" href="/card.html?id=${id}">
-  <img class="search__item-image" src="${data.photopath || nopic}" alt=${
-    data.authorstext
-  }></img>
+  <img class="search__item-image" src="${
+    data.photopath || nopic
+  }" alt="книга"></img>
   <div class="search__item-texts">
     <p class="search__item-autor">${data.authorstext}</p>
     <p class="search__item-name">${data.description}</p>
@@ -161,9 +180,7 @@ function createSearchResultElement(data) {
   return `
   <li class="s__item"> <a href="/card.html?id=${id}">
   <div class="s__item-new hidden">Новинка</div>
-  <img class="s__item-image" src="${data.photopath || nopic}" alt=${
-    data.authorstext
-  }></img>
+  <img class="s__item-image" src="${data.photopath || nopic}" alt="книга"></img>
   <div class="s__item-texts">
     <p class="s__item-autor">${data.authorstext}</p>
     <p class="s__item-name">${data.description}</p>
@@ -173,9 +190,11 @@ function createSearchResultElement(data) {
       <p class="s__item-price">${price}</p>
       <div class="s__item-icon"></div>
     </div>
-    ${ remain > 0 ?
-      ` <p class="s__item-availability">В наличии ${remain} шт.</p>` :
-       `<p class="s__item-availability red">Нет в наличии</p>` }
+    ${
+      remain > 0
+        ? ` <p class="s__item-availability">В наличии ${remain} шт.</p>`
+        : `<p class="s__item-availability red">Нет в наличии</p>`
+    }
 
   </div>
 </a>
@@ -192,7 +211,6 @@ function renderFullResult(data) {
   }
 }
 
-
 // Pagination
 function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
   if (resultsSearchPagination) {
@@ -201,32 +219,49 @@ function renderPagination(itemsCount, pageSize = RESULTS_PAGE_SIZE) {
     const nextPageNumber = resultsPageNumber + 1;
     const pageItems = paginationGenerator(resultsPageNumber, pagesCount);
 
-    console.log("renderPagination", itemsCount, resultsPageNumber, pagesCount, pageItems);
+    console.log(
+      "renderPagination",
+      itemsCount,
+      resultsPageNumber,
+      pagesCount,
+      pageItems
+    );
 
-    const paginationContent =  `
+    const paginationContent = `
   <div class="s-catalog__pagination-count s-catalog__pagination-prev">
-    ${resultsPageNumber <= 1 ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${prevPageNumber}">Предыдущая</a>`}
+    ${
+      resultsPageNumber <= 1
+        ? ""
+        : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${prevPageNumber}">Предыдущая</a>`
+    }
     </div>
     <hr />
     <div class="s-catalog__pagination-block">
     <ul class="s-catalog__pagination-list">
-      ${pageItems.map((pageItem) => (
-        `
+      ${pageItems
+        .map(
+          (pageItem) =>
+            `
         <li class="s-catalog__pagination-elem">
           <a class="s-catalog__pagination-elem" href="/search-results.html?search=${resultsSearchQuery}&page=${pageItem}">${pageItem}</a>
         </li>
         `
-      )).join('')}
+        )
+        .join("")}
     </ul>
     </div>
     <hr />
     <div class="s-catalog__pagination-count s-catalog__pagination-next">
-    ${resultsPageNumber >= pagesCount ? '' : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${nextPageNumber}">Следующая</a>` }
+    ${
+      resultsPageNumber >= pagesCount
+        ? ""
+        : `<a href="/search-results.html?search=${resultsSearchQuery}&page=${nextPageNumber}">Следующая</a>`
+    }
   </div>
-  `
+  `;
 
-  resultsSearchPagination.innerHTML = paginationContent;
- }
+    resultsSearchPagination.innerHTML = paginationContent;
+  }
 }
 
 function generateSearchResultsHref(query) {
@@ -239,7 +274,7 @@ function createLink(query) {
 }
 
 function handleFillPopup(data) {
-  searchList.innerHTML = '';
+  searchList.innerHTML = "";
   let firstItems = data.slice(0, 20);
   firstItems.forEach((dataObject) => {
     renderListElement(dataObject);
@@ -247,14 +282,16 @@ function handleFillPopup(data) {
 }
 
 function handleFillResults(data) {
-  const listData =  data.slice(resultsPageNumber * 20, RESULTS_PAGE_SIZE + resultsPageNumber * 20);
-  resultTemplate.innerHTML = '';
+  const listData = data.slice(
+    resultsPageNumber * 20,
+    RESULTS_PAGE_SIZE + resultsPageNumber * 20
+  );
+  resultTemplate.innerHTML = "";
   listData.forEach((result) => {
     renderFullResult(result);
   });
   renderPagination(data.length);
 }
-
 
 // Карточка товара
 function getCardData(cardId) {
@@ -298,11 +335,10 @@ function createCard(data) {
   let sliderPhotos;
 
   if (data.photos) {
-     mainPhoto = data.photos.find((photo) => photo.isfirstphoto === 't');
-    sliderPhotos = data.photos.filter((photo) => photo.isfirstphoto === 'f');
+    mainPhoto = data.photos.find((photo) => photo.isfirstphoto === "t");
+    sliderPhotos = data.photos.filter((photo) => photo.isfirstphoto === "f");
     console.log(sliderPhotos);
   }
-
 
   return `
   <div class="card" id="${id}">
@@ -313,8 +349,11 @@ function createCard(data) {
         <div class="swiper slider__container">
           <div class="swiper-wrapper">
 
-              ${ sliderPhotos ?  sliderPhotos.map((element) => (
-                `
+              ${
+                sliderPhotos
+                  ? sliderPhotos.map(
+                      (element) =>
+                        `
                 <div class="swiper-slide slider__photo">
                 <img class="slider__photo-img"
                   src="${data.photos ? element.photopath : nopicsmall}"
@@ -322,14 +361,18 @@ function createCard(data) {
                 />
               </div>
                 `
-              )) : ""}
+                    )
+                  : ""
+              }
           </div>
         </div>
         <div class="slider__arrow-next disabled"></div>
       </div>
       <div class="card__main-block">
         <div class="card__main-photo">
-          <img id="main-photo" src="${data.photos ? mainPhoto.photopath : nopic}" alt=""></div>
+          <img id="main-photo" src="${
+            data.photos ? mainPhoto.photopath : nopic
+          }" alt=""></div>
       </div>
     </div>
     <div class="card__text-block">
@@ -349,48 +392,81 @@ function createCard(data) {
     <div class="card__right-header">${data.data.description}</div>
     <div class="card-right__main">
       <div class="card__right-template">
-      ${data.data.authorstext === null ?  "" :
-      `<p>Автор</p>
-      <p>${data.data.authorstext}</p>`}
-        ${data.data.ill_text === null ?  "" :
-        `<p>Художник</p>
-        <p>${data.data.ill_text}</p>`}
+      ${
+        data.data.authorstext === null
+          ? ""
+          : `<p>Автор</p>
+      <p>${data.data.authorstext}</p>`
+      }
+        ${
+          data.data.ill_text === null
+            ? ""
+            : `<p>Художник</p>
+        <p>${data.data.ill_text}</p>`
+        }
 
-        ${data.data.tr_text === null ?  "" :
-        `<p>Переводчик</p>
-        <p>${data.data.tr_text}</p>`}
+        ${
+          data.data.tr_text === null
+            ? ""
+            : `<p>Переводчик</p>
+        <p>${data.data.tr_text}</p>`
+        }
 
-        ${data.data.seriesname === null ?  "" :
-        `<p>Серия</p>
-        <p>${data.data.seriesname}</p>`}
+        ${
+          data.data.seriesname === null
+            ? ""
+            : `<p>Серия</p>
+        <p>${data.data.seriesname}</p>`
+        }
 
-        ${data.data.publishername === null ?  "" :
-        `<p>Издательство</p>
-        <p>${data.data.publishername}</p>`}
+        ${
+          data.data.publishername === null
+            ? ""
+            : `<p>Издательство</p>
+        <p>${data.data.publishername}</p>`
+        }
 
-        ${data.data.publishingyear === "" ?  "" :
-        `<p>Год</p>
-        <p>${data.data.publishingyear}</p>`}
+        ${
+          data.data.publishingyear === ""
+            ? ""
+            : `<p>Год</p>
+        <p>${data.data.publishingyear}</p>`
+        }
 
-        ${data.data.bindingtype === null ?  "" :
-        `<p>Переплёт</p>
-        <p>${data.data.bindingtype}</p>`}
+        ${
+          data.data.bindingtype === null
+            ? ""
+            : `<p>Переплёт</p>
+        <p>${data.data.bindingtype}</p>`
+        }
 
-        ${data.data.pagesnum === "0" ?  "" :
-        `<p>Кол-во страниц</p>
-        <p>${data.data.pagesnum}</p>`}
+        ${
+          data.data.pagesnum === "0"
+            ? ""
+            : `<p>Кол-во страниц</p>
+        <p>${data.data.pagesnum}</p>`
+        }
 
-        ${data.data.lang === null ?  "" :
-        `<p>Язык</p>
-        <p>${data.data.lang}</p>`}
+        ${
+          data.data.lang === null
+            ? ""
+            : `<p>Язык</p>
+        <p>${data.data.lang}</p>`
+        }
 
-        ${data.data.isbn === null ?  "" :
-        `<p>ISBN</p>
-        <p>${data.data.isbn}</p>`}
+        ${
+          data.data.isbn === null
+            ? ""
+            : `<p>ISBN</p>
+        <p>${data.data.isbn}</p>`
+        }
 
-        ${data.data.article === null ?  "" :
-        `<p>Артикул</p>
-        <p>${data.data.article}</p>`}
+        ${
+          data.data.article === null
+            ? ""
+            : `<p>Артикул</p>
+        <p>${data.data.article}</p>`
+        }
 
       </div>
     </div>
