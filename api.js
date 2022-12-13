@@ -54,15 +54,15 @@ window.onload = () => {
 
   // Поиск из карточки
 
-  if (cardSearch) {
-    cardSearch.addEventListener("keypress", (event) => {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        window.location.href = generateSearchResultsHref(cardSearch.value);
-        console.log(cardSearch.value);
-      }
-    });
-  }
+  // if (cardSearch) {
+  //   cardSearch.addEventListener("keypress", (event) => {
+  //     if (event.keyCode === 13) {
+  //       event.preventDefault();
+  //       window.location.href = generateSearchResultsHref(cardSearch.value);
+  //       console.log(cardSearch.value);
+  //     }
+  //   });
+  // }
 
 
   // Search param
