@@ -28,6 +28,10 @@ const resultsSearchPagination = document.querySelector(
   ".s-catalog__pagination"
 );
 const backButton = document.querySelector(".s-catalog__btn");
+const cardMainBlock = document.querySelector(".main-info");
+const cardSearch = cardMainBlock.querySelector(".search__input-full");
+
+
 
 window.onload = () => {
   // Listeners
@@ -40,9 +44,27 @@ window.onload = () => {
       }
     });
   }
+
+  // Поиск из страницы поиска
+
   if (searchInpFull) {
     searchInpFull.addEventListener("input", debounce(handleResults, 1000));
   }
+
+
+  // Поиск из карточки
+
+  if (cardSearch) {
+    cardSearch.addEventListener("keypress", (event) => {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        window.location.href = generateSearchResultsHref(cardSearch.value);
+        console.log(cardSearch.value);
+      }
+    });
+  }
+
+
   // Search param
   const searchQuery = parseUrlParam("search");
   if (searchQuery && searchInpFull) {
@@ -79,9 +101,6 @@ window.onload = () => {
   }
 };
 
-// if (backButton) {
-//   backButton.href = back;
-// }
 
 function getDataByQuery(element, successCallback) {
   let query = element.value;
@@ -135,7 +154,8 @@ function handleResults() {
   getDataByQuery(searchInpFull, handleFillResults);
 }
 
-// Создать элемент списка
+
+// Создать элемент списка в попапе
 function createListElement(data) {
   let price = Number(Math.floor(data.price));
   let remain = Number(Math.floor(data.remain));
