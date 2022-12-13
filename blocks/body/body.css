@@ -2,3 +2,7 @@
   background: #fdf6ec;
   font: 20px "Apercu Pro", Helvetica, Arial, sans-serif;
 }
+
+.body.white {
+  background-color: #fff;
+}
