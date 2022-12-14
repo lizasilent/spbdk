@@ -50,5 +50,5 @@ body {
   background-color: #427e66;
   max-width: 579px;
   width: 30%;
-  min-height: 1300px;
+  min-height: 100vh;
 }
