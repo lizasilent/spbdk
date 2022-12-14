@@ -44,7 +44,8 @@ body {
 
 .banner-new {
   position: relative;
-  background: url(../images/174.png) no-repeat;
+  background-image: url(http://dk.searchsystem.local/banner.png);
+  background-repeat: no-repeat;
   background-size: contain;
   background-position: top right;
   background-color: #427e66;
