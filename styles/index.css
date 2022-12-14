@@ -15,7 +15,6 @@
 @import url(../blocks/loader/loader.css);
 @import url(../blocks/modifiers/modifiers.css);
 
-
 * {
   box-sizing: border-box;
 }
@@ -29,8 +28,6 @@ a:hover {
   opacity: 0.5;
 }
 
-
-
 html,
 body {
   scrollbar-color: #c4c4c4 #eeeeee; /* «цвет ползунка» «цвет полосы скроллбара» */
@@ -38,13 +35,12 @@ body {
 }
 
 .main-info {
-position: relative;
-width: 70%;
-box-sizing: border-box;
-min-height: 100%;
-padding: 73px 5% 0;
+  position: relative;
+  width: 70%;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 73px 5% 0;
 }
-
 
 .banner-new {
   position: relative;
@@ -54,8 +50,5 @@ padding: 73px 5% 0;
   background-color: #427e66;
   max-width: 579px;
   width: 30%;
-  min-height: 1078px;
-
-
+  min-height: 1300px;
 }
-
