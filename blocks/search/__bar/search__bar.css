@@ -7,9 +7,10 @@
   border: 2px solid #427e66;
   border-top: none;
   border-left: none;
-  padding: 9px;
+  padding: 9px 9px 9px 0;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -18,7 +19,6 @@
   width: 85%;
   background-color: transparent;
   color: #9a9a9a;
-  padding-left: 10px;
   outline: none;
   border: 0;
   border-radius: 50px;
